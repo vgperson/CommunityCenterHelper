@@ -268,64 +268,61 @@ namespace CommunityCenterHelper
                                            seasonList: new string[] { "spring", "summer" }, weatherKey: "weatherSun");
                     
                     case ItemID.IT_Catfish:
-                        return strFishBase(waterList: new string[] { "waterRivers", "waterWoodsPond" }, start: "6am", end: "12am",
-                                           seasonList: new string[] { "spring", "fall" }, weatherKey: "weatherRain");
+                        return strFishBase("waterRivers", "6am", "12am", seasonList: new string[] { "spring", "fall", "winter" },
+                                           weatherKey: "weatherRain") + "\n"
+                             + strFishBase("waterWoods", "6am", "12am", weatherKey: "weatherRain");
                     
                     case ItemID.IT_Shad:
-                        return strFishBase(waterKey: "waterRivers", start: "9am", end: "2am",
+                        return strFishBase("waterRivers", "9am", "2am",
                                            seasonList: new string[] { "spring", "summer", "fall" }, weatherKey: "weatherRain");
                     
                     case ItemID.IT_TigerTrout:
-                        return strFishBase(waterKey: "waterRivers", start: "6am", end: "7pm",
+                        return strFishBase("waterRivers", "6am", "7pm",
                                            seasonList: new string[] { "fall", "winter" });
                     
                     // Lake Fish Bundle
                     
                     case ItemID.IT_LargemouthBass:
-                        return strFishBase(waterKey: "waterMountainLake", start: "6am", end: "7pm");
+                        return strFishBase("waterMountain", "6am", "7pm");
                     
                     case ItemID.IT_Carp:
-                        return strFishBase(waterList: new string[] { "waterMountainLake", "waterForestPond" },
-                                           seasonList: new string[] { "spring", "summer", "fall" }, extraLinebreak: true) + "\n"
-                             + strFishBase(waterList: new string[] { "waterWoodsPond", isSewerKnown()? "waterSewer" : "" });
+                        return strFishBase("waterMountain", seasonList: new string[] { "spring", "summer", "fall" }) + "\n"
+                             + strFishBase(waterList: new string[] { "waterWoods", isSewerKnown()? "waterSewer" : "" });
                     
                     case ItemID.IT_Bullhead:
-                        return strFishBase(waterKey: "waterMountainLake");
+                        return strFishBase("waterMountain");
                     
                     case ItemID.IT_Sturgeon:
-                        return strFishBase(waterKey: "waterMountainLake", start: "6am", end: "7pm",
-                                           seasonList: new string[] { "summer", "winter" });
+                        return strFishBase("waterMountain", "6am", "7pm", seasonList: new string[] { "summer", "winter" });
                     
                     // Ocean Fish Bundle
                     
                     case ItemID.IT_Sardine:
-                        return strFishBase(waterKey: "waterOcean", start: "6am", end: "7pm",
-                                           seasonList: new string[] { "spring", "fall", "winter" });
+                        return strFishBase("waterOcean", "6am", "7pm", seasonList: new string[] { "spring", "fall", "winter" });
                     
                     case ItemID.IT_Tuna:
-                        return strFishBase(waterKey: "waterOcean", start: "6am", end: "7pm",
-                                           seasonList: new string[] { "summer", "winter" });
+                        return strFishBase("waterOcean", "6am", "7pm", seasonList: new string[] { "summer", "winter" });
                     
                     case ItemID.IT_RedSnapper:
-                        return strFishBase(waterKey: "waterOcean", start: "6am", end: "7pm",
-                                           seasonList: new string[] { "summer", "fall" }, weatherKey: "weatherRain");
+                        return strFishBase("waterOcean", "6am", "7pm", seasonList: new string[] { "summer", "fall", "winter" },
+                                           weatherKey: "weatherRain");
                     
                     case ItemID.IT_Tilapia:
-                        return strFishBase(waterKey: "waterOcean", start: "6am", end: "2pm",
-                                           seasonList: new string[] { "summer", "fall" });
+                        return strFishBase("waterOcean", "6am", "2pm", seasonList: new string[] { "summer", "fall" });
                     
                     // Night Fishing Bundle
                     
                     case ItemID.IT_Walleye:
-                        return strFishBase(waterList: new string[] { "waterRivers", "waterLakes", "waterForestPond" },
-                                           start: "12pm", end: "2am", seasonKey: "fall", weatherKey: "weatherRain");
+                        return strFishBase(waterList: new string[] { "waterRivers", "waterMountain", "waterForestPond" },
+                                           start: "12pm", end: "2am", seasonList: new string[] { "fall", "winter" },
+                                           weatherKey: "weatherRain");
                     
                     case ItemID.IT_Bream:
-                        return strFishBase(waterKey: "waterRivers", start: "6am", end: "2am");
+                        return strFishBase("waterRivers");
                     
                     case ItemID.IT_Eel:
-                        return strFishBase(waterKey: "waterOcean", start: "4pm", end: "2am",
-                                           seasonList: new string[] { "spring", "fall" }, weatherKey: "weatherRain");
+                        return strFishBase("waterOcean", "4pm", "2am", seasonList: new string[] { "spring", "fall" },
+                                           weatherKey: "weatherRain");
                     
                     // Crab Pot Bundle
                     
@@ -368,18 +365,17 @@ namespace CommunityCenterHelper
                     // Specialty Fish Bundle
                     
                     case ItemID.IT_Pufferfish:
-                        return strFishBase(waterKey: "waterOcean", start: "12pm", end: "4pm",
-                                           seasonKey: "summer", weatherKey: "weatherSun");
+                        return strFishBase("waterOcean", "12pm", "4pm", "summer", "weatherSun");
                     
                     case ItemID.IT_Ghostfish:
-                        return strFishBase(waterKey: "waterMines") + "\n"
+                        return strFishBase("waterMines") + "\n"
                              + strDroppedByMonster("Ghost");
                     
                     case ItemID.IT_Sandfish:
-                        return strFishBase(waterKey: isDesertKnown()? "waterDesertPond" : "waterUnknown", start: "6am", end: "8pm");
+                        return strFishBase(isDesertKnown()? "waterDesert" : "waterUnknown", "6am", "8pm");
                     
                     case ItemID.IT_Woodskip:
-                        return strFishBase(waterList: new string[] { "waterWoodsPond",
+                        return strFishBase(waterList: new string[] { "waterWoods",
                                                                      haveSpecialFarmType("forest")? "waterSpecialFarm" : "" });
                     
                     /********** Boiler Room **********/
@@ -490,7 +486,7 @@ namespace CommunityCenterHelper
                         return strSeasonalLocationalForage("winter", "locationBeach");
                     
                     case ItemID.IT_Chub:
-                        return strFishBase(waterList: new string[] { "waterMountainLake", "waterMountainRiver" });
+                        return strFishBase(waterList: new string[] { "waterMountain", "waterForestRiver" });
                     
                     case ItemID.IT_FrozenGeode:
                         return strHitRocks("locationMinesArea2") + "\n"
@@ -505,7 +501,9 @@ namespace CommunityCenterHelper
                     
                     case ItemID.IT_Hay:
                         return strBuyFrom(shopLiteral: multiKey("shopMarnie", isDesertKnown()? "shopDesertTrader" : "")) + "\n"
-                             + str.Get("harvestHay", new { wheat = getItemName(ItemID.IT_Wheat) });
+                             + str.Get("harvestHay", new { wheat = getItemName(ItemID.IT_Wheat) })
+                             + (modRegistry.IsLoaded("ppja.artisanvalleyPFM")? // Artisan Valley machine rules
+                                "\n" + strPutItemInMachine(ItemID.IT_Fiber, machineName: "Drying Rack") : "");
                     
                     // Enchanter's Bundle
                     
@@ -997,14 +995,14 @@ namespace CommunityCenterHelper
                     // [AlternateBundles] River Fish Bundle
                     
                     case ItemID.IT_SmallmouthBass:
-                        return strFishBase(waterList: new string[] { "waterRivers", "waterForestPond" },
+                        return strFishBase(waterList: new string[] { "waterTown", "waterForestPond" },
                                            seasonList: new string[] { "spring", "fall" });
                     
                     case ItemID.IT_Salmon:
                         return strFishBase("waterRivers", "6am", "7pm", "fall");
                     
                     case ItemID.IT_Perch:
-                        return strFishBase(waterList: new string[] { "waterRivers", "waterMountainLake", "waterForestPond" },
+                        return strFishBase(waterList: new string[] { "waterRivers", "waterMountain", "waterForestPond" },
                                            seasonKey: "winter");
                     
                     case ItemID.IT_Pike:
@@ -1014,12 +1012,11 @@ namespace CommunityCenterHelper
                     // [AlternateBundles] Lake Fish Bundle
                     
                     case ItemID.IT_RainbowTrout:
-                        return strFishBase(waterList: new string[] { "waterRivers", "waterMountainLake" },
+                        return strFishBase(waterList: new string[] { "waterRivers", "waterMountain" },
                                            start: "6am", end: "7pm", seasonKey: "summer");
                     
                     case ItemID.IT_Lingcod:
-                        return strFishBase(waterList: new string[] { "waterRivers", "waterMountainLake" },
-                                           seasonKey: "winter");
+                        return strFishBase(waterList: new string[] { "waterRivers", "waterMountain" }, seasonKey: "winter");
                     
                     // [AlternateBundles] Ocean Fish Bundle
                     
@@ -1039,7 +1036,7 @@ namespace CommunityCenterHelper
                     // [AlternateBundles] Night Fishing Bundle
                     
                     case ItemID.IT_MidnightCarp:
-                        return strFishBase(waterList: new string[] { "waterMountainLake", "waterForestPond" },
+                        return strFishBase(waterList: new string[] { "waterMountain", "waterForestPond" },
                                            start: "10pm", end: "2am", seasonList: new string[] { "fall", "winter" });
                     
                     case ItemID.IT_SuperCucumber:
@@ -1055,10 +1052,10 @@ namespace CommunityCenterHelper
                         return strFishBase("waterMines60", fishingLevel: 5);
                     
                     case ItemID.IT_ScorpionCarp:
-                        return strFishBase("waterDesertPond", "6am", "8pm");
+                        return strFishBase("waterDesert", "6am", "8pm");
                     
                     case ItemID.IT_Dorado:
-                        return strFishBase("waterRivers", "6am", "7pm", "summer");
+                        return strFishBase("waterForestRiver", "6am", "7pm", "summer");
                     
                     /********** [AlternateBundles] Boiler Room **********/
                     
@@ -1451,12 +1448,404 @@ namespace CommunityCenterHelper
                     case ItemID.IT_GhostCrystal:
                         return strOpenGeode(ItemID.IT_FrozenGeode, ItemID.IT_OmniGeode);
                     
+                    /********** [Minerva's Harder CC (PPJA)] Crafts Room **********/
+                    
+                    // [Minerva's Harder CC (PPJA)] Spring Foraging Bundle
+                    
+                    case ItemID.IT_RiceShoot:
+                        return strBuyFrom(shopLiteral: str.Get("shopPierreSeason",
+                                          new { season = str.Get("spring"), startingYear = getStartingYearString(2) })) + "\n"
+                             + strFishingChest() + "\n"
+                             + strDroppedByMonster("Grub");
+                    
+                    // [Minerva's Harder CC (PPJA)] Crafting Bundle
+                    
+                    case ItemID.IT_WiltedBouquet:
+                        return strPutItemInMachine(ItemID.IT_Bouquet, ItemID.BC_Furnace);
+                    
+                    // [Minerva's Harder CC (PPJA)] Specialty Foraging Bundle
+                    
+                    case ItemID.MFM_Starfish:
+                        if (modRegistry.IsLoaded("MoreFish"))
+                            return strLocationalForage("locationBeach");
+                        else
+                            return "";
+                    
+                    case ItemID.MFM_CrownOfThornsStarfish:
+                        if (modRegistry.IsLoaded("MoreFish"))
+                            return strLocationalForage("locationBeach");
+                        else
+                            return "";
+                    
+                    case ItemID.MFM_HolyGrenadeStarfish:
+                        if (modRegistry.IsLoaded("MoreFish"))
+                            return strLocationalForage("locationBeach");
+                        else
+                            return "";
+                    
+                    /********** [Minerva's Harder CC (PPJA)] Fish Tank **********/
+                    
+                    // [Minerva's Harder CC (PPJA)] Spring Fish Bundle
+                    
+                    case ItemID.MFM_Lionhead:
+                        if (modRegistry.IsLoaded("MoreFish"))
+                            return strFishBase("waterForestPond", "8am", "4pm", "spring", "weatherSun");
+                        else
+                            return "";
+                    
+                    case ItemID.MFM_Pacu:
+                        if (modRegistry.IsLoaded("MoreFish"))
+                            return strFishBase(waterList: new string[] { "waterRivers", "waterMountain" },
+                                               seasonList: new string[] { "spring", "summer", "fall" });
+                        else
+                            return "";
+                    
+                    case ItemID.MFM_GreenTerror:
+                        if (modRegistry.IsLoaded("MoreFish"))
+                            return strFishBase("waterTown", "6am", "6pm",
+                                               seasonList: new string[] { "spring", "summer" }, weatherKey: "weatherSun");
+                        else
+                            return "";
+                    
+                    case ItemID.MFM_Ladyfish:
+                        if (modRegistry.IsLoaded("MoreFish"))
+                            return strFishBase("waterOcean", "6am", "7pm",
+                                               seasonList: new string[] { "spring", "summer" }, weatherKey: "weatherSun");
+                        else
+                            return "";
+                    
+                    case ItemID.MFM_Barracuda:
+                        if (modRegistry.IsLoaded("MoreFish"))
+                            return strFishBase("waterOcean", "10am", "7pm", "spring", "weatherSun");
+                        else
+                            return "";
+                    
+                    case ItemID.MFM_ZebraTilapia:
+                        if (modRegistry.IsLoaded("MoreFish"))
+                            return strFishBase("waterMountain", "8am", "4pm",
+                                               seasonList: new string[] { "spring", "summer" }, weatherKey: "weatherSun");
+                        else
+                            return "";
+                    
+                    case ItemID.MFM_ClownLoach:
+                        if (modRegistry.IsLoaded("MoreFish"))
+                            return strFishBase(waterList: new string[] { "waterForestPond", "waterMountain" },
+                                               seasonList: new string[] { "spring", "summer" });
+                        else
+                            return "";
+                    
+                    case ItemID.MFM_Elephantfish:
+                        if (modRegistry.IsLoaded("MoreFish"))
+                            return strFishBase(waterList: new string[] { "waterForestPond", "waterMountain" },
+                                               start: "8am", end: "8pm", seasonList: new string[] { "spring", "summer" },
+                                               weatherKey: "weatherSun");
+                        else
+                            return "";
+                    
+                    case ItemID.MFM_YamabukiKoi:
+                        if (modRegistry.IsLoaded("MoreFish"))
+                            return strFishBase("waterWoods", "6am", "12am", "spring", "weatherRain");
+                        else
+                            return "";
+                    
+                    // [Minerva's Harder CC (PPJA)] Summer Fish Bundle
+                    
+                    case ItemID.MFM_Pangasius:
+                        if (modRegistry.IsLoaded("MoreFish"))
+                            return strFishBase(waterList: new string[] { "waterForestPond", "waterMountain" },
+                                               seasonList: new string[] { "spring", "summer", "fall" });
+                        else
+                            return "";
+                    
+                    case ItemID.MFM_KohakuKoi:
+                        if (modRegistry.IsLoaded("MoreFish"))
+                            return strFishBase("waterWoods", seasonKey: "spring");
+                        else
+                            return "";
+                    
+                    case ItemID.MFM_Comet:
+                        if (modRegistry.IsLoaded("MoreFish"))
+                            return strFishBase("waterForestPond", "8am", "4pm", "summer");
+                        else
+                            return "";
+                    
+                    case ItemID.MFM_Tucunare:
+                        if (modRegistry.IsLoaded("MoreFish"))
+                            return strFishBase("waterForestRiver", "6am", "4pm", "summer", "weatherRain");
+                        else
+                            return "";
+                    
+                    case ItemID.MFM_FreshwaterPufferfish:
+                        if (modRegistry.IsLoaded("MoreFish"))
+                            return strFishBase("waterRivers", seasonKey: "summer", weatherKey: "weatherRain");
+                        else
+                            return "";
+                    
+                    case ItemID.MFM_Anochoviella:
+                        if (modRegistry.IsLoaded("MoreFish"))
+                            return strFishBase("waterOcean", "6am", "4pm",
+                                               seasonList: new string[] { "spring", "summer" }, weatherKey: "weatherRain");
+                        else
+                            return "";
+                    
+                    case ItemID.MFM_RibbonEel:
+                        if (modRegistry.IsLoaded("MoreFish"))
+                            return strFishBase("waterOcean", "8pm", "2am", "summer", "weatherSun");
+                        else
+                            return "";
+                    
+                    case ItemID.MFM_SmallMantaRay:
+                        if (modRegistry.IsLoaded("MoreFish"))
+                            return strFishBase("waterOcean", "8am", "2pm", "summer");
+                        else
+                            return "";
+                    
+                    // [Minerva's Harder CC (PPJA)] Fall Fish Bundle
+                    
+                    case ItemID.MFM_SmallSwordfish:
+                        if (modRegistry.IsLoaded("MoreFish"))
+                            return strFishBase("waterOcean", "12pm", "6pm", "fall");
+                        else
+                            return "";
+                    
+                    case ItemID.MFM_BlueRingedOctopus:
+                        if (modRegistry.IsLoaded("MoreFish"))
+                            return strFishBase("waterOcean", "6am", "12pm", "fall");
+                        else
+                            return "";
+                    
+                    case ItemID.MFM_GhostEel:
+                        if (modRegistry.IsLoaded("MoreFish"))
+                            return strFishBase("waterOcean", "8pm", "2am", "fall");
+                        else
+                            return "";
+                    
+                    case ItemID.MFM_ClownKnifefish:
+                        if (modRegistry.IsLoaded("MoreFish"))
+                            return strFishBase("waterMountain", "12pm", "12am", "fall");
+                        else
+                            return "";
+                    
+                    case ItemID.MFM_RedtailShark:
+                        if (modRegistry.IsLoaded("MoreFish"))
+                            return strFishBase(waterList: new string[] { "waterForestPond", "waterMountain" },
+                                               start: "10am", end: "8pm", seasonKey: "fall");
+                        else
+                            return "";
+                    
+                    case ItemID.MFM_GhostKoi:
+                        if (modRegistry.IsLoaded("MoreFish"))
+                            return strFishBase("waterWoods", "6am", "12am", "fall", "weatherRain");
+                        else
+                            return "";
+                    
+                    case ItemID.MFM_Telescope:
+                        if (modRegistry.IsLoaded("MoreFish"))
+                            return strFishBase("waterForestPond", "6am", "6pm", "fall", "weatherRain");
+                        else
+                            return "";
+                    
+                    case ItemID.MFM_Trahira:
+                        if (modRegistry.IsLoaded("MoreFish"))
+                            return strFishBase(waterList: new string[] { "waterTown", "waterMountain" },
+                                               seasonList: new string[] { "spring", "summer", "fall" }) + "\n"
+                                 + strFishBase("waterForestRiver", seasonList: new string[] { "spring", "summer" }) + "\n"
+                                 + strFishBase(isSewerKnown()? "waterSewer" : "waterUnknown");
+                        else
+                            return "";
+                    
+                    case ItemID.MFM_CommonPleco:
+                        if (modRegistry.IsLoaded("MoreFish"))
+                            return strFishBase(waterList: new string[] { "waterForestPond", "waterTown" },
+                                               start: "6pm", end: "2am", seasonList: new string[] { "summer", "fall" },
+                                               weatherKey: "weatherRain") + "\n"
+                                 + strFishBase("waterMountain", "6pm", "2am", "fall", "weatherRain");
+                        else
+                            return "";
+                    
+                    // [Minerva's Harder CC (PPJA)] Winter Fish Bundle
+                    
+                    case ItemID.MFM_SnowballPleco:
+                        if (modRegistry.IsLoaded("MoreFish"))
+                            return strFishBase(waterList: new string[] { "waterForestPond", "waterTown", "waterMountain" },
+                                               start: "6pm", end: "2am", seasonKey: "winter");
+                        else
+                            return "";
+                    
+                    case ItemID.MFM_ArcticChar:
+                        if (modRegistry.IsLoaded("MoreFish"))
+                            return strFishBase("waterForestRiver", "8am", "6pm", "winter");
+                        else
+                            return "";
+                    
+                    case ItemID.MFM_Ide:
+                        if (modRegistry.IsLoaded("MoreFish"))
+                            return strFishBase(waterList: new string[] { "waterForestPond", "waterMountain" },
+                                               start: "6am", end: "6pm", seasonKey: "winter");
+                        else
+                            return "";
+                    
+                    case ItemID.MFM_ShiroUtsuriKoi:
+                        if (modRegistry.IsLoaded("MoreFish"))
+                            return strFishBase("waterWoods", seasonKey: "winter");
+                        else
+                            return "";
+                    
+                    case ItemID.MFM_Sauger:
+                        if (modRegistry.IsLoaded("MoreFish"))
+                            return strFishBase(waterList: new string[] { "waterForestPond", "waterMountain" },
+                                               start: "8am", end: "6pm", seasonKey: "winter");
+                        else
+                            return "";
+                    
+                    case ItemID.MFM_Tench:
+                        if (modRegistry.IsLoaded("MoreFish"))
+                            return strFishBase(waterList: new string[] { "waterForestPond", "waterMountain" },
+                                               start: "6am", end: "4pm", seasonList: new string[] { "fall", "winter" });
+                        else
+                            return "";
+                    
+                    case ItemID.MFM_Haddock:
+                        if (modRegistry.IsLoaded("MoreFish"))
+                            return strFishBase("waterOcean", "10am", "8pm", seasonList: new string[] { "fall", "winter" });
+                        else
+                            return "";
+                    
+                    case ItemID.MFM_Hagfish:
+                        if (modRegistry.IsLoaded("MoreFish"))
+                            return strFishBase("waterOcean", "8am", "6pm", "winter");
+                        else
+                            return "";
+                    
+                    case ItemID.MFM_KingCrab:
+                        if (modRegistry.IsLoaded("MoreFish"))
+                            return strFishBase("waterOcean", "8am", "10pm", "winter");
+                        else
+                            return "";
+                    
+                    // [Minerva's Harder CC (PPJA)] Crab Pot Bundle
+                    
+                    case ItemID.MFM_FreshwaterCrab:
+                        if (modRegistry.IsLoaded("MoreFish"))
+                            return strCrabPot("waterTypeFresh");
+                        else
+                            return "";
+                    
+                    case ItemID.MFM_FreshwaterShrimp:
+                        if (modRegistry.IsLoaded("MoreFish"))
+                            return strCrabPot("waterTypeFresh");
+                        else
+                            return "";
+                    
+                    case ItemID.MFM_Jellyfish:
+                        if (modRegistry.IsLoaded("MoreFish"))
+                            return strCrabPot("waterTypeOcean");
+                        else
+                            return "";
+                    
+                    case ItemID.MFM_SwimmerCrab:
+                        if (modRegistry.IsLoaded("MoreFish"))
+                            return strCrabPot("waterTypeOcean");
+                        else
+                            return "";
+                    
+                    case ItemID.MFM_Prawn:
+                        if (modRegistry.IsLoaded("MoreFish"))
+                            return strCrabPot("waterTypeOcean");
+                        else
+                            return "";
+                    
+                    case ItemID.MFM_Nautilus:
+                        if (modRegistry.IsLoaded("MoreFish"))
+                            return strCrabPot("waterTypeOcean");
+                        else
+                            return "";
+                    
+                    case ItemID.MFM_BriefSquid:
+                        if (modRegistry.IsLoaded("MoreFish"))
+                            return strCrabPot("waterTypeOcean");
+                        else
+                            return "";
+                    
+                    case ItemID.MFM_SandDollar:
+                        if (modRegistry.IsLoaded("MoreFish"))
+                            return strCrabPot("waterTypeOcean");
+                        else
+                            return "";
+                    
+                    case ItemID.MFM_BlueDragonSlug:
+                        if (modRegistry.IsLoaded("MoreFish"))
+                            return strCrabPot("waterTypeOcean");
+                        else
+                            return "";
+                    
+                    // [Minerva's Harder CC (PPJA)] Specialty Fish Bundle
+                    
+                    case ItemID.MFM_TigerFish:
+                        if (modRegistry.IsLoaded("MoreFish"))
+                            return strFishBase("waterDesert", "8am", "2am");
+                        else
+                            return "";
+                    
+                    case ItemID.MFM_ElectricCatfish:
+                        if (modRegistry.IsLoaded("MoreFish"))
+                            return strFishBase("waterDesert");
+                        else
+                            return "";
+                    
+                    case ItemID.MFM_Blinky:
+                        if (modRegistry.IsLoaded("MoreFish"))
+                            return strFishBase("waterSewer");
+                        else
+                            return "";
+                    
+                    case ItemID.MFM_Glassfish:
+                        if (modRegistry.IsLoaded("MoreFish"))
+                            return strFishBase("waterMines");
+                        else
+                            return "";
+                    
+                    case ItemID.MFM_Coelacanth:
+                        if (modRegistry.IsLoaded("MoreFish"))
+                            return strFishBase("waterMines", "6am", "2am");
+                        else
+                            return "";
+                    
+                    case ItemID.MFM_Barreleye:
+                        if (modRegistry.IsLoaded("MoreFish"))
+                            return strFishBase("waterMines", "8pm", "2am");
+                        else
+                            return "";
+                    
+                    case ItemID.MFM_Lungfish:
+                        if (modRegistry.IsLoaded("MoreFish"))
+                            return strFishBase("waterDesert", "8am", "2am");
+                        else
+                            return "";
+                    
+                    /********** [Minerva's Harder CC (PPJA)] Boiler Room **********/
+                    
+                    // [Minerva's Harder CC (PPJA)] Geologist's Bundle
+                    
+                    case ItemID.IT_Soapstone:
+                        return strOpenGeode(ItemID.IT_FrozenGeode, ItemID.IT_OmniGeode);
+                    
+                    /********** [Minerva's Harder CC (PPJA)] The Missing Bundle **********/
+                    
+                    case ItemID.MFM_TrappedSoul:
+                        if (modRegistry.IsLoaded("MoreFish"))
+                            return strFishBase("waterSwamp");
+                        else
+                            return "";
+                    
                     /********** [Challenging PPJA] Boiler Room **********/
                     
                     // [Challenging PPJA] Adventurer's Bundle
                     
                     case ItemID.IT_WhiteAlgae:
-                        return strFishBase(waterList: new string[] { isSewerKnown()? "waterSewer" : "", "waterOcean", "waterMines" });
+                        return strFishBase(waterList: new string[] { isSewerKnown()? "waterSewer" : "",
+                                                                     isWitchSwampKnown()? "waterSwamp" : "",
+                                                                     "waterMines" });
                     
                     case ItemID.IT_Bomb:
                         return strCraftRecipe("Bomb") + "\n"
@@ -1472,7 +1861,7 @@ namespace CommunityCenterHelper
                     
                     case ItemID.IT_LuckyPurpleShorts:
                         return str.Get("luckyShorts")
-                            + (modRegistry.IsLoaded("ppja.artisanvalleyPFM")? // Artisan Valley machine rules, expected for CPPJA bundles
+                            + (modRegistry.IsLoaded("ppja.artisanvalleyPFM")? // Artisan Valley machine rules
                                "\n" + strPutItemInMachine(ItemID.IT_Amethyst, ItemID.BC_Loom) : "");
                     
                     // [Challenging PPJA] Field Research Bundle
@@ -1507,25 +1896,115 @@ namespace CommunityCenterHelper
                 
                 switch (getItemName(id, true))
                 {
+                    /********** [Minerva's Harder CC (PPJA)] Crafts Room **********/
+                    
+                    // [Minerva's Harder CC (PPJA)] Summer Foraging Bundle
+                    
+                    case "Asparagus":
+                        return strSeasonalCrop("summer", quality, startingYear: 4) +
+                               (modRegistry.IsLoaded("minervamaga.FTM.PPJAForage")? // Forage pack included with bundle mod
+                                "\n" + strSeasonalForage("summer") : "");
+                    
+                    case "Raspberry":
+                        return strSeasonalCrop("summer", quality, startingYear: 2) +
+                               (modRegistry.IsLoaded("minervamaga.FTM.PPJAForage")? // Forage pack included with bundle mod
+                                "\n" + strSeasonalForage("summer") : "");
+                    
+                    case "Summer Rose":
+                        return strSeasonalCrop("summer", quality) +
+                               (modRegistry.IsLoaded("minervamaga.FTM.PPJAForage")? // Forage pack included with bundle mod
+                                "\n" + strSeasonalForage("summer") : "");
+                    
+                    // [Minerva's Harder CC (PPJA)] Fall Foraging Bundle
+                    
+                    case "Thyme":
+                        return strSeasonalCrop("fall", quality) +
+                               (modRegistry.IsLoaded("minervamaga.FTM.PPJAForage")? // Forage pack included with bundle mod
+                                "\n" + strSeasonalForage("fall") : "");
+                    
+                    case "Barley":
+                        return strSeasonalCrop("fall", quality, startingYear: 2) +
+                               (modRegistry.IsLoaded("minervamaga.FTM.PPJAForage")? // Forage pack included with bundle mod
+                                "\n" + strSeasonalForage("fall") : "");
+                    
+                    case "Fennel":
+                        return strSeasonalCrop("fall", quality, startingYear: 2) +
+                               (modRegistry.IsLoaded("minervamaga.FTM.PPJAForage")? // Forage pack included with bundle mod
+                                "\n" + strSeasonalForage("fall") : "");
+                    
+                    // [Minerva's Harder CC (PPJA)] Crafting Bundle
+                    
+                    case "Beeswax":
+                        return strPutItemInMachine(ItemID.IT_Honey, machineName: "Extruder");
+                    
+                    case "Thread":
+                        return strPutItemInMachine(itemName: "Cotton Boll", machineID: ItemID.BC_Loom);
+                    
+                    case "Twine":
+                        return strPutItemInMachine(ItemID.IT_Hay, ItemID.BC_Loom);
+                    
+                    /********** [Minerva's Harder CC (PPJA)] Boiler Room **********/
+                    
+                    // [Minerva's Harder CC (PPJA)] Adventurer's Bundle
+                    
+                    case "Prismatic Popsicle":
+                        return strCookRecipe("Prismatic Popsicle");
+                    
+                    case "Berry Fusion Tea":
+                        return strCookRecipe("Berry Fusion Tea");
+                    
+                    case "Black Tea":
+                        return strCookRecipe("Black Tea");
+                    
+                    case "Cranberry Pomegranate Tea":
+                        return strCookRecipe("Cranberry Pomegranate Tea");
+                    
+                    case "Southern Sweet Tea":
+                        return strCookRecipe("Southern Sweet Tea");
+                    
+                    case "Surimi":
+                        return strCookRecipe("Surimi");
+                    
+                    case "PB&J Sandwich":
+                        return strCookRecipe("PB&J Sandwich");
+                    
+                    /********** [Minerva's Harder CC (PPJA)] The Missing Bundle **********/
+                    
+                    case "Cactus Flower":
+                        return strSeasonalCrop(seasonList: new string[] { "spring", "summer", "fall" }, quality: quality,
+                                               shopKey: "shopOasis", startingYear: 3);
+                    
+                    case "Grilled Zucchini":
+                        return strCookRecipe("Grilled Zucchini");
+                    
+                    case "Habanero Extract":
+                        return strPutItemInMachine(itemName: "Habanero", machineName: "Pepper Blender");
+                    
+                    case "Chocolate Mouse Bread":
+                        return strCookRecipe("Chocolate Mouse Bread");
+                    
                     /********** [Challenging PPJA] Crafts Room **********/
                     
                     // [Challenging PPJA] Spring Foraging Bundle
                     
                     case "Basil":
                         return strSeasonalCrop("spring", quality)
-                             + (modRegistry.IsLoaded("alja.FTMCCCB")? "\n" + strSeasonalForage("spring") : ""); // CPPJA bundle forage pack
+                             + (modRegistry.IsLoaded("alja.FTMCCCB")? // Challenging PPJA bundle forage pack
+                                "\n" + strSeasonalForage("spring") : "");
                     
                     // [Challenging PPJA] Summer Foraging Bundle
                     
                     case "Blue Mist":
                         return strSeasonalCrop("summer", quality)
-                             + (modRegistry.IsLoaded("alja.FTMCCCB")? "\n" + strSeasonalForage("summer") : ""); // CPPJA bundle forage pack
+                             + (modRegistry.IsLoaded("alja.FTMCCCB")? // Challenging PPJA bundle forage pack
+                                "\n" + strSeasonalForage("summer") : "");
                     
                     // [Challenging PPJA] Fall Foraging Bundle
                     
                     case "Shiitake Mushroom":
                         return strSeasonalCrop(seasonList: new string[] { "spring", "fall" }, quality: quality, startingYear: 4)
-                             + (modRegistry.IsLoaded("alja.FTMCCCB")? "\n" + strSeasonalForage("fall") : ""); // CPPJA bundle forage pack
+                             + (modRegistry.IsLoaded("alja.FTMCCCB")? // Challenging PPJA bundle forage pack
+                                "\n" + strSeasonalForage("fall") : "");
                     
                     /********** [Challenging PPJA] Pantry **********/
                     
@@ -1785,6 +2264,9 @@ namespace CommunityCenterHelper
                     case ItemID.IT_Fiber:
                         return str.Get("shortHintFiber");
                     
+                    case ItemID.IT_Hay:
+                        return str.Get("shortHintHay", new { wheat = getItemName(ItemID.IT_Wheat) });
+                    
                     case ItemID.IT_Wine:
                         return str.Get("shortHintMachine", new { item = getItemName(StardewValley.Object.FruitsCategory),
                                                                  machine = getBigCraftableName(ItemID.BC_Keg) });
@@ -1810,6 +2292,9 @@ namespace CommunityCenterHelper
                     case ItemID.IT_Wool:
                         return multiKey("animalSheep", "animalRabbit");
                     
+                    case ItemID.IT_Bouquet:
+                        return str.Get("shopPierre");
+                    
                     case ItemID.IT_CoffeeBean:
                         return str.Get("shopTravelingCartRandom");
                     
@@ -1832,9 +2317,15 @@ namespace CommunityCenterHelper
                 
                 switch (getItemName(id, true))
                 {
+                    case "Cotton Boll":
+                        return str.Get("shortHintSeasonalCrop", new { season = multiSeason(new string[] { "summer", "fall" }) });
+                    
                     case "Jalapeno":
                     case "Durum":
                         return str.Get("shortHintSeasonalCrop", new { season = str.Get("fall") });
+                    
+                    case "Habanero":
+                        return str.Get("shortHintSeasonalCropStartingYear", new { season = str.Get("fall"), year = 3 });
                     
                     case "Juniper Berry":
                         return str.Get("shortHintSeasonalCrop", new { season = str.Get("winter") });
@@ -1888,7 +2379,7 @@ namespace CommunityCenterHelper
         private static string strSeasonalCrop(string seasonKey = "", int quality = 0, string shopKey = "",
                                               int startingYear = 0, string[] seasonList = null)
         {
-            string yearStr = startingYear != 0 && Game1.year < startingYear? str.Get("startingYear", new { num = startingYear }) : "";
+            string yearStr = getStartingYearString(startingYear);
             string qualityCrop = quality > 0? str.Get("qualityCrop") : "";
             
             return str.Get("seasonalCrop", new { seedShop = shopKey != ""? str.Get(shopKey) : getSeedShopsString(),
@@ -1920,7 +2411,7 @@ namespace CommunityCenterHelper
         /// <param name="locationLiteral">Override for preformatted text.</param>
         private static string strLocationalForage(string locationKey = "", string locationLiteral = "")
         {
-            return str.Get("locationalForage", new { location = locationLiteral != ""? locationLiteral :str.Get(locationKey) });
+            return str.Get("locationalForage", new { location = locationLiteral != ""? locationLiteral : str.Get(locationKey) });
         }
         
         /// <summary>Suggestion of an item forageable in particular location during particular season(s).</summary>
@@ -2337,7 +2828,7 @@ namespace CommunityCenterHelper
         private static string strFruitTreeDuringSeason(string treeKey, string seasonKey,
                                                        string shopKey = "shopPierre", int startingYear = 0)
         {
-            string yearStr = startingYear != 0 && Game1.year < startingYear? str.Get("startingYear", new { num = startingYear }) : "";
+            string yearStr = getStartingYearString(startingYear);
             string seedlingStr = parenthesize(str.Get("treeDescSeedling", new { shop = str.Get(shopKey), startingYear = yearStr }));
             
             return str.Get("treeDuringSeason", new { tree = str.Get(treeKey) + seedlingStr, season = str.Get(seasonKey) });
@@ -2772,24 +3263,37 @@ namespace CommunityCenterHelper
                     break;
             }
             
-            // Manual friendship mail unlocks (often with multiple factors) for mod-added recipes.
+            // Manual mail unlocks (often with multiple factors) for mod-added recipes.
             switch (recipeName)
             {
                 case "Butter Churn":
                     if (modRegistry.IsLoaded("ppja.artisanvalleyforMFM")) // Artisan Valley mail
                         recipeSources = conditionalMailSource("Marnie", 4, "farming", 5);
                     break;
+                
                 case "Still":
                     if (modRegistry.IsLoaded("ppja.artisanvalleyforMFM")) // Artisan Valley mail
                         recipeSources = conditionalMailSource(skill: "farming", level: 10, year: 3, seasonKey: "fall");
                     break;
+                
                 case "Poached Pear":
                     if (modRegistry.IsLoaded("ppja.MoreRecipesforMFM")) // More Recipes mail
                         recipeSources = conditionalMailSource("Gus", 5, year: 2);
                     break;
+                
+                case "PB&J Sandwich":
+                    if (modRegistry.IsLoaded("ppja.MoreRecipesforMFM")) // More Recipes mail
+                        recipeSources = conditionalMailSource(skill: "farming", level: 4);
+                    break;
+                
                 case "Seaweed Chips":
                     if (modRegistry.IsLoaded("ppja.EvenMoreRecipesforMFM")) // Even More Recipes mail
                         recipeSources = str.Get("recipeSourceFriendship", new { person = getPersonName("Willy"), hearts = 5 });
+                    break;
+                
+                case "Chocolate Mouse Bread":
+                    if (modRegistry.IsLoaded("ppja.EvenMoreRecipesforMFM")) // Even More Recipes mail
+                        recipeSources = conditionalMailSource("Penny", 8, year: 3);
                     break;
             }
             
@@ -2856,57 +3360,72 @@ namespace CommunityCenterHelper
                 case "Iron Lamp-post":
                     recipeSources += separator + str.Get("shopCarpenter");
                     break;
+                
                 case "Grass Starter":
                     recipeSources += separator + str.Get("shopPierre");
                     break;
+                
                 case "Weathered Floor":
                     if (isDwarfKnown())
                         recipeSources += separator + str.Get("shopDwarf");
                     break;
+                
                 case "Crystal Floor":
                 case "Wicked Statue":
                     if (isSewerKnown())
                         recipeSources += separator + str.Get("shopKrobus");
                     break;
+                
                 case "Warp Totem: Desert":
                     if (isDesertKnown())
                         recipeSources += separator + str.Get("shopDesertTrader");
                     break;
+                
                 case "Tub o' Flowers":
                     recipeSources += separator + str.Get("shopFlowerDance");
                     break;
+                
                 case "Jack-O-Lantern":
                     recipeSources += separator + str.Get("shopSpiritsEve");
                     break;
+                
                 case "Furnace":
                     recipeSources += separator + str.Get("recipeSourceFirstCopper",
                                                          new { copperOre = getItemName(ItemID.IT_CopperOre) });
                     break;
+                
                 case "Garden Pot":
                     recipeSources += separator + str.Get("recipeSourceAfterGreenhouse");
                     break;
+                
                 case "Cask":
                     recipeSources += separator + str.Get("recipeSourceFinalFarmhouse");
                     break;
+                
                 case "Ancient Seeds":
                     recipeSources += separator + str.Get("recipeSourceAncientSeed",
                                                          new { seedArtifact = getItemName(ItemID.IT_AncientSeedArtifact) });
                     break;
+                
                 case "Deluxe Scarecrow":
                     recipeSources += separator + str.Get("recipeSourceRarecrows");
                     break;
+                
                 case "Tea Sapling":
                     recipeSources += separator + str.Get("recipeSourceHeartEvent",
                                                          new { person = getPersonName("Caroline"), hearts = 2 });
                     break;
+                
                 case "Wild Bait":
                     recipeSources += separator + str.Get("recipeSourceHeartEvent",
                                                          new { person = getPersonName("Linus"), hearts = 4 });
                     break;
+                
                 case "Mini-Jukebox":
                     recipeSources += separator + str.Get("recipeSourceHeartEvent",
                                                          new { person = getPersonName("Gus"), hearts = 5 });
                     break;
+                
                 case "Flute Block":
                 case "Drum Block":
                     recipeSources += separator + str.Get("recipeSourceHeartEvent",
@@ -2924,6 +3443,7 @@ namespace CommunityCenterHelper
                 case "Triple Shot Espresso":
                     recipeSources += separator + str.Get("shopSaloon");
                     break;
+                
                 case "Cookies":
                     recipeSources += separator + str.Get("recipeSourceHeartEvent",
                                                          new { person = getPersonName("Evelyn"), hearts = 4 });
@@ -2931,30 +3451,79 @@ namespace CommunityCenterHelper
                 
                 // PPJA Cooking Recipes
                 case "Mushroom and Pepper Crepe":
-                case "Breakfast Tea":
                 case "Popcorn":
                 case "Strawberry Lemonade":
-                    recipeSources += separator + str.Get("shopSaloon");
+                    if (modRegistry.IsLoaded("ppja.evenmorerecipes")) // Even More Recipes assets
+                        recipeSources += separator + str.Get("shopSaloon");
                     break;
+                
+                case "Breakfast Tea":
+                    if (modRegistry.IsLoaded("paradigmnomad.morefood")) // More Recipes (Fruits and Veggies) assets
+                        recipeSources += separator + str.Get("shopSaloon");
+                    break;
+                
                 case "Halloumi Burger":
-                    recipeSources += separator + str.Get("shopSaloon") + parenthesize(str.Get("randomlyAvailable"));
+                    if (modRegistry.IsLoaded("ppja.evenmorerecipes")) // Even More Recipes assets
+                        recipeSources += separator + str.Get("shopSaloon") + parenthesize(str.Get("randomlyAvailable"));
                     break;
+                
+                case "Berry Fusion Tea":
+                    if (modRegistry.IsLoaded("paradigmnomad.morefood")) // More Recipes (Fruits and Veggies) assets
+                        recipeSources += separator + str.Get("shopSaloon") + parenthesize(str.Get("spring"));
+                    break;
+                
+                case "Southern Sweet Tea":
+                    if (modRegistry.IsLoaded("paradigmnomad.morefood")) // More Recipes (Fruits and Veggies) assets
+                        recipeSources += separator + str.Get("shopSaloon") + parenthesize(str.Get("summer"));
+                    break;
+                
+                case "Cranberry Pomegranate Tea":
+                    if (modRegistry.IsLoaded("paradigmnomad.morefood")) // More Recipes (Fruits and Veggies) assets
+                        recipeSources += separator + str.Get("shopSaloon") + parenthesize(str.Get("fall"));
+                    break;
+                
                 case "Avocado Eel Roll":
+                    if (modRegistry.IsLoaded("paradigmnomad.morefood")) // More Recipes (Fruits and Veggies) assets
+                        recipeSources += separator + str.Get("shopSaloon") + getStartingYearString(2);
+                    break;
+                
                 case "Rich Tiramisu":
-                    recipeSources += separator + str.Get("shopSaloon")
-                                   + (Game1.year < 2? str.Get("startingYear", new { num = 2 }) : "");
+                    if (modRegistry.IsLoaded("ppja.evenmorerecipes")) // Even More Recipes assets
+                        recipeSources += separator + str.Get("shopSaloon") + getStartingYearString(2);
                     break;
+                
                 case "Ice Cream Brownie":
-                    recipeSources += separator + str.Get("shopSaloon") + parenthesize(str.Get("randomlyAvailable"))
-                                   + (Game1.year < 2? str.Get("startingYear", new { num = 2 }) : "");
+                    if (modRegistry.IsLoaded("ppja.evenmorerecipes")) // Even More Recipes assets
+                        recipeSources += separator + str.Get("shopSaloon") + parenthesize(str.Get("randomlyAvailable"))
+                                       + getStartingYearString(2);
                     break;
+                
                 case "Wasabi Peas":
-                    recipeSources += separator + str.Get("shopSaloon")
-                                   + (Game1.year < 3? str.Get("startingYear", new { num = 3 }) : "");
+                case "Grilled Zucchini":
+                    if (modRegistry.IsLoaded("ppja.evenmorerecipes")) // Even More Recipes assets
+                        recipeSources += separator + str.Get("shopSaloon") + getStartingYearString(3);
                     break;
+                
                 case "Sun Tea":
-                    if (isDesertKnown())
-                        recipeSources += separator + str.Get("shopOasis");
+                    if (modRegistry.IsLoaded("paradigmnomad.morefood")) // More Recipes (Fruits and Veggies) assets
+                        if (isDesertKnown())
+                            recipeSources += separator + str.Get("shopOasis");
+                    break;
+                
+                case "Prismatic Popsicle":
+                    if (modRegistry.IsLoaded("ppja.evenmorerecipes")) // Even More Recipes assets
+                    {
+                        if (isDesertKnown())
+                        {
+                            bool shippedBerry = Game1.player.basicShipped.ContainsKey(ItemID.IT_SweetGemBerry)
+                                             && Game1.player.basicShipped[ItemID.IT_SweetGemBerry] >= 1;
+                            
+                            recipeSources += separator + str.Get("shopOasis")
+                                           + (!shippedBerry? parenthesize(str.Get("mustHaveShipped",
+                                                                                  new { item = getItemName(ItemID.IT_SweetGemBerry) }))
+                                                           : "");
+                        }
+                    }
                     break;
             }
             
@@ -3022,6 +3591,13 @@ namespace CommunityCenterHelper
                 return skillReq;
             else
                 return "";
+        }
+        
+        /// <summary>Returns startingYear hint with the given year, or a blank string if that year has already been reached.</summary>
+        /// <param name="year">The starting year.</param>
+        private static string getStartingYearString(int year)
+        {
+            return Game1.year < year? str.Get("startingYear", new { num = year }) : "";
         }
         
         /// <summary>Returns shops where you can buy standard seeds (removing JojaMart after it closes).</summary>

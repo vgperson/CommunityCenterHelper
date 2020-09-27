@@ -144,8 +144,10 @@
         public const int IT_Corn = 270;
         public const int IT_UnmilledRice = 271;
         public const int IT_Eggplant = 272;
+        public const int IT_RiceShoot = 273;
         public const int IT_Artichoke = 274;
         public const int IT_Pumpkin = 276;
+        public const int IT_WiltedBouquet = 277;
         public const int IT_BokChoy = 278;
         public const int IT_Yam = 280;
         public const int IT_Chanterelle = 281;
@@ -232,6 +234,7 @@
         public const int IT_RabbitsFoot = 446;
         public const int IT_AgedRoe = 447;
         public const int IT_AncientFruit = 454;
+        public const int IT_Bouquet = 458;
         public const int IT_Mead = 459;
         public const int IT_AncientSeeds = 499;
         
@@ -258,6 +261,7 @@
         public const int IT_Sandstone = 568;
         public const int IT_Granite = 569;
         public const int IT_Limestone = 571;
+        public const int IT_Soapstone = 572;
         public const int IT_Mudstone = 574;
         public const int IT_Slate = 576;
         public const int IT_FairyStone = 577;
@@ -342,6 +346,64 @@
         public const int IT_Roe = 812;
         public const int IT_SquidInk = 814;
         public const int IT_TeaLeaves = 815;
+        
+        // More Fish Mod Item IDs (check that "MoreFish" is loaded before use)
+        public const int MFM_ClownKnifefish = 1056;
+        public const int MFM_BlueRingedOctopus = 1059;
+        public const int MFM_Barreleye = 1062;
+        public const int MFM_FreshwaterPufferfish = 1063;
+        public const int MFM_TrappedSoul = 1066;
+        public const int MFM_RibbonEel = 1068;
+        public const int MFM_GhostEel = 1069;
+        public const int MFM_Anochoviella = 1071;
+        public const int MFM_Hagfish = 1072;
+        public const int MFM_GreenTerror = 1073;
+        public const int MFM_ClownLoach = 1074;
+        public const int MFM_YamabukiKoi = 1077;
+        public const int MFM_GhostKoi = 1078;
+        public const int MFM_ShiroUtsuriKoi = 1081;
+        public const int MFM_RedtailShark = 1083;
+        public const int MFM_Elephantfish = 1084;
+        public const int MFM_Sauger = 1085;
+        public const int MFM_Pacu = 1086;
+        public const int MFM_CommonPleco = 1087;
+        public const int MFM_SnowballPleco = 1089;
+        public const int MFM_Ide = 1090;
+        public const int MFM_Pangasius = 1091;
+        public const int MFM_Trahira = 1092;
+        public const int MFM_BlueDragonSlug = 1093;
+        public const int MFM_Nautilus = 1094;
+        public const int MFM_Starfish = 1096;
+        public const int MFM_CrownOfThornsStarfish = 1099;
+        
+        public const int MFM_HolyGrenadeStarfish = 1100;
+        public const int MFM_FreshwaterShrimp = 1101;
+        public const int MFM_BriefSquid = 1106;
+        public const int MFM_Prawn = 1107;
+        public const int MFM_SandDollar = 1108;
+        public const int MFM_KingCrab = 1109;
+        public const int MFM_FreshwaterCrab = 1115;
+        public const int MFM_Ladyfish = 1120;
+        public const int MFM_KohakuKoi = 1122;
+        public const int MFM_ZebraTilapia = 1124;
+        public const int MFM_Tucunare = 1125;
+        public const int MFM_SmallMantaRay = 1129;
+        public const int MFM_Blinky = 1131;
+        public const int MFM_ArcticChar = 1133;
+        public const int MFM_Tench = 1134;
+        public const int MFM_Haddock = 1135;
+        public const int MFM_SmallSwordfish = 1136;
+        public const int MFM_Barracuda = 1137;
+        public const int MFM_ElectricCatfish = 1142;
+        public const int MFM_SwimmerCrab = 1144;
+        public const int MFM_Glassfish = 1145;
+        public const int MFM_Lionhead = 1147;
+        public const int MFM_Comet = 1148;
+        public const int MFM_Telescope = 1149;
+        public const int MFM_Jellyfish = 1151;
+        public const int MFM_Lungfish = 1153;
+        public const int MFM_TigerFish = 1154;
+        public const int MFM_Coelacanth = 1184;
         
         // Big Craftable IDs
         public const int BC_LightningRod = 9;

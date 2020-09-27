@@ -115,11 +115,13 @@
 	/***** Short Hints *****/
 	
 	"shortHintSeasonalCrop": "{{season}}の作物",
+	"shortHintSeasonalCropStartingYear": "{{year}}年目から{{season}}の作物",
 	"shortHintSeasonalSeed": "{{season}}のタネ",
 	"shortHintMachine": "{{machine}}に{{item}}",
 	"shortHintTrash": "ゴミ",
 	"shortHintFishPond": "魚のいる池",
 	"shortHintFiber": "雑草",
+	"shortHintHay": "雑草・{{wheat}}",
 	
 	/***** Partial Strings *****/
 	
@@ -153,18 +155,18 @@
 	"locationUnknown": "???",
 	
 	// Water Locations (for fishing suggestions)
-	"waterRivers": "川",
-	"waterPonds": "池",
-	"waterLakes": "湖",
+	"waterRivers": "川", // Town river or Cindersap Forest river
 	"waterOcean": "海",
-	"waterMountainLake": "山の湖",
-	"waterMountainRiver": "山の川",
+	"waterTown": "町の川",
+	"waterMountain": "山の湖",
 	"waterForestPond": "シンダーサップの森の池",
+	"waterForestRiver": "シンダーサップの森の川",
 	"waterSpecialFarm": "牧場",
-	"waterWoodsPond": "秘密の森の池",
-	"waterDesertPond": "砂漠の池",
+	"waterWoods": "秘密の森の池",
+	"waterDesert": "砂漠の池",
 	"waterSewer": "下水管",
-	"waterMines": "鉱山20F/60F",
+	"waterBugLand": "バグのすみか",
+	"waterMines": "鉱山20F/60F/100F",
 	"waterMines20": "鉱山20F",
 	"waterMines60": "鉱山60F",
 	"waterMines100": "鉱山100F",
@@ -181,6 +183,7 @@
 	
 	// Shop Names (for buying suggestions)
 	"shopPierre": "雑貨店",
+	"shopPierreSeason": "{{season}}に雑貨店{{startingYear}}",
 	"shopJoja": "Jojaマート",
 	"shopMarnie": "マーニーの牧場",
 	"shopCarpenter": "大工作業場",
@@ -199,8 +202,9 @@
 	"shopFlowerDance": "フラワーダンス（春の24日）でピエール",
 	"shopSpiritsEve": "スピリットイブ（秋の27日）でピエール",
 	"shopUnknown": "???",
-	"randomlyAvailable": "ランダム", // appended after shop name when item is only randomly in stock
-	"sewerRequirement": "博物館に60個のアイテムを寄贈", // requirement to access sewer and buy from Krobus
+	"randomlyAvailable": "ランダム", // appended in parentheses after shop name when item is only randomly in stock
+	"mustHaveShipped": "{{item}}を出荷", // appended in parentheses after shop name if you have to have shipped a certain other item
+	"sewerRequirement": "博物館に60個のアイテムを寄贈", // appended in parentheses after Krobus's shop name if sewer is not yet accessible
 	
 	// Item Categories (for when any item from a category is allowed as machine input or recipe ingredient)
 	"itemCategoryGem": "宝石",

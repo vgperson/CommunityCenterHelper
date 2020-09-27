@@ -115,11 +115,13 @@
 	/***** Short Hints *****/
 	
 	"shortHintSeasonalCrop": "{{season}} crop",
+	"shortHintSeasonalCropStartingYear": "{{season}} crop Year {{year}}+",
 	"shortHintSeasonalSeed": "{{season}} seed",
 	"shortHintMachine": "{{item}} in {{machine}}",
 	"shortHintTrash": "trash",
 	"shortHintFishPond": "Fish Pond",
 	"shortHintFiber": "weeds",
+	"shortHintHay": "grass/{{wheat}}",
 	
 	/***** Partial Strings *****/
 	
@@ -153,23 +155,23 @@
 	"locationUnknown": "in ???",
 	
 	// Water Locations (for fishing suggestions)
-	"waterRivers": "in rivers",
-	"waterPonds": "in ponds",
-	"waterLakes": "in lakes",
+	"waterRivers": "in rivers", // Town river or Cindersap Forest river
 	"waterOcean": "in Ocean",
-	"waterMountainLake": "in Mountain lake",
-	"waterMountainRiver": "in Mountain river",
+	"waterTown": "in Town river",
+	"waterMountain": "in Mountain lake",
 	"waterForestPond": "in Cindersap Forest pond",
+	"waterForestRiver": "in Cindersap Forest river",
 	"waterSpecialFarm": "on Farm",
-	"waterWoodsPond": "in Secret Woods pond",
-	"waterDesertPond": "in Desert pond",
+	"waterWoods": "in Secret Woods pond",
+	"waterDesert": "in Desert pond",
 	"waterSewer": "in Sewer",
-	"waterMines": "on Mines Floor 20/60",
+	"waterBugLand": "in Bug Lair",
+	"waterMines": "on Mines Floor 20/60/100",
 	"waterMines20": "on Mines Floor 20",
 	"waterMines60": "on Mines Floor 60",
 	"waterMines100": "on Mines Floor 100",
 	"waterSwamp": "in Witch's Swamp",
-	"waterAnglerSpot": "at far north of river in town",
+	"waterAnglerSpot": "at far north of Town river",
 	"waterCrimsonfishSpot": "from Beach east shore/pier",
 	"waterGlacierfishSpot": "from southernmost tip of Cindersap Forest center island",
 	"waterLegendSpot": "around log in Mountain lake",
@@ -181,6 +183,7 @@
 	
 	// Shop Names (for buying suggestions)
 	"shopPierre": "Pierre's",
+	"shopPierreSeason": "Pierre's in {{season}}{{startingYear}}",
 	"shopJoja": "JojaMart",
 	"shopMarnie": "Marnie's Ranch",
 	"shopCarpenter": "Carpenter's Shop",
@@ -199,8 +202,9 @@
 	"shopFlowerDance": "Pierre at Flower Dance (Spring 24)",
 	"shopSpiritsEve": "Pierre on Spirit's Eve (Fall 27)",
 	"shopUnknown": "???",
-	"randomlyAvailable": "random", // appended after shop name when item is only randomly in stock
-	"sewerRequirement": "donate 60 items to Museum", // requirement to access sewer and buy from Krobus
+	"randomlyAvailable": "random", // appended in parentheses after shop name when item is only randomly in stock
+	"mustHaveShipped": "ship {{item}}", // appended in parentheses after shop name if you have to have shipped a certain other item
+	"sewerRequirement": "donate 60 items to Museum", // appended in parentheses after Krobus's shop name if sewer is not yet accessible
 	
 	// Item Categories (for when any item from a category is allowed as machine input or recipe ingredient)
 	"itemCategoryGem": "any gem",
