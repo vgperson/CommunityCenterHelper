@@ -110,12 +110,14 @@
         public const int IT_TomKhaSoup = 218;
         public const int IT_TroutSoup = 219;
         public const int IT_PinkCake = 221;
+        public const int IT_Cookie = 223;
         public const int IT_SpicyEel = 226;
         public const int IT_Sashimi = 227;
         public const int IT_MakiRoll = 228;
         public const int IT_Tortilla = 229;
         public const int IT_EggplantParmesan = 231;
         public const int IT_RicePudding = 232;
+        public const int IT_IceCream = 233;
         public const int IT_AutumnsBounty = 235;
         public const int IT_PumpkinSoup = 236;
         public const int IT_SuperMeal = 237;
@@ -123,6 +125,7 @@
         public const int IT_Stuffing = 239;
         public const int IT_SurvivalBurger = 241;
         public const int IT_RootsPlatter = 244;
+        public const int IT_WheatFlour = 246;
         public const int IT_Oil = 247;
         public const int IT_Garlic = 248;
         public const int IT_Kale = 250;
@@ -346,6 +349,7 @@
         public const int IT_Roe = 812;
         public const int IT_SquidInk = 814;
         public const int IT_TeaLeaves = 815;
+        public const int IT_BoneFragment = 881;
         
         // More Fish Mod Item IDs (check that "MoreFish" is loaded before use)
         public const int MFM_ClownKnifefish = 1056;
