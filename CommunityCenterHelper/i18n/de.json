@@ -15,7 +15,7 @@
 
 	// Tilling
 	"generalTilling": "Erde pflügen",
-	"seasonalTilling": "im {{season}} pflügen",
+	"seasonalTilling": "Im {{season}} pflügen",
 	"locationalTilling": "{{location}} pflügen",
 	"artifactDigging": "Artifakte (\"Würmer\") ausgraben",
 	"locationalArtifact": "Artifakte ausgraben {{location}}",
@@ -34,7 +34,7 @@
 	"crabPot": "Mit {{crabPot}} gefangen ({{waterType}})",
 
 	// Animal Products
-	"animalProduct": "Von {{animal}} produzeirt {{details}}",
+	"animalProduct": "Von {{animal}} produziert {{details}}",
 	"inGoodMood": " (wenn glücklich genug)", // included if a certain level of happiness is required to produce the item
 	"animalOutside": " (wenn nach draußen gelassen)", // included if animal must be outside to produce it
 
@@ -45,7 +45,7 @@
 	"noItemMachine": "Von {{machine}} produziert",
 
 	// Constructions
-	"putItemInMill": "{{rawItem}} in Mühe legen",
+	"putItemInMill": "{{rawItem}} in Mühle legen",
 	"fishPond": "Vom Fischteich mit {{num}}x {{fish}} produziert",
 	"fishPondAny": "Vom Fischteich mit jedem Fisch produziert",
 
@@ -67,13 +67,13 @@
 	"openAnyGeode": "Geode beim Schmied öffnen lassen",
 
 	// Panning
-	"panning": "Schwenken (xD)",
+	"panning": "Schwenken",
 
 	// Ore Through Mining
 	"mineCopperOre": "Kupferader (Minen, häufig auf Ebenen 31-39) abbauen",
-	"mineIronOre": "Eisennader (Minenebenen 41+, häufig auf 71-79) abbauen",
+	"mineIronOre": "Eisenader (Minenebenen 41+, häufig auf 71-79) abbauen",
 	"mineGoldOre": "Goldader (Minenebenen 81+) abbauen",
-	"mineIridiumOre": "Mine Mystic Stone (Mines 101+), meteorite (rare event)",
+	"mineIridiumOre": "Baue Mystischen Stein ab (Minenebenen 101+), Meteorit (seltenes Ereignis)",
 
 	// Gems Through Mining
 	"gemEmerald": "Smaragdader (Minenebenen 81+) oder Edelsteinader abbauen",
@@ -95,18 +95,18 @@
 
 	// General Actions
 	"chopWood": "Bäume fällen und Äste mit {{axe}} hacken",
-	"chopHardwood": "große Baumstümpfe mit {{copperAxe}} oder Baumstämme mit {{steelAxe}} hacken",
+	"chopHardwood": "Große Baumstümpfe mit {{copperAxe}} oder Baumstämme mit {{steelAxe}} hacken",
 	"chopTrees": "Bäume mit {{axe}} fällen",
 	"smashCrates": "Kisten in Minen zerschlagen",
 	"clearWeeds": "Unkraut vernichten",
-	"harvestHay": "von Gras oder {{wheat}} ernten",
+	"harvestHay": "Von Gras oder {{wheat}} ernten",
 	"trash": "Müll aus Krebsfallen, Mülltonnen oder vom Angeln",
 	"trashCan": "Müll aus Mülltonnen",
 
 	// Miscellaneous Sources
-	"luckyShorts": "Marnies Zimmer (in Lewis's Hose-Aufgabe am 3. Sommertag)",
+	"luckyShorts": "Marnies Zimmer (in Lewis' Hose-Aufgabe am 3. Sommertag)",
 	"goldenPumpkin": "Geisternacht-Labyrinth (27. Herbsttag)",
-	"mermaidPearl": "vom Nachtmarkt (15.-17. Wintertag) auf Meerjungfrauenboot{{hint}}",
+	"mermaidPearl": "Vom Nachtmarkt (15.-17. Wintertag) auf Meerjungfrauenboot{{hint}}",
 	"mermaidHint": " (1-5-4-2-3)", // included as hint for how to get the mermaid's pearl, if spoilers are allowed or secret note read
 	"winCraneGame": "Preis vom Kranspiel im Kino",
 	"voidEggEvent": "zufälliges Hexenereignis",
@@ -123,7 +123,7 @@
 	"shortHintTrash": "Müll",
 	"shortHintFishPond": "Fischteich",
 	"shortHintFiber": "Gräser",
-	"shortHintHay": "Graß/{{wheat}}",
+	"shortHintHay": "Gras/{{wheat}}",
 
 	/***** Partial Strings *****/
 
@@ -151,8 +151,8 @@
 	"locationBeachEastInaccessible": "am Strand (rechte Seite; 300 {{wood}}, um die Brücke zu reparieren)", // tip displayed if bridge is not fixed
 	"locationForest": "in Zundersaftwald",
 	"locationWoods": "in Geheimen Wäldern",
-	"locationSewer": "in Kanalisation",
-	"locationDesert": "in Calico-Wüste",
+	"locationSewer": "in der Kanalisation",
+	"locationDesert": "in der Calico-Wüste",
 	"locationSkullPrehistoric": "auf prähistorischer Ebene der Schädelhöhle",
 	"locationUnknown": "in ???",
 
@@ -173,11 +173,11 @@
 	"waterMines60": "auf Minenebene 60",
 	"waterMines100": "auf Minenebene 100",
 	"waterSwamp": "im Hexensumpf",
-	"waterIsland": "auf Ingwerinsel",
+	"waterIsland": "auf der Ingwerinsel",
 	"waterIslandRiver": "im Ingwerinselfluss",
 	"waterIslandOcean": "im Ozean um Ingwerinsel",
 	"waterIslandOceanWest": "im westlichen Ozean der Ingwerinsel",
-	"waterIslandCove": "in Piratenhöhle",
+	"waterIslandCove": "in der Piratenhöhle",
 	"waterAnglerSpot": "am nördlichen Ende des Stadtflusses",
 	"waterCrimsonfishSpot": "am östlichen Steg/Strand",
 	"waterGlacierfishSpot": "an der südlichsten Spitze der großen Insel im Zundersaftwald",
@@ -185,7 +185,7 @@
 	"waterBlueMoonVineyard": "am Weinberg Blauer Mond", // SVE
 	"waterShearwaterBridge": "an Sturmtaucherbrücke", // SVE
 	"waterForestWest": "im Westen des Zundersaftwaldes", // SVE
-	"waterAdventurerSummit": "bei Abenteurergilde", // SVE
+	"waterAdventurerSummit": "bei der Abenteurergilde", // SVE
 	"waterUnknown": "in ???",
 
 	// Water Types (for crab pot suggestions)
@@ -193,10 +193,10 @@
 	"waterTypeFresh": "Süßwasser",
 
 	// Shop Names (for buying suggestions)
-	"shopPierre": "Pierre's",
-	"shopPierreSeason": "Pierre's im {{season}}{{startingYear}}",
+	"shopPierre": "Pierres Laden",
+	"shopPierreSeason": "Pierres Laden im {{season}}{{startingYear}}",
 	"shopJoja": "JojaMarkt",
-	"shopMarnie": "Marnie's Ranch",
+	"shopMarnie": "Marnies Ranch",
 	"shopCarpenter": "Robins Schreinerladen",
 	"shopBlacksmith": "Schmied",
 	"shopSaloon": "Kneipe",
@@ -243,10 +243,10 @@
 	"treePapaya": "Papayabaum", // PPJA
 	"treeWalnut": "Walnussbaum", // PPJA
 	"treePersimmon": "Persimmonenbaum", // PPJA
-	"treeGranny": "\"Oma Smith\"-Baum", // PPJA
+	"treeGranny": "Granny Smith-Baum", // PPJA
 	"treeEucalyptus": "Eucalyptusbaum", // PPJA
 	"treeMaple": "Ahornbaum",
-	"treeOak": "Eichebaum",
+	"treeOak": "Eichenbaum",
 	"treePine": "Kieferbaum",
 	"treeMushroom": "Pilzbaum (seltenes Ereignis im Herbst)",
 	"treeDescSeedling": "Setzling von {{shop}}{{startingYear}}", // advice for fruit trees
@@ -265,7 +265,7 @@
 
 	// Monster Locations (appended after monster names)
 	"monsterAreaMinesAll": "Minen",
-	"monsterAreaMinesAndSkull": "Mines, Schädelhöhle",
+	"monsterAreaMinesAndSkull": "Minen, Schädelhöhle",
 	"monsterAreaMinesRange": "Minenebenen {{start}}-{{end}}",
 	"monsterAreaSkull": "Schädelhöhle",
 	"monsterAreaSkullFloorPlus": "Schädelhöhle Ebenen {{start}}+",
@@ -302,7 +302,7 @@
 	"recipeSourceTV": "TV (am {{date}})",
 	"recipeSourceTVAlreadyAired": "TV (Wiederholungsfolge am Mittwoch, oder am {{date}})",
 	"recipeSourceFriendship": "{{hearts}}+ Herzen mit {{person}}", // sent in mail or available for purchase when you have enough hearts
-	"recipeSourceHeartEvent": "{{hearts}}-herzereignis von {{person}}", // received from heart event specifically
+	"recipeSourceHeartEvent": "{{hearts}}-Herzereignis von {{person}}", // received from heart event specifically
 	"recipeSourceFirstCopper": "sammle {{copperOre}}",
 	"recipeSourceAfterGreenhouse": "repariere Gewächshaus",
 	"recipeSourceFinalFarmhouse": "letzte Gewächshausverbesserung",
@@ -324,7 +324,7 @@
 
 	// Machine Sources
 	"statueOfPerfectionTip": "perfekte Einschätzung durch Opa", // advice for statue if you haven't had evaluation or achieved 4 candles
-	"statueOfPerfectionAvailable": "Opa's Schrein", // advice for statue if you've unlocked it, but haven't collected it
+	"statueOfPerfectionAvailable": "Opas Schrein", // advice for statue if you've unlocked it, but haven't collected it
 
 	// Conditional Mail
 	"conditionalMailAll": "Brief am {{time}} when {{friendReq}} & {{skillReq}}",
