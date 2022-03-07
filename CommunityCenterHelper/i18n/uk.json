@@ -1,5 +1,6 @@
 {
 	/***** Suggestions *****/
+
 	// Crops
 	"seasonalCrop": "Купіть насіння {{seedShop}} {{season}}{{startingYear}}{{qualityCrop}}",
 	"growSeeds": "Виростіть з {{seeds}}{{qualityCrop}}",
@@ -13,14 +14,14 @@
 	"salmonberryForage": "Зберіть з ягідних кущів навесні 15-18 чисел",
 	
 	// Tilling
-	"generalTilling": "Зорайте ґрунт",
-	"seasonalTilling": "Зорайте {{season}}",
-	"locationalTilling": "Зорайте {{location}}",
+	"generalTilling": "Викопайте в землі",
+	"seasonalTilling": "Викопайте {{season}}",
+	"locationalTilling": "Викопайте {{location}}",
 	"artifactDigging": "Викопайте місце артефакту (\"хробаки\")",
 	"locationalArtifact": "Викопайте місце артефакту в {{location}}",
 	
 	// Mining
-	"hitRocks": "Розбийте каміння за допомогою {{pickaxe}}",
+	"hitRocks": "Розбийте каміння кайлом",
 	"hitRocksInLocation": "Розбийте каміння {{location}}",
 	
 	// Fishing
@@ -38,28 +39,28 @@
 	"animalOutside": " (якщо надворі)", // included if animal must be outside to produce it
 	
 	// Machines
-	"putItemInMachine": "Покладіть {{rawItem}} в \"{{machine}}\"",
+	"putItemInMachine": "Покладіть {{rawItem}} в {{machine}}",
 	"machineItemQuantity": "предмет \"{{item}}\" ({{num}} од.)", // used for {{rawItem}} above if more than 1 of item is required
-	"putItemInMachineThenCask": "Покладіть {{rawItem}} в \"{{machine}}\", а {{resultItem}} в \"{{cask}}\"",
-	"noItemMachine": "Виробляє \"{{machine}}\"",
-
+	"putItemInMachineThenCask": "Покладіть {{rawItem}} в {{machine}}, а {{resultItem}} в діжку",
+	"noItemMachine": "Виробляє {{machine}}",
+	
 	// Constructions
 	"putItemInMill": "Покладіть {{rawItem}} в млин",
 	"fishPond": "Виробляє рибний ставок ({{fish}}) ({{num}} од.)",
 	"fishPondAny": "Виробляє рибний ставок з будь-якою рибою",
 	
 	// Monsters
-	"droppedByMonster": "Випадає з {{monster}}",
+	"droppedByMonster": "Випадає : {{monster}}",
 	
 	// Trees
 	"treeDuringSeason": "{{tree}} {{season}}",
-	"tapTree": "Прикріпіть \"{{tapper}}\" на {{tree}}",
+	"tapTree": "Прикріпіть соківницю на {{tree}}",
 	"seedFromTree": "Потрусіть або зрубайте {{tree}}",
 	
 	// Crafting/Cooking
 	"craftRecipeByName": "Створіть з {{recipe}}",
-	"craftRecipe": "створення",
-	"cookRecipe": "готування",
+	"craftRecipe": "Створення",
+	"cookRecipe": "Готування",
 	
 	// From Geodes
 	"openGeode": "Розбийте {{geode}} у коваля",
@@ -93,12 +94,12 @@
 	"buyFrom": "Купіть {{shop}}",
 	
 	// General Actions
-	"chopWood": "Розрубайте дерева та кущі за допомогою {{axe}}",
-	"chopHardwood": "Розрубайте великі пні за допомогою {{copperAxe}} або колоди за допомогою {{steelAxe}}",
-	"chopTrees": "Розрубайте дерева за допомогою {{axe}}",
+	"chopWood": "Розрубайте дерева та кущі сокирою",
+	"chopHardwood": "Розрубайте великі пні сокирою з міді або колоди сокирою зі сталі",
+	"chopTrees": "Розрубайте дерева сокирою",
 	"smashCrates": "Розбийте ящики в шахті",
 	"clearWeeds": "Знищте бур'яни",
-	"harvestHay": "Зберіть, скошуючи траву або {{wheat}}",
+	"harvestHay": "Зберіть, скошуючи траву або пшеницю",
 	"trash": "Сміття від риболовлі, в крабових пастках або в сміттєвих баках",
 	"trashCan": "Попорпатейтесь в сміттєвих баках",
 	
@@ -116,9 +117,9 @@
 	/***** Short Hints *****/
 	
 	"shortHintSeasonalCrop": "Культура, яка росте {{season}}",
-	"shortHintSeasonalCropStartingYear": "{{season}} crop Year {{year}}+",
+	"shortHintSeasonalCropStartingYear": "Культура, яка росте {{season}} {{year}}+ року",
 	"shortHintSeasonalSeed": "Насіння, яке росте {{season}}",
-	"shortHintMachine": "{{item}} в \"{{machine}}\"",
+	"shortHintMachine": "{{item}} в {{machine}}",
 	"shortHintTrash": "сміття",
 	"shortHintFishPond": "Рибний ставок",
 	"shortHintFiber": "бур'яни",
@@ -131,14 +132,14 @@
 	"multipleThingSeparator": "/", // general separator for lists of multiple seasons, locations, etc.
 	
 	// Season Names
-	"spring": "навесні",
-	"summer": "влітку",
-	"fall": "восени",
-	"winter": "взимку",
+	"spring": "Навесні",
+	"summer": "Влітку",
+	"fall": "Восени",
+	"winter": "Взимку",
 	"allSeasons": "в будь-яку пору року",
 	
 	// Location Names (for foraging suggestions)
-        "locationFarm": "на фермі",
+	"locationFarm": "на фермі",
 	"locationMines": "в шахті",
 	"locationMinesArea1": "в шахті 1-39 рів.",
 	"locationMinesArea2": "в шахті 41-79 рів.",
@@ -184,7 +185,7 @@
 	"waterBlueMoonVineyard": "на винограднику Блакитного Місяця", // SVE
 	"waterShearwaterBridge": "на Буревісному мості", // SVE
 	"waterForestWest": "в лісі Сіндерсеп (Захід)", // SVE
-	"waterAdventurerSummit": "на Вершина шукачів пригод", // SVE
+	"waterAdventurerSummit": "на Вершині шукачів пригод", // SVE
 	"waterUnknown": "в ???",
 	
 	// Water Types (for crab pot suggestions)
@@ -232,22 +233,22 @@
 	"itemCategoryMushroom": "будь-який гриб", // not a category strictly defined by base game, but used to summarize machine input
 	
 	// Tree Names (for tree suggestions)
-	"treeApple": "яблуневе дерево",
-	"treeApricot": "абрикосоке дерево",
-	"treeOrange": "дерево помаранчу",
-	"treePeach": "персикове дерево",
-	"treePomegranate": "гранатове дерево",
-	"treeCherry": "вишневе дерево",
-	"treeLime": "лаймове дерево", // PPJA
-	"treePapaya": "дерево папаї", // PPJA
-	"treeWalnut": "горіхове дерево", // PPJA
-	"treePersimmon": "дерево хурми", // PPJA
-	"treeGranny": "дерево бабусі Сміт", // PPJA
-	"treeEucalyptus": "евкаліптове дерево", // PPJA
-	"treeMaple": "клен",
-	"treeOak": "дуб",
-	"treePine": "сосну",
-	"treeMushroom": "грибне дерево (рідкісна осіння подія)",
+	"treeApple": "Яблуневе дерево",
+	"treeApricot": "Абрикосове дерево",
+	"treeOrange": "Дерево помаранчу",
+	"treePeach": "Персикове дерево",
+	"treePomegranate": "Гранатове дерево",
+	"treeCherry": "Вишневе дерево",
+	"treeLime": "Лаймове дерево", // PPJA
+	"treePapaya": "Дерево папаї", // PPJA
+	"treeWalnut": "Горіхове дерево", // PPJA
+	"treePersimmon": "Дерево хурми", // PPJA
+	"treeGranny": "Дерево бабусі Сміт", // PPJA
+	"treeEucalyptus": "Евкаліптове дерево", // PPJA
+	"treeMaple": "Клен",
+	"treeOak": "Дуб",
+	"treePine": "Сосну",
+	"treeMushroom": "Грибне дерево (рідкісна осіння подія)",
 	"treeDescSeedling": "купіть саджанець {{shop}}{{startingYear}}", // advice for fruit trees
 	"treeDescNonFruit": "в будь-якому місці на фермі/землі {{treeSeed}}", // advice for Maple/Oak/Pine trees
 	
@@ -256,10 +257,10 @@
 	"monsterGeneralSlime": "монстрів виду слаймових",
 	"monsterGeneralBat": "монстрів виду кажанових",
 	"monsterGeneralBug": "монстрів виду жукових",
-	"monsterBlueSlime": "блакитного слайму",
-	"monsterRedSlime": "червоного слайму",
-	"monsterPurpleSlime": "фіолетового слайму",
-	"monsterBRPCISlime": "блакитного/червоного/фіолетового/мідного/залізного слаймів",
+	"monsterBlueSlime": "Блакитні слайми",
+	"monsterRedSlime": "Червоні слайми",
+	"monsterPurpleSlime": "Фіолетові слайми",
+	"monsterBRPCISlime": "Блакитні/Червоні/Фіолетові/Мідні/Залізні слайми",
 	"monsterUnknown": "???",
 	
 	// Monster Locations (appended after monster names)
@@ -274,14 +275,14 @@
 	"monsterAreaUnknown": "???",
 	
 	// Animal Names (for animal product suggestions)
-	"animalCow": "корови",
-	"animalChicken": "кури",
-	"animalVoidChicken": "темні кури",
-	"animalGoat": "кози",
-	"animalSheep": "вівці",
-	"animalRabbit": "кролики",
-	"animalDuck": "качки",
-	"animalPig": "свині",
+	"animalCow": "Корови",
+	"animalChicken": "Кури",
+	"animalVoidChicken": "Темні кури",
+	"animalGoat": "Кози",
+	"animalSheep": "Вівці",
+	"animalRabbit": "Кролики",
+	"animalDuck": "Качки",
+	"animalPig": "Свині",
 	
 	// Animal Building Requirements (advice on how to obtain animals, if not currently available to purchase)
 	"animalReqCoopLv1": "потрібен пташник",
@@ -302,8 +303,8 @@
 	"recipeSourceTVAlreadyAired": "Телевізор (Повтор в середу або {{date}})",
 	"recipeSourceFriendship": "{{hearts}}+ сердець з {{person}}", // sent in mail or available for purchase when you have enough hearts
 	"recipeSourceHeartEvent": "Подія з {{person}} в {{hearts}} сердець", // received from heart event specifically
-	"recipeSourceFirstCopper": "Видобудьте {{copperOre}}",
-	"recipeSourceAfterGreenhouse": "полагодьте теплицю",
+	"recipeSourceFirstCopper": "Видобувається з мідної руди",
+	"recipeSourceAfterGreenhouse": "полагодження теплиці",
 	"recipeSourceFinalFarmhouse": "останнє розширення будинку",
 	"recipeSourceAncientSeed": "пожертвуйте {{seedArtifact}} в музей",
 	"recipeSourceRarecrows": "зберіть усі рідкісні опудала",
