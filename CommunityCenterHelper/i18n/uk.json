@@ -6,24 +6,24 @@
 	"growSeeds": "Виростіть з {{seeds}}{{qualityCrop}}",
 	"startingYear": " (починаючи з {{num}} року)", // included if seeds only become available starting a certain year
 	"qualityCrop": " (потрібне добриво)", // included if higher quality is required
-	
+
 	// Foraging
 	"seasonalForage": "Зберіть {{season}}",
 	"locationalForage": "Зберіть {{location}}",
 	"seasonalLocationalForage": "Зберіть {{season}} {{location}}",
 	"salmonberryForage": "Зберіть з ягідних кущів навесні 15-18 чисел",
-	
+
 	// Tilling
 	"generalTilling": "Викопайте в землі",
 	"seasonalTilling": "Викопайте {{season}}",
 	"locationalTilling": "Викопайте {{location}}",
 	"artifactDigging": "Викопайте місце артефакту (\"хробаки\")",
 	"locationalArtifact": "Викопайте місце артефакту в {{location}}",
-	
+
 	// Mining
 	"hitRocks": "Розбийте каміння кайлом",
 	"hitRocksInLocation": "Розбийте каміння {{location}}",
-	
+
 	// Fishing
 	"fishBase": "Зловіть {{water}}, {{extraLinebreak}}{{time}}{{weather}}, {{season}}",
 	// {{extraLinebreak}} is a linebreak inserted for some fish with long location descriptions, {{weather}} is left blank if no particular weather is required
@@ -32,49 +32,49 @@
 	"fishSubmarine": "Зловіть на Нічному ринку в підводному човні (Взимку 15-17 чисел)",
 	"fishingChest": "Зловіть скриню зі скарбами",
 	"crabPot": "Зловіть в {{crabPot}} ({{waterType}})",
-	
+
 	// Animal Product
 	"animalProduct": "Продукують {{animal}}{{details}}",
 	"inGoodMood": " (якщо тваринка достатньо щаслива)", // included if a certain level of happiness is required to produce the item
 	"animalOutside": " (якщо надворі)", // included if animal must be outside to produce it
-	
+
 	// Machines
 	"putItemInMachine": "Покладіть {{rawItem}} в {{machine}}",
 	"machineItemQuantity": "предмет \"{{item}}\" ({{num}} од.)", // used for {{rawItem}} above if more than 1 of item is required
 	"putItemInMachineThenCask": "Покладіть {{rawItem}} в {{machine}}, а {{resultItem}} в діжку",
 	"noItemMachine": "Виробляє {{machine}}",
-	
+
 	// Constructions
 	"putItemInMill": "Покладіть {{rawItem}} в млин",
 	"fishPond": "Виробляє рибний ставок ({{fish}}) ({{num}} од.)",
 	"fishPondAny": "Виробляє рибний ставок з будь-якою рибою",
-	
+
 	// Monsters
 	"droppedByMonster": "Випадає : {{monster}}",
-	
+
 	// Trees
 	"treeDuringSeason": "{{tree}} {{season}}",
 	"tapTree": "Прикріпіть соківницю на {{tree}}",
 	"seedFromTree": "Потрусіть або зрубайте {{tree}}",
-	
+
 	// Crafting/Cooking
 	"craftRecipeByName": "Створіть з {{recipe}}",
 	"craftRecipe": "Створення",
 	"cookRecipe": "Готування",
-	
+
 	// From Geodes
 	"openGeode": "Розбийте {{geode}} у коваля",
 	"openAnyGeode": "Розбийте будь-яку жеоду у коваля",
-	
+
 	// Panning
 	"panning": "Промивка руди",
-	
+
 	// Ore Through Mining
 	"mineCopperOre": "Розбийте мідну жилу (Шахта, найбільша кількість на 31-39 рів.)",
 	"mineIronOre": "Розбийте залізну жилу (Шахта 41+ рів., найбільша кількість на 71-79 рів.)",
 	"mineGoldOre": "Розбийте золоту жилу (Шахта 81+ рів.)",
 	"mineIridiumOre": "Розбийте іридієву жилу (Шахта 101+ рів.), метеорит (рідкісна подія)",
-	
+
 	// Gems Through Mining
 	"gemEmerald": "Розбийте смарагдову жилу (Шахта 81+ рів.), коштовну жилу",
 	"gemAquamarine": "Розбийте аквамаринову жилу (Шахта 41+ рів.), коштовну жилу",
@@ -84,15 +84,15 @@
 	"gemJade": "Розбийте нефритову жилу (Шахта 41+ рів.), коштовну жилу",
 	"gemDiamond": "Розбийте діамантову жилу (Шахта 51+ рів.), коштовну жилу",
 	"gemPrismaticShard": "Розбийте коштовну жилу, містичний камінь (Шахта 101+ рів., 25%), іридієву жилу (4%)",
-	
+
 	// Farm Cave
 	"caveYours": "Знайдіть в печері на фермі", // once cave type has been chosen, the other type is disregarded and this is used
 	"caveFruitBats": "Знайдіть в печері на фермі (фруктові кажани)", // if spoilers are allowed, cave type is specified until player selects type
 	"caveMushrooms": "Знайдіть в печері на фермі (гриби)", // if spoilers are allowed, cave type is specified until player selects type
-	
+
 	// Buying
 	"buyFrom": "Купіть {{shop}}",
-	
+
 	// General Actions
 	"chopWood": "Розрубайте дерева та кущі сокирою",
 	"chopHardwood": "Розрубайте великі пні сокирою з міді або колоди сокирою зі сталі",
@@ -102,7 +102,7 @@
 	"harvestHay": "Зберіть, скошуючи траву або пшеницю",
 	"trash": "Сміття від риболовлі, в крабових пастках або в сміттєвих баках",
 	"trashCan": "Попорпатейтесь в сміттєвих баках",
-	
+
 	// Miscellaneous Sources
 	"luckyShorts": "Кімната Марні (Для завдання \"Шорти мера\" влітку 3 числа)",
 	"goldenPumpkin": "Лабіринт Передодня усіх духів (Восени 27 числа)",
@@ -110,12 +110,12 @@
 	"mermaidHint": " (1-5-4-2-3)", // included as hint for how to get the mermaid's pearl, if spoilers are allowed or secret note read
 	"winCraneGame": "Виграйте в гральному автоматі в кінотеатрі",
 	"voidEggEvent": "Випадкова подія з відьмою",
-	
+
 	// Concealed Source (for when entire suggestion is a spoiler)
 	"unknownSource": "???",
-	
+
 	/***** Short Hints *****/
-	
+
 	"shortHintSeasonalCrop": "Культура, яка росте {{season}}",
 	"shortHintSeasonalCropStartingYear": "Культура, яка росте {{season}} {{year}}+ року",
 	"shortHintSeasonalSeed": "Насіння, яке росте {{season}}",
@@ -124,20 +124,20 @@
 	"shortHintFishPond": "Рибний ставок",
 	"shortHintFiber": "бур'яни",
 	"shortHintHay": "трава/{{wheat}}",
-	
+
 	/***** Partial Strings *****/
-	
+
 	// General Formatting
 	"parenthesized": " ({{text}})", // general form for appending descriptive text after a thing
 	"multipleThingSeparator": "/", // general separator for lists of multiple seasons, locations, etc.
-	
+
 	// Season Names
 	"spring": "Навесні",
 	"summer": "Влітку",
 	"fall": "Восени",
 	"winter": "Взимку",
 	"allSeasons": "в будь-яку пору року",
-	
+
 	// Location Names (for foraging suggestions)
 	"locationFarm": "на фермі",
 	"locationMines": "в шахті",
@@ -155,7 +155,7 @@
 	"locationDesert": "в пустелі Каліко",
 	"locationSkullPrehistoric": "в Печері Черепа на доісторичних рівнях",
 	"locationUnknown": "в ???",
-	
+
 	// Water Locations (for fishing suggestions)
 	"waterRivers": "в річках", // Town river or Cindersap Forest river
 	"waterOcean": "в океані",
@@ -187,11 +187,11 @@
 	"waterForestWest": "в лісі Сіндерсеп (Захід)", // SVE
 	"waterAdventurerSummit": "на Вершині шукачів пригод", // SVE
 	"waterUnknown": "в ???",
-	
+
 	// Water Types (for crab pot suggestions)
 	"waterTypeOcean": "океан",
 	"waterTypeFresh": "прісна вода",
-	
+
 	// Shop Names (for buying suggestions)
 	"shopPierre": "в крамниці У П'єра",
 	"shopPierreSeason": "в крамниці У П'єра {{season}}{{startingYear}}",
@@ -216,7 +216,7 @@
 	"randomlyAvailable": "будь-коли", // appended in parentheses after shop name when item is only randomly in stock
 	"mustHaveShipped": "продайте {{item}}", // appended in parentheses after shop name if you have to have shipped a certain other item
 	"sewerRequirement": "пожертвуйте 60 предметів в музей", // appended in parentheses after Krobus's shop name if sewer is not yet accessible
-	
+
 	// Item Categories (for when any item from a category is allowed as machine input or recipe ingredient)
 	"itemCategoryGem": "будь-яку коштовність",
 	"itemCategoryFish": "будь-яку рибу",
@@ -231,7 +231,7 @@
 	"itemCategoryWildSeed": "будь-яке дике насіння", // category -777; not defined as a constant, but used for Tea Sapling recipe
 	"itemCategoryNut": "будь-який горіх", // not a category strictly defined by base game, but used to summarize machine input
 	"itemCategoryMushroom": "будь-який гриб", // not a category strictly defined by base game, but used to summarize machine input
-	
+
 	// Tree Names (for tree suggestions)
 	"treeApple": "Яблуневе дерево",
 	"treeApricot": "Абрикосове дерево",
@@ -251,7 +251,7 @@
 	"treeMushroom": "Грибне дерево (рідкісна осіння подія)",
 	"treeDescSeedling": "купіть саджанець {{shop}}{{startingYear}}", // advice for fruit trees
 	"treeDescNonFruit": "в будь-якому місці на фермі/землі {{treeSeed}}", // advice for Maple/Oak/Pine trees
-	
+
 	// General Monster Names (most monster names are taken from data, so these are either categories of monster or specific colors/etc.)
 	"monsterGeneralAnyInMines": "більшості монстрів",
 	"monsterGeneralSlime": "монстрів виду слаймових",
@@ -262,7 +262,7 @@
 	"monsterPurpleSlime": "Фіолетові слайми",
 	"monsterBRPCISlime": "Блакитні/Червоні/Фіолетові/Мідні/Залізні слайми",
 	"monsterUnknown": "???",
-	
+
 	// Monster Locations (appended after monster names)
 	"monsterAreaMinesAll": "Шахта",
 	"monsterAreaMinesAndSkull": "Шахта, Печера Черепа",
@@ -273,7 +273,7 @@
 	"monsterAreaSkullMummy": "Рівні з муміями в Печері Черепа",
 	"monsterAreaVolcano": "Вулкан",
 	"monsterAreaUnknown": "???",
-	
+
 	// Animal Names (for animal product suggestions)
 	"animalCow": "Корови",
 	"animalChicken": "Кури",
@@ -283,7 +283,7 @@
 	"animalRabbit": "Кролики",
 	"animalDuck": "Качки",
 	"animalPig": "Свині",
-	
+
 	// Animal Building Requirements (advice on how to obtain animals, if not currently available to purchase)
 	"animalReqCoopLv1": "потрібен пташник",
 	"animalReqCoopLv2": "потрібен великий пташник",
@@ -291,12 +291,12 @@
 	"animalReqBarnLv1": "потрібен хлів",
 	"animalReqBarnLv2": "потрібен великий хлів",
 	"animalReqBarnLv3": "потрібен хлів делюкс",
-	
+
 	// Recipe Help
 	"recipeTipHouseUpgrade": "потрібне розширення будинку", // displayed for cooking recipes if cooking is not yet available
 	"recipeFrom": "рецепт: {{sources}}",
 	"recipeSourceSeparator": " / ",
-	
+
 	// Recipe Sources (compiled into list for recipeFrom)
 	"recipeSourceSaloon": "Салун",
 	"recipeSourceTV": "Телевізор ({{date}})",
@@ -308,12 +308,12 @@
 	"recipeSourceFinalFarmhouse": "останнє розширення будинку",
 	"recipeSourceAncientSeed": "пожертвуйте {{seedArtifact}} в музей",
 	"recipeSourceRarecrows": "зберіть усі рідкісні опудала",
-	
+
 	// Recipe Ingredient Lists (for learned recipes)
 	"recipeIngredientSingle": "{{ingredient}}", // for ingredient x1
 	"recipeIngredientMultiple": "{{ingredient}} ({{num}} од.)", // for ingredient x2 or more
 	"recipeIngredientSeparator": ", ",
-	
+
 	// Skill Level Requirements
 	"farmingLvRequirement": "Фермерство {{num}} рів.",
 	"miningLvRequirement": "Шахтарство {{num}} рів.",
@@ -321,25 +321,25 @@
 	"foragingLvRequirement": "Збирацтво {{num}} рів.",
 	"combatLvRequirement": "Бойові навички {{num}} рів.",
 	"totalSkillLvRequirement": "Комбінація навичок {{num}} рів.",
-	
+
 	// Machine Sources
 	"statueOfPerfectionTip": "ідеальна оцінка дідуся", // advice for statue if you haven't had evaluation or achieved 4 candles
 	"statueOfPerfectionAvailable": "Дідусевий меморіал", // advice for statue if you've unlocked it, but haven't collected it
-	
+
 	// Conditional Mail
 	"conditionalMailAll": "лист після {{time}}, якщо {{friendReq}} та {{skillReq}}",
 	"conditionalMailTimeFriend": "лист після {{time}}, якщо {{friendReq}}",
 	"conditionalMailTimeSkill": "лист після {{time}}, якщо {{skillReq}}",
 	"conditionalMailFriendSkill": "лист, якщо {{friendReq}} та {{skillReq}}",
 	"mailConditionFriendship": "{{hearts}} сердець з {{person}}",
-	
+
 	// Times (for fishing)
 	"timeAM": "{{hour}} дп",
 	"timePM": "{{hour}} пп",
 	"time24Hour": "{{hour}}:00",
 	"timeRange": "{{start}}-{{end}}",
 	"anyTime": "в будь-який час",
-	
+
 	// Days of the Week (for daily shop stocks)
 	"monday": "в понеділок",
 	"tuesday": "у вівторок",
@@ -348,7 +348,7 @@
 	"friday": "у п'ятницю",
 	"saturday": "в суботу",
 	"sunday": "в неділю",
-	
+
 	// Dates (for things that happen on or after specific date/season/year)
 	"specificDate": "{{season}} {{day}} {{year}} року",
 	"generalDate": "{{season}} {{day}}",
