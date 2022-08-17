@@ -1,5 +1,6 @@
 {
     /***** Suggestions *****/
+
     // Crops
     "seasonalCrop": "{{seedShop}}'den aldığın tohumları {{season}}{{startingYear}}{{qualityCrop}}'da yetiştir.",
     "growSeeds": "{{qualityCrop}} kalitede {{seeds}} yetiştir.",
@@ -25,7 +26,6 @@
 
     // Fishing
     "fishBase": "Balık tut {{water}}, {{extraLinebreak}}{{time}}{{weather}}, {{season}}",
-
     // {{extraLinebreak}} is a linebreak inserted for some fish with long location descriptions, {{weather}} is left blank if no particular weather is required
     "weatherSun": " (güneşli havada)", // included if only available in sunny weather
     "weatherRain": " (sadece yağmurlu havada)", // included if only available in rain
@@ -115,6 +115,7 @@
     "unknownSource": "???",
 
     /***** Short Hints *****/
+
     "shortHintSeasonalCrop": "{{season}} ekini",
     "shortHintSeasonalCropStartingYear": "{{season}} ekini, yıl {{year}}+",
     "shortHintSeasonalSeed": "{{season}} tohumu",
@@ -125,11 +126,12 @@
     "shortHintHay": "çimen/{{wheat}}",
 
     /***** Partial Strings *****/
+
     // Genel Formatlama
     "parenthesized": " ({{text}})", // general form for appending descriptive text after a thing
     "multipleThingSeparator": "/", // general separator for lists of multiple seasons, locations, etc.
 
-    // General Formatting
+    // Season Names
     "spring": "İlkbahar",
     "summer": "Yaz",
     "fall": "Sonbahar",
@@ -214,7 +216,7 @@
     "randomlyAvailable": "rastgele", // appended in parentheses after shop name when item is only randomly in stock
     "mustHaveShipped": "{{item}} sat", // appended in parentheses after shop name if you have to have shipped a certain other item
     "sewerRequirement": "Müzeye 60 item bağışla.", // appended in parentheses after Krobus's shop name if sewer is not yet accessible
-   
+
     // Item Categories (for when any item from a category is allowed as machine input or recipe ingredient)
     "itemCategoryGem": "herhangi bir değerli taş",
     "itemCategoryFish": "herhangi bir balık",
@@ -229,7 +231,7 @@
     "itemCategoryWildSeed": "herhangi bir yabani tohum", // category -777; not defined as a constant, but used for Tea Sapling recipe
     "itemCategoryNut": "herhangi bir yemiş", // not a category strictly defined by base game, but used to summarize machine input
     "itemCategoryMushroom": "herhangi bir mantar", // not a category strictly defined by base game, but used to summarize machine input
-   
+
     // Ağaç İsimleri (Ağaç önerileri için)
     "treeApple": "Elma Ağacı",
     "treeApricot": "Kayısı Ağacı",
@@ -249,7 +251,7 @@
     "treeMushroom": "Mantar Ağacı (nadir güz olayı)",
     "treeDescSeedling": "{{shop}} dükkanından aldığın fidanla", // advice for fruit trees
     "treeDescNonFruit": "Çiftlikte mevcut veya {{treeSeed}} ile yetiştir.", // advice for Maple/Oak/Çam trees
-   
+
     // General Monster Names (most monster names are taken from data, so these are either categories of monster or specific colors/etc.)
     "monsterGeneralAnyInMines": "çoğu canavar",
     "monsterGeneralSlime": "Slime tipindeki canavarlar",
@@ -260,7 +262,7 @@
     "monsterPurpleSlime": "Mor Slime",
     "monsterBRPCISlime": "Mavi/Kırmızı/Mor/Bakır/Demir Slime",
     "monsterUnknown": "???",
-   
+
     // Monster Locations (appended after monster names)
     "monsterAreaMinesAll": "Maden",
     "monsterAreaMinesAndSkull": "Maden, Kafatası Madeni",
@@ -271,7 +273,7 @@
     "monsterAreaSkullMummy": "Kafatası Mağarası mumya katları",
     "monsterAreaVolcano": "Volkan",
     "monsterAreaUnknown": "???",
-   
+
     // Animal Names (for animal product suggestions)
     "animalCow": "İnek",
     "animalChicken": "Tavuk",
@@ -281,7 +283,7 @@
     "animalRabbit": "Tavşan",
     "animalDuck": "Ördek",
     "animalPig": "Domuz",
-   
+
     // Animal Building Requirements (advice on how to obtain animals, if not currently available to purchase)
     "animalReqCoopLv1": "Kümes gerekiyor",
     "animalReqCoopLv2": "Büyük kümes gerekiyor",
@@ -289,12 +291,12 @@
     "animalReqBarnLv1": "Ahır gerekiyor",
     "animalReqBarnLv2": "Büyük ahır gerekiyor",
     "animalReqBarnLv3": "Deluxe ahır gerekiyor",
-    
+
     // Tarif Yardımı
     "recipeTipHouseUpgrade": "Ev geliştirmesi gerekiyor.", // displayed for cooking recipes if cooking is not yet available
     "recipeFrom": "Tarif: {{sources}}",
     "recipeSourceSeparator": " / ",
-   
+
     // Recipe Sources (compiled into list for recipeFrom)
     "recipeSourceSaloon": "Yıldızkaydı Salonu",
     "recipeSourceTV": "TV ({{date}})",
@@ -306,12 +308,12 @@
     "recipeSourceFinalFarmhouse": "Son çiftlik evi geliştirmesi",
     "recipeSourceAncientSeed": "{{seedArtifact}}i müzeye bağışla.",
     "recipeSourceRarecrows": "Bütün korkulukları topla",
-   
+
     // Recipe Ingredient Lists (for learned recipes)
     "recipeIngredientSingle": "{{ingredient}}", // for ingredient x1
     "recipeIngredientMultiple": "{{ingredient}} x {{num}}", // for ingredient x2 or more
     "recipeIngredientSeparator": ", ",
-   
+
     // Skill Level Requirements
     "farmingLvRequirement": "Çiftçilik Lv. {{num}}",
     "miningLvRequirement": "Madencilik Lv. {{num}}",
@@ -319,25 +321,25 @@
     "foragingLvRequirement": "Toplayıcılık Lv. {{num}}",
     "combatLvRequirement": "Savaşma Lv. {{num}}",
     "totalSkillLvRequirement": "Yeteneklerin toplamı Lv. {{num}}",
-   
+
     // Machine Sources
     "statueOfPerfectionTip": "Büyükbabanın mükemmel değerlendirmesiyle", // advice for statue if you haven't had evaluation or achieved 4 candles
     "statueOfPerfectionAvailable": "Büyükbabanın Mezarlığı", // advice for statue if you've unlocked it, but haven't collected it
-  
+
     // Conditional Mail
     "conditionalMailAll": "{{friendReq}} ve {{skillReq}} gerçekleştiğinde {{time}}'den sonra postayla",
     "conditionalMailTimeFriend": "{{time}} at {{friendReq}} olduğunda {{time}}'den sonra postayla",
     "conditionalMailTimeSkill": "{{time}}'den sonra ve {{skillReq}} gerçekleştiğinde postayla",
     "conditionalMailFriendSkill": "{{friendReq}} ve {{skillReq}} gerçekleştiğinde postayla",
     "mailConditionFriendship": "{{person}} ile {{hearts}} olduğunda",
-   
+
     // Times (for fishing)
     "timeAM": "Sabah {{hour}}",
     "timePM": "Akşam {{hour}}",
     "time24Hour": "{{hour}}:00",
     "timeRange": "{{start}}-{{end}}",
     "anyTime": "Herhangi bir saatte",
-  
+
     // Days of the Week (for daily shop stocks)
     "monday": "Pazartesi",
     "tuesday": "Salı",
@@ -346,13 +348,11 @@
     "friday": "Cuma",
     "saturday": "Cumartesi",
     "sunday": "Pazar",
-   
+
     // Dates (for things that happen on or after specific date/season/year)
     "specificDate": "{{season}} {{day}} Yıl {{year}}",
     "generalDate": "{{season}} {{day}}",
     "yearSeason": "{{season}} Yıl {{year}}",
     "year": "Yıl {{year}}",
     "today": "bugün", // when Queen of Sauce episode is airing that very day
-
-    
 }
