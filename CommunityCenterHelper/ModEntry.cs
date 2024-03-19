@@ -1,11 +1,11 @@
-﻿using System;
-using System.Reflection;
-using Harmony;
+﻿using HarmonyLib;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using StardewModdingAPI;
 using StardewValley;
 using StardewValley.Menus;
+using System;
+using System.Reflection;
 
 namespace CommunityCenterHelper
 {
@@ -40,7 +40,7 @@ namespace CommunityCenterHelper
                 ItemHints.modRegistry = helper.ModRegistry;
                 ItemHints.Config = helper.ReadConfig<ModConfig>();
                 
-                HarmonyInstance harmonyInstance = HarmonyInstance.Create(this.ModManifest.UniqueID);
+                Harmony harmonyInstance = new Harmony(this.ModManifest.UniqueID);
                 
                 patchPostfix(harmonyInstance, typeof(JunimoNoteMenu), "setUpBundleSpecificPage",
                                               typeof(ModEntry), nameof(ModEntry.Postfix_setUpBundleSpecificPage));
@@ -57,7 +57,7 @@ namespace CommunityCenterHelper
                 Log("Error in mod setup: " + e.Message + Environment.NewLine + e.StackTrace);
             }
         }
-        
+
         /// <summary>Attempts to patch the given source method with the given postfix method.</summary>
         /// <param name="harmonyInstance">The Harmony instance to patch with.</param>
         /// <param name="sourceClass">The class the source method is part of.</param>
@@ -65,11 +65,17 @@ namespace CommunityCenterHelper
         /// <param name="patchClass">The class the patch method is part of.</param>
         /// <param name="patchName">The name of the patch method.</param>
         /// <param name="sourceParameters">The source method's parameter list, when needed for disambiguation.</param>
-        void patchPostfix(HarmonyInstance harmonyInstance, Type sourceClass, string sourceName, Type patchClass, string patchName, Type[] sourceParameters = null)
+        /// <param name="sourceLiteralName">The source method given as a string, if type cannot be directly accessed.</param>
+        void patchPostfix(Harmony harmonyInstance, Type sourceClass, string sourceName, Type patchClass, string patchName, Type[] sourceParameters = null, string sourceLiteralName = "")
         {
             try
             {
-                MethodBase sourceMethod = AccessTools.Method(sourceClass, sourceName, sourceParameters);
+                MethodBase sourceMethod;
+                if (sourceLiteralName != "")
+                    sourceMethod = AccessTools.Method(sourceLiteralName, sourceParameters);
+                else
+                    sourceMethod = AccessTools.Method(sourceClass, sourceName, sourceParameters);
+                
                 HarmonyMethod postfixPatch = new HarmonyMethod(patchClass, patchName);
                 
                 if (sourceMethod != null && postfixPatch != null)
@@ -82,9 +88,9 @@ namespace CommunityCenterHelper
                         Log("Warning: Patch method (" + patchClass.ToString() + "::" + patchName + ") not found.");
                 }
             }
-            catch (Exception e)
+            catch (Exception ex)
             {
-                Log("Error in code patching: " + e.Message + Environment.NewLine + e.StackTrace);
+                Log("Error patching postfix method to " + sourceClass.Name + "." + sourceName + "." + Environment.NewLine + ex.InnerException + Environment.NewLine + ex.StackTrace);
             }
         }
         
@@ -115,7 +121,7 @@ namespace CommunityCenterHelper
                     try
                     {
                         BundleIngredientDescription ingredient = b.ingredients[i];
-                        string hintText = ItemHints.getHintText(ingredient.index, ingredient.quality);
+                        string hintText = ItemHints.getHintText(ingredient.id, ingredient.quality);
                         if (hintText != "")
                         {
                             ingredientHoverTitle[i] = __instance.ingredientList[i].hoverText;
