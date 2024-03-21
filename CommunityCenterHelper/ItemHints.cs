@@ -20,7 +20,8 @@ namespace CommunityCenterHelper
         /// <summary>Returns hint text for an item, given an item ID and quality.</summary>
         /// <param name="id">The item ID.</param>
         /// <param name="quality">Minimum required quality of item.</param>
-        public static string getHintText(string id, int quality)
+        /// <param name="category">The item category, for items that accept anything in the category.</param>
+        public static string getHintText(string id, int quality, int? category = 0)
         {
             try
             {
@@ -542,7 +543,25 @@ namespace CommunityCenterHelper
                         return strPutItemInMachine(ItemID.IT_Roe, itemLiteral: getFishRoeName(ItemID.IT_Sturgeon),
                                                    machineID: ItemID.BC_PreservesJar);
                     
+                    /********** Crafts Room (Remix) **********/
+                    
+                    // Forest Bundle
+                    case ItemID.IT_Moss:
+                        return str.Get("treeMoss");
+                    
                     /********** Pantry (Remix) **********/
+                    
+                    // Spring Crops Bundle
+                    case ItemID.IT_Carrot:
+                        return strGrowSeeds(ItemID.IT_CarrotSeeds, parenthesize(strSeasonalForage("spring")), quality);
+                    
+                    // Summer Crops Bundle
+                    case ItemID.IT_SummerSquash:
+                        return strGrowSeeds(ItemID.IT_SummerSquashSeeds, parenthesize(strSeasonalForage("summer")), quality);
+                    
+                    // Fall Crops Bundle
+                    case ItemID.IT_Broccoli:
+                        return strGrowSeeds(ItemID.IT_BroccoliSeeds, parenthesize(strSeasonalForage("fall")), quality);
                     
                     // Fish Farmer's Bundle
                     
@@ -571,6 +590,27 @@ namespace CommunityCenterHelper
                     
                     case ItemID.IT_WheatFlour:
                         return strBuyFrom(shopLiteral: getSeedShopsString());
+                    
+                    // Helper's Bundle
+                    case ItemID.IT_PrizeTicket:
+                        return str.Get("prizeTicket");
+                    
+                    case ItemID.IT_MysteryBox:
+                        if (areMysteryBoxesUnlocked())
+                            return str.Get("artifactDigging") + "\n"
+                                 + str.Get("fishingChest") + "\n"
+                                 + str.Get("hitRocks");
+                        else
+                        {
+                            if (Config.ShowSpoilers)
+                                return str.Get("mysteryBoxesLocked");
+                            else
+                                return str.Get("unknownSource");
+                        }
+                    
+                    // Winter Star Bundle
+                    case ItemID.IT_Powdermelon:
+                        return strGrowSeeds(ItemID.IT_PowdermelonSeeds, parenthesize(strSeasonalForage("winter")), quality);
                     
                     /********** [EasierBundles] Crafts Room **********/
                     
@@ -1984,7 +2024,25 @@ namespace CommunityCenterHelper
                              + strOpenGeode(ItemID.IT_MagmaGeode, ItemID.IT_OmniGeode);
                 }
                 
-                // If ID was not covered in the above switch statement (usually because it's a mod-added item), search by name.
+                // If item ID was not matched and category is specified, look for category match.
+                
+                switch (category)
+                {
+                    /********** Bulletin Board (Remix) **********/
+                    
+                    // Home Cook's Bundle
+                    
+                    case StardewValley.Object.EggCategory:
+                        return strAnimalProduct("animalChicken") + "\n"
+                             + strAnimalProduct("animalDuck") + "\n"
+                             + strAnimalProduct("animalOstrich");
+                    
+                    case StardewValley.Object.MilkCategory:
+                        return strAnimalProduct("animalCow") + "\n"
+                             + strAnimalProduct("animalGoat");
+                }
+                
+                // If neither the item ID nor category was covered above (usually because it's a mod-added item), search by name.
                 
                 switch (getItemName(id, true))
                 {
@@ -2692,6 +2750,7 @@ namespace CommunityCenterHelper
                 case "animalDuck": coopReq = 1; break;
                 case "animalRabbit": coopReq = 2; break;
                 case "animalCow": barnReq = 0; break;
+                case "animalOstrich": barnReq = 0; break;
                 case "animalGoat": barnReq = 1; break;
                 case "animalSheep": barnReq = 2; break;
                 case "animalPig": barnReq = 2; break;
@@ -4027,6 +4086,12 @@ namespace CommunityCenterHelper
         {
             return Config.ShowSpoilers || Game1.MasterPlayer.mailReceived.Contains("ccMovieTheater")
                                        || Game1.MasterPlayer.mailReceived.Contains("ccMovieTheaterJoja");
+        }
+        
+        /// <summary>Returns whether the Mystery Boxes have been dropped.</summary>
+        private static bool areMysteryBoxesUnlocked()
+        {
+            return Game1.MasterPlayer.mailReceived.Contains("sawQiPlane");
         }
         
         /// <summary>Returns whether current language should use 24-hour time.</summary>

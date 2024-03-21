@@ -121,7 +121,7 @@ namespace CommunityCenterHelper
                     try
                     {
                         BundleIngredientDescription ingredient = b.ingredients[i];
-                        string hintText = ItemHints.getHintText(ingredient.id, ingredient.quality);
+                        string hintText = ItemHints.getHintText(ingredient.id, ingredient.quality, ingredient.category);
                         if (hintText != "")
                         {
                             ingredientHoverTitle[i] = __instance.ingredientList[i].hoverText;

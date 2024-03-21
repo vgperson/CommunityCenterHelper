@@ -359,7 +359,19 @@
         public const string IT_SquidInk = "814";
         public const string IT_TeaLeaves = "815";
         public const string IT_BoneFragment = "881";
-        
+
+        public const string IT_MysteryBox = "MysteryBox";
+        public const string IT_Moss = "Moss";
+        public const string IT_PrizeTicket = "PrizeTicket";
+        public const string IT_CarrotSeeds = "CarrotSeeds";
+        public const string IT_Carrot = "Carrot";
+        public const string IT_SummerSquashSeeds = "SummerSquashSeeds";
+        public const string IT_SummerSquash = "SummerSquash";
+        public const string IT_BroccoliSeeds = "BroccoliSeeds";
+        public const string IT_Broccoli = "Broccoli";
+        public const string IT_PowdermelonSeeds = "PowdermelonSeeds";
+        public const string IT_Powdermelon = "Powdermelon";
+       
         // More Fish Mod Item IDs (check that "MoreFish" is loaded before use)
         public const string MFM_ClownKnifefish = "1056";
         public const string MFM_BlueRingedOctopus = "1059";
