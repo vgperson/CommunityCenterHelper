@@ -1412,7 +1412,7 @@ namespace CommunityCenterHelper
                         return strSeasonalCrop("summer", quality);
                     
                     case ItemID.CNC_BellPepper:
-                        return strSeasonalCrop("fall", quality);
+                        return strSeasonalCrop("summer", quality);
                     
                     case ItemID.SVE_AncientFiber:
                         return strGrowSeeds(ItemID.SVE_AncientFernSeed, parenthesize(strLocationalForage("locationWoods")), quality);
@@ -1489,7 +1489,9 @@ namespace CommunityCenterHelper
                                                            locationKey: "locationBeach");
                     
                     case ItemID.CNC_Peppercorn:
-                        return strSeasonalForage("spring");
+                        return strSeasonalForage(seasonList: new string[] { "spring", "summer" }) + "\n"
+                             + strSeasonalCrop(seasonList: new string[] { "spring", "summer", "fall" }, quality: quality,
+                                               shopKey: "shopTravelingCartRandom");
                     
                     case ItemID.RSV_MountainChico:
                         return strSeasonalForage("summer");
@@ -1702,8 +1704,8 @@ namespace CommunityCenterHelper
                     // [Challenging Cornucopia_SVE] Summer Foraging Bundle
                     
                     case ItemID.CNC_Raspberry:
-                        return strSeasonalCrop("summer", quality, startingYear: 2) +
-                               (modRegistry.IsLoaded("minervamaga.FTM.PPJAForage")? // Forage pack included with bundle mod
+                        return strSeasonalCrop("summer", quality, startingYear: 2)
+                             + (modRegistry.IsLoaded("minervamaga.FTM.PPJAForage")? // Forage pack included with bundle mod
                                 "\n" + strSeasonalForage("summer") : "");
                     
                     /********** [Challenging CC Bundles RSV_SVE] Pantry **********/
@@ -1737,7 +1739,7 @@ namespace CommunityCenterHelper
                         return strFruitTreeDuringSeason("treeParadiseRangpur", "summer", "shopNightingaleOrchard");
                     
                     case ItemID.CNC_Avocado:
-                        return strFruitTreeDuringSeason("treeAvocado", "fall");
+                        return strFruitTreeDuringSeason("treeAvocado", "summer");
                     
                     // [Custom Cornucopia_RSV_SVE] Brewer's Bundle
                     
@@ -1754,7 +1756,7 @@ namespace CommunityCenterHelper
                     /********** [Custom CC Bundles Cornucopia_RSV_SVE] The Missing Bundle **********/
                     
                     case ItemID.CNC_Watermelon:
-                        return strSeasonalCrop("fall", quality);
+                        return strSeasonalCrop("summer", quality);
                     
                     /********** [Minerva's Harder CC (Easy)] Pantry **********/
                     
