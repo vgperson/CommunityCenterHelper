@@ -1,5 +1,5 @@
 # CommunityCenterHelper
-A mod for **Stardew Valley** that adds suggestions when hovering over required items for bundles.
+A mod for **Stardew Valley** that adds suggestions when hovering over required items for bundles, or items in the Collections tab.
 
 ## Description
 
@@ -8,6 +8,8 @@ Need help finding items for the Community Center bundles, but don't want to look
 Suggestions are generally tailored to your progress in the game. For example, if an item requires an unlearned cooking recipe, it will tell you how to get the recipe; otherwise, it will tell you the ingredients. It tries to make it clear when there are requirements (such as skill levels) that must be met in before the item can be obtained.
 
 Most item sources are included, but not every possible one - I prioritized the easiest and most reliable ways to get each item. This notably excludes things like the Traveling Cart, which can randomly provide many of the items required for bundles, but cannot be relied upon. I also don't account for bundle rewards, since they're one-time and are often changed by mods.
+
+Additionally, as of version 1.6.0, you can choose to show hints for items in the Collections tab as well, which can help with filling in your Collection or finding more of a particular item. Note that only items from the base game Collections tab are guaranteed to be supported, as supporting every mod item that could be there is infeasible.
 
 ## Supported Languages
 
@@ -20,13 +22,25 @@ Most item sources are included, but not every possible one - I prioritized the e
 2. Unzip the mod folder into Stardew Valley/Mods.
 3. Run the game using SMAPI.
 
-## User Configuration (edit config.json)
+## User Configuration
+
+**NOTE:** The Collections tab setting is disabled by default, so be sure to enable it if you want it! Either edit the config.json file directly, or if you have [Generic Mod Config Menu](https://www.nexusmods.com/stardewvalley/mods/5098) installed, open Mod Config from the title screen or options menu.
+
 ### ShowSpoilers (true or false)
 By its nature, this mod spoils certain things about the game. However, by default ("ShowSpoilers": false), it tries to conceal things that could be seen as "surprises" for new players, like areas and characters you haven't yet encountered. If you want all the information regardless of your progress in the game, you can set this to true.
 
 **Things that are still spoiled with ShowSpoilers disabled:** Names of items and machines, requirements for getting recipes, the existence of some constructions.
 
 **Things that ShowSpoilers will hide as appropriate:** Names of areas you haven't yet reached, unknown shops, unencountered monsters.
+
+### ShowCollectionsTabHints (0, 1, or 2)
+You can enable this to show the same style of hint tooltips in the Collections tab as well.
+
+**0 (off, default):** Never show location hints in the Collections tab.
+
+**1 (for unknowns):** Shows hints for where to get items not yet obtained in Collections.
+
+**2 (all items):** Not only shows hints for unobtained items, but allows you to review location hints on obtained items as well - just click or press the Action or Tool button to toggle what's displayed.
 
 ## Bundle Mod Support
 In addition to the bundles (both normal and remixed) in the base game, the following bundle-altering mods are supported.
