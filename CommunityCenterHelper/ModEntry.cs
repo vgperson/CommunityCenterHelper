@@ -2,6 +2,7 @@
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using StardewModdingAPI;
+using StardewModdingAPI.Events;
 using StardewValley;
 using StardewValley.Menus;
 using System;
@@ -17,6 +18,9 @@ namespace CommunityCenterHelper
         
         private static string[] ingredientHoverTitle;
         private static string[] ingredientHoverText;
+        
+        public static bool collectionHintsToggle = false;
+        public static string collectionLastHoverItemID = "";
         
         public static bool debugClearCompletedBundles = false;
         public static bool debugUnlockMissingBundle = false;
@@ -42,6 +46,9 @@ namespace CommunityCenterHelper
                 ItemHints.modRegistry = helper.ModRegistry;
                 ItemHints.Config = helper.ReadConfig<ModConfig>();
                 
+                helper.Events.GameLoop.GameLaunched += this.OnGameLaunched;
+                helper.Events.Input.ButtonPressed += this.OnButtonPressed;
+                
                 if (debugAddBundleTestCommand)
                     helper.ConsoleCommands.Add("testbundlehints", "Tests item hints on a list of JSON Community Center bundle definitions, outputting results.", this.debugTestBundleHints);
                 
@@ -54,7 +61,15 @@ namespace CommunityCenterHelper
                                               typeof(ModEntry), nameof(ModEntry.Postfix_gameWindowSizeChanged));
                 
                 patchPostfix(harmonyInstance, typeof(JunimoNoteMenu), "draw",
-                                              typeof(ModEntry), nameof(ModEntry.Postfix_draw),
+                                              typeof(ModEntry), nameof(ModEntry.Postfix_JunimoNoteMenu_draw),
+                                              new Type[] { typeof(SpriteBatch) });
+                
+                patchPrefix(harmonyInstance, typeof(CollectionsPage), "draw",
+                                             typeof(ModEntry), nameof(ModEntry.Prefix_CollectionsPage_draw),
+                                             new Type[] { typeof(SpriteBatch) });
+                
+                patchPostfix(harmonyInstance, typeof(CollectionsPage), "draw",
+                                              typeof(ModEntry), nameof(ModEntry.Postfix_CollectionsPage_draw),
                                               new Type[] { typeof(SpriteBatch) });
             }
             catch (Exception e)
@@ -62,7 +77,43 @@ namespace CommunityCenterHelper
                 Log("Error in mod setup: " + e.Message + Environment.NewLine + e.StackTrace);
             }
         }
-
+        
+        /// <summary>Attempts to patch the given source method with the given prefix method.</summary>
+        /// <param name="harmonyInstance">The Harmony instance to patch with.</param>
+        /// <param name="sourceClass">The class the source method is part of.</param>
+        /// <param name="sourceName">The name of the source method.</param>
+        /// <param name="patchClass">The class the patch method is part of.</param>
+        /// <param name="patchName">The name of the patch method.</param>
+        /// <param name="sourceParameters">The source method's parameter list, when needed for disambiguation.</param>
+        /// <param name="sourceLiteralName">The source method given as a string, if type cannot be directly accessed.</param>
+        void patchPrefix(Harmony harmonyInstance, System.Type sourceClass, string sourceName, System.Type patchClass, string patchName, Type[] sourceParameters = null, string sourceLiteralName = "")
+        {
+            try
+            {
+                MethodBase sourceMethod;
+                if (sourceLiteralName != "")
+                    sourceMethod = AccessTools.Method(sourceLiteralName, sourceParameters);
+                else
+                    sourceMethod = AccessTools.Method(sourceClass, sourceName, sourceParameters);
+                
+                HarmonyMethod prefixPatch = new HarmonyMethod(patchClass, patchName);
+                
+                if (sourceMethod != null && prefixPatch != null)
+                    harmonyInstance.Patch(sourceMethod, prefixPatch);
+                else
+                {
+                    if (sourceMethod == null)
+                        Log("Warning: Source method (" + sourceClass.ToString() + "::" + sourceName + ") not found or ambiguous.");
+                    if (prefixPatch == null)
+                        Log("Warning: Patch method (" + patchClass.ToString() + "::" + patchName + ") not found.");
+                }
+            }
+            catch (Exception ex)
+            {
+                Log("Error patching prefix method to " + sourceClass.Name + "." + sourceName + "." + Environment.NewLine + ex.InnerException + Environment.NewLine + ex.StackTrace);
+            }
+        }
+        
         /// <summary>Attempts to patch the given source method with the given postfix method.</summary>
         /// <param name="harmonyInstance">The Harmony instance to patch with.</param>
         /// <param name="sourceClass">The class the source method is part of.</param>
@@ -129,17 +180,9 @@ namespace CommunityCenterHelper
                         string hintText = ItemHints.getHintText(ingredient.id, ingredient.quality, ingredient.category);
                         if (hintText != "")
                         {
-                            ingredientHoverTitle[i] = __instance.ingredientList[i].hoverText;
+                            ingredientHoverTitle[i] = ItemHints.getItemName(ingredient.id);
                             ingredientHoverText[i] = hintText;
                             __instance.ingredientList[i].hoverText = "";
-                            
-                            // Override item name for generic Dried and Smoked items.
-                            if (ingredient.id == ItemID.IT_DriedFruit)
-                                ingredientHoverTitle[i] = Game1.content.LoadString("Strings\\Objects:DriedFruit_CollectionsTabName");
-                            else if (ingredient.id == ItemID.IT_DriedMushrooms)
-                                ingredientHoverTitle[i] = Game1.content.LoadString("Strings\\Objects:DriedMushrooms_CollectionsTabName");
-                            else if (ingredient.id == ItemID.IT_SmokedFish)
-                                ingredientHoverTitle[i] = Game1.content.LoadString("Strings\\Objects:SmokedFish_CollectionsTabName");
                         }
                         else
                         {
@@ -183,7 +226,7 @@ namespace CommunityCenterHelper
         /// <summary>Draw tooltip for ingredients if cursor is hovering over them.</summary>
         /// <param name="__instance">The instance of the bundle menu.</param>
         /// <param name="b">The sprite batch.</param>
-        public static void Postfix_draw(JunimoNoteMenu __instance, SpriteBatch b)
+        public static void Postfix_JunimoNoteMenu_draw(JunimoNoteMenu __instance, SpriteBatch b)
         {
             try
             {
@@ -207,7 +250,193 @@ namespace CommunityCenterHelper
             }
             catch (Exception e)
             {
-                Log("Error in draw: " + e.Message + Environment.NewLine + e.StackTrace);
+                Log("Error in JunimoNoteMenu draw: " + e.Message + Environment.NewLine + e.StackTrace);
+            }
+        }
+        
+        /// <summary>Prevent normal drawing of tooltip under the cirumstances for drawing own hints tooltip.</summary>
+        /// <param name="__instance">The instance of the collections page.</param>
+        /// <param name="b">The sprite batch.</param>
+        public static bool Prefix_CollectionsPage_draw(CollectionsPage __instance, SpriteBatch b)
+        {
+            try
+            {
+                if (ItemHints.Config.ShowCollectionsTabHints == 0 || __instance.currentTab > 4) // Hints disabled or not an item tab
+                {
+                    collectionHintsToggle = false;
+                    return true; // Go to original function
+                }
+                
+                Game1.PushUIMode();
+                int x = Game1.getMouseX(), y = Game1.getMouseY();
+                Game1.PopUIMode();
+                
+                bool itemHoveredOver = false;
+                foreach (ClickableTextureComponent textureComponent in __instance.collections[__instance.currentTab][__instance.currentPage])
+                {
+                    if (textureComponent.containsPoint(x, y, 2))
+                    {
+                        string hoverItemID = ArgUtility.SplitBySpace(textureComponent.name)[0];
+                        if (!collectionLastHoverItemID.Equals(hoverItemID)) // Hovering over a new item, so reset view toggle
+                            collectionHintsToggle = false;
+                        collectionLastHoverItemID = hoverItemID;
+                        itemHoveredOver = true;
+                        break;
+                    }
+                }
+                if (!itemHoveredOver)
+                {
+                    collectionLastHoverItemID = "";
+                    collectionHintsToggle = false;
+                }
+                
+                if (ItemHints.Config.ShowCollectionsTabHints == 2 && collectionHintsToggle) // Toggled to show hints even for obtained items
+                {
+                    __instance.performHoverAction(-50000, -50000); // Call with fake mouse position to blank hover text
+                    return true; // Go to original function
+                }
+                
+                foreach (ClickableTextureComponent textureComponent in __instance.collections[__instance.currentTab][__instance.currentPage])
+                {
+                    if (textureComponent.containsPoint(x, y, 2))
+                    {
+                        string[] strArray = ArgUtility.SplitBySpace(textureComponent.name);
+                        if (strArray.Length > 1 && Convert.ToBoolean(strArray[1]) || strArray.Length > 2 && Convert.ToBoolean(strArray[2]))
+                            return true; // Obtained, so stop here and go to original function
+                        __instance.performHoverAction(-50000, -50000); // Call with fake mouse position to blank hover text
+                        break; // Exit loop as soon as hovered-over unknown item is found
+                    }
+                }
+                
+                collectionLastHoverItemID = "";
+                collectionHintsToggle = false;
+                return true; // Go to original function
+            }
+            catch (Exception ex)
+            {
+                Log("Error in CollectionsPage draw prefix: " + ex.Message + Environment.NewLine + ex.StackTrace);
+                return true; // Go to original function
+            }
+        }
+        
+        /// <summary>Draw tooltip for collections page if cursor is hovering over an item.</summary>
+        /// <param name="__instance">The instance of the collections page.</param>
+        /// <param name="b">The sprite batch.</param>
+        public static void Postfix_CollectionsPage_draw(CollectionsPage __instance, SpriteBatch b)
+        {
+            try
+            {
+                if (ItemHints.Config.ShowCollectionsTabHints == 0 || __instance.currentTab > 4) // Hints disabled or not an item tab
+                    return;
+                
+                Game1.PushUIMode();
+                int x = Game1.getMouseX(), y = Game1.getMouseY();
+                Game1.PopUIMode();
+                
+                string hoverItemID = "";
+                foreach (ClickableTextureComponent textureComponent in __instance.collections[__instance.currentTab][__instance.currentPage])
+                {
+                    if (textureComponent.containsPoint(x, y, 2))
+                    {
+                        string[] strArray = ArgUtility.SplitBySpace(textureComponent.name);
+                        if (ItemHints.Config.ShowCollectionsTabHints != 2 || !collectionHintsToggle) // Skip obtained check if toggle is on
+                        {
+                            if (strArray.Length > 1 && Convert.ToBoolean(strArray[1]) || strArray.Length > 2 && Convert.ToBoolean(strArray[2]))
+                                return; // Obtained, so stop here
+                        }
+                        hoverItemID = strArray[0];
+                        break; // Exit loop as soon as hovered-over item that should display hints is found
+                    }
+                }
+                
+                if (hoverItemID != "")
+                {
+                    string hintText = ItemHints.getHintText(hoverItemID, 0);
+                    if (hintText == "")
+                        hintText = "??? [" + hoverItemID + "]";
+                    IClickableMenu.drawToolTip(b, ItemHints.getItemName(hoverItemID) + Environment.NewLine + Environment.NewLine + hintText, "", null);
+                }
+            }
+            catch (Exception e)
+            {
+                Log("Error in CollectionsPage draw: " + e.Message + Environment.NewLine + e.StackTrace);
+            }
+        }
+        
+        /******************
+         ** Input Method **
+         ******************/
+        
+        private void OnButtonPressed(object sender, ButtonPressedEventArgs e)
+        {
+            if (!Context.IsWorldReady || ItemHints.Config.ShowCollectionsTabHints != 2)
+                return;
+            
+            if (Game1.activeClickableMenu != null && Game1.activeClickableMenu is GameMenu) // The main game menu is open
+            {
+                if (((GameMenu)Game1.activeClickableMenu).currentTab == GameMenu.collectionsTab) // On collections tab
+                {
+                    if (collectionLastHoverItemID != "") // Hovering over an item
+                    {
+                        if (e.Button.IsActionButton() || e.Button.IsUseToolButton() || e.Button == SButton.MouseLeft)
+                        {
+                            collectionHintsToggle = !collectionHintsToggle;
+                            Game1.playSound("drumkit6");
+                        }
+                    }
+                }
+            }
+        }
+        
+        /********************************
+         ** Config Menu Initialization **
+         ********************************/
+        
+        /// <summary>Initializes menu for Generic Mod Config Menu on game launch.</summary>
+        /// <param name="sender">The event sender.</param>
+        /// <param name="e">The event data.</param>
+        private void OnGameLaunched(object sender, GameLaunchedEventArgs e)
+        {
+            try
+            {
+                // Get Generic Mod Config Menu's API (if it's installed).
+                var configMenu = ItemHints.modRegistry.GetApi<IGenericModConfigMenuApi>("spacechase0.GenericModConfigMenu");
+                if (configMenu is null)
+                    return;
+                
+                // Register mod.
+                configMenu.Register(mod: ModManifest, reset: () => ItemHints.Config = new ModConfig(), save: () => Helper.WriteConfig(ItemHints.Config));
+                
+                // Add options.
+                configMenu.AddBoolOption(
+                    mod: ModManifest,
+                    name: () => ItemHints.str.Get("optionShowSpoilersName"),
+                    tooltip: () => ItemHints.str.Get("optionShowSpoilersTooltip"),
+                    getValue: () => ItemHints.Config.ShowSpoilers,
+                    setValue: value => ItemHints.Config.ShowSpoilers = value
+                );
+                
+                configMenu.AddTextOption(
+                    mod: ModManifest,
+                    name: () => ItemHints.str.Get("optionCollectionsTabName"),
+                    tooltip: () => ItemHints.str.Get("optionCollectionsTabTooltip"),
+                    getValue: () => ItemHints.Config.ShowCollectionsTabHints.ToString(),
+                    setValue: value => ItemHints.Config.ShowCollectionsTabHints = int.Parse(value),
+                    allowedValues: new string[] { "0", "1", "2" },
+                    formatAllowedValue: value =>
+                    {
+                        switch (value)
+                        {
+                            case "0": default: return ItemHints.str.Get("collectionsTabOff");
+                            case "1": return ItemHints.str.Get("collectionsTabUnknowns");
+                            case "2": return ItemHints.str.Get("collectionsTabAll");
+                        }
+                    }
+                );
+            }
+            catch (Exception ex)
+            {
+                Log("Error setting up mod config menu (menu may not appear): " + ex.InnerException + Environment.NewLine + ex.StackTrace);
             }
         }
         
@@ -342,12 +571,18 @@ namespace CommunityCenterHelper
                                 }
                                 
                                 string itemID = "";
-                                if (itemName == "EggCategory")
+                                if (itemName.StartsWith("<") && itemName.EndsWith(">")) // Direct ID reference, not a thing in actual RandomBundle format
+                                {
+                                    itemID = itemName.Substring(1, itemName.Length - 2);
+                                    itemName = ItemHints.getItemName(itemID);
+                                }
+                                else if (itemName == "EggCategory")
                                     itemID = StardewValley.Object.EggCategory.ToString();
                                 else if (itemName == "MilkCategory")
                                     itemID = StardewValley.Object.MilkCategory.ToString();
                                 else
                                     ItemHints.findItemIDByName(itemName, out itemID);
+                                
                                 if (itemID == "")
                                 {
                                     str.WriteLine("ERROR: No item found matching name " + itemName + "\n");

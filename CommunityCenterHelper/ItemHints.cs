@@ -458,10 +458,14 @@ namespace CommunityCenterHelper
                         return strSeasonalCrop("summer", quality);
                     
                     case ItemID.IT_MakiRoll:
-                        return strCookRecipe("Maki Roll");
+                        return strCookRecipe("Maki Roll") + "\n"
+                             + strBuyFromRandom("shopSaloon") + "\n"
+                             + strBuyFromKrobusWeekday("saturday");
                     
                     case ItemID.IT_FriedEgg:
-                        return strCookRecipe("Fried Egg");
+                        return strCookRecipe("Fried Egg") + "\n"
+                             + strBuyFromRandom("shopSaloon") + "\n"
+                             + strBuyFromKrobusWeekday("saturday");
                     
                     // Dye Bundle
                     
@@ -751,14 +755,18 @@ namespace CommunityCenterHelper
                              + possibleSourceFruitBatCave();
                     
                     case ItemID.IT_Cookies:
-                        return strCookRecipe("Cookies");
+                        return strCookRecipe("Cookies") + "\n"
+                             + strBuyFromRandom("shopSaloon") + "\n"
+                             + strBuyFromKrobusWeekday("saturday");
                     
                     case ItemID.IT_AncientDoll:
                         return str.Get("artifactDigging") + "\n"
                              + strFishingChest(2);
                     
                     case ItemID.IT_IceCream:
-                        return strCookRecipe("Ice Cream");
+                        return strCookRecipe("Ice Cream") + "\n"
+                             + strBuyFromRandom("shopSaloon") + "\n"
+                             + strBuyFromKrobusWeekday("saturday");
                     
                     // [Remixed] Home Cook's Bundle
                     
@@ -794,7 +802,9 @@ namespace CommunityCenterHelper
                         return strCookRecipe("Plum Pudding");
                     
                     case ItemID.IT_Stuffing:
-                        return strCookRecipe("Stuffing");
+                        return strCookRecipe("Stuffing") + "\n"
+                             + strBuyFromRandom("shopSaloon") + "\n"
+                             + strBuyFromKrobusWeekday("saturday");
                     
                     case ItemID.IT_Powdermelon:
                         return strGrowSeeds(ItemID.IT_PowdermelonSeeds, parenthesize(strSeasonalForage("winter")), quality);
@@ -874,7 +884,8 @@ namespace CommunityCenterHelper
                              + strMachineOrCaskForQuality(ItemID.IT_Wheat, ItemID.BC_Keg, ItemID.IT_Beer, quality);
                     
                     case ItemID.IT_Coffee:
-                        return strPutItemInMachine(ItemID.IT_CoffeeBean, ItemID.BC_Keg, itemQuantity: 5);
+                        return strPutItemInMachine(ItemID.IT_CoffeeBean, ItemID.BC_Keg, itemQuantity: 5)
+                             + strBuyFrom("shopSaloon");
                     
                     /********** [Challenging CC Bundles Vanilla] Crafts Room **********/
                     
@@ -939,7 +950,9 @@ namespace CommunityCenterHelper
                         return strGrowSeeds(ItemID.IT_TeaSapling, recipeUnlockTip, quality);
                     
                     case ItemID.IT_Salad:
-                        return strCookRecipe("Salad");
+                        return strCookRecipe("Salad") + "\n"
+                             + strBuyFrom("shopSaloon") + "\n"
+                             + strBuyFromKrobusWeekday("saturday");
                     
                     case ItemID.IT_AlgaeSoup:
                         return strCookRecipe("Algae Soup");
@@ -1125,7 +1138,8 @@ namespace CommunityCenterHelper
                         return strCookRecipe("Triple Shot Espresso");
                     
                     case ItemID.IT_SurvivalBurger:
-                        return strCookRecipe("Survival Burger");
+                        return strCookRecipe("Survival Burger") + "\n"
+                             + strBuyFromKrobusWeekday("saturday");
                     
                     case ItemID.IT_Escargot:
                         return strCookRecipe("Escargot");
@@ -1149,14 +1163,17 @@ namespace CommunityCenterHelper
                     // [Challenging Vanilla] Field Research Bundle
                     
                     case ItemID.IT_RedPlate:
-                        return strCookRecipe("Red Plate");
+                        return strCookRecipe("Red Plate") + "\n"
+                             + strBuyFromRandom("shopSaloon") + "\n"
+                             + strBuyFromKrobusWeekday("saturday");
                     
                     case ItemID.IT_AncientSeeds:
                         return strCraftRecipe("Ancient Seeds");
                     
                     case ItemID.IT_AmphibianFossil:
                         return strLocationalArtifact(locationList: new string[] { "locationForest", "locationMountains" }) + "\n"
-                             + strFishingChest(2);
+                             + strFishingChest(2) + "\n"
+                             + (isIslandKnown()? str.Get("boneNode") : str.Get("unknownSource"));
                     
                     case ItemID.IT_FieldSnack:
                         return strCraftRecipe("Field Snack");
@@ -1200,7 +1217,7 @@ namespace CommunityCenterHelper
                         return strCookRecipe("Seafoam Pudding");
                     
                     case ItemID.IT_GoldenMask:
-                        return strLocationalArtifact("locationDesert");
+                        return strLocationalArtifact(isDesertKnown()? "locationDesert" : "locationUnknown");
                     
                     case ItemID.IT_DriedMushrooms:
                         return strPutItemInMachine(itemLiteral: str.Get("itemCategoryMushroom"), machineID: ItemID.BC_Dehydrator);
@@ -1221,8 +1238,8 @@ namespace CommunityCenterHelper
                     
                     case ItemID.IT_BlueberryTart:
                         return strCookRecipe("Blueberry Tart") + "\n"
-                             + strBuyFromKrobusWeekday("saturday") + "\n"
-                             + strBuyFrom("shopSaloon");
+                             + strBuyFromRandom("shopSaloon") + "\n"
+                             + strBuyFromKrobusWeekday("saturday");
                     
                     case ItemID.IT_CranberryCandy:
                         return strCookRecipe("Cranberry Candy");
@@ -1231,7 +1248,9 @@ namespace CommunityCenterHelper
                         return strCookRecipe("Poppyseed Muffin");
                     
                     case ItemID.IT_PinkCake:
-                        return strCookRecipe("Pink Cake");
+                        return strCookRecipe("Pink Cake") + "\n"
+                             + strBuyFromRandom("shopSaloon") + "\n"
+                             + strBuyFromKrobusWeekday("saturday");
                     
                     case ItemID.IT_TentKit:
                         return strCraftRecipe("Tent Kit");
@@ -1256,19 +1275,27 @@ namespace CommunityCenterHelper
                     // [Challenging Vanilla] Home Cook's Bundle
                     
                     case ItemID.IT_VegetableMedley:
-                        return strCookRecipe("Vegetable Stew");
+                        return strCookRecipe("Vegetable Stew") + "\n"
+                             + strBuyFromRandom("shopSaloon") + "\n"
+                             + strBuyFromKrobusWeekday("saturday");
                     
                     case ItemID.IT_Tortilla:
-                        return strCookRecipe("Tortilla");
+                        return strCookRecipe("Tortilla") + "\n"
+                             + strBuyFromRandom("shopSaloon") + "\n"
+                             + strBuyFromKrobusWeekday("saturday");
                     
                     case ItemID.IT_FruitSalad:
                         return strCookRecipe("Fruit Salad");
                     
                     case ItemID.IT_SalmonDinner:
-                        return strCookRecipe("Salmon Dinner");
+                        return strCookRecipe("Salmon Dinner") + "\n"
+                             + strBuyFromRandom("shopSaloon") + "\n"
+                             + strBuyFromKrobusWeekday("saturday");
                     
                     case ItemID.IT_CompleteBreakfast:
-                        return strCookRecipe("Complete Breakfast");
+                        return strCookRecipe("Complete Breakfast") + "\n"
+                             + strBuyFromRandom("shopSaloon") + "\n"
+                             + strBuyFromKrobusWeekday("saturday");
                     
                     case ItemID.IT_Pizza:
                         return strCookRecipe("Pizza") + "\n"
@@ -1284,7 +1311,9 @@ namespace CommunityCenterHelper
                         return strCookRecipe("Bruschetta");
                     
                     case ItemID.IT_Pancakes:
-                        return strCookRecipe("Pancakes");
+                        return strCookRecipe("Pancakes") + "\n"
+                             + strBuyFromRandom("shopSaloon") + "\n"
+                             + strBuyFromKrobusWeekday("saturday");
                     
                     // [Challenging Vanilla] Helper's Bundle
                     
@@ -1318,7 +1347,9 @@ namespace CommunityCenterHelper
                     // [Challenging Vanilla] Spirit's Eve Bundle
                     
                     case ItemID.IT_PumpkinSoup:
-                        return strCookRecipe("Pumpkin Soup");
+                        return strCookRecipe("Pumpkin Soup") + "\n"
+                             + strBuyFromRandom("shopSaloon") + "\n"
+                             + strBuyFromKrobusWeekday("saturday");
                     
                     case ItemID.IT_SquidInkRavioli:
                         return strCookRecipe("Squid Ink Ravioli");
@@ -1343,7 +1374,9 @@ namespace CommunityCenterHelper
                     // [Challenging Vanilla] Winter Star Bundle
                     
                     case ItemID.IT_CranberrySauce:
-                        return strCookRecipe("Cran. Sauce");
+                        return strCookRecipe("Cran. Sauce") + "\n"
+                             + strBuyFromRandom("shopSaloon") + "\n"
+                             + strBuyFromKrobusWeekday("saturday");
                     
                     case ItemID.IT_RoastedHazelnuts:
                         return strCookRecipe("Roasted Hazelnuts");
@@ -1373,16 +1406,22 @@ namespace CommunityCenterHelper
                         return strFishBase("waterBugLand");
                     
                     case ItemID.IT_SuperMeal:
-                        return strCookRecipe("Super Meal");
+                        return strCookRecipe("Super Meal") + "\n"
+                             + strBuyFromRandom("shopSaloon") + "\n"
+                             + strBuyFromKrobusWeekday("saturday");
                     
                     case ItemID.IT_FishTaco:
-                        return strCookRecipe("Fish Taco");
+                        return strCookRecipe("Fish Taco") + "\n"
+                             + strBuyFromRandom("shopSaloon") + "\n"
+                             + strBuyFromKrobusWeekday("saturday");
                     
                     case ItemID.IT_StarShards:
                         return strOpenGeode(ItemID.IT_MagmaGeode, ItemID.IT_OmniGeode);
                     
                     case ItemID.IT_PepperPoppers:
-                        return strCookRecipe("Pepper Poppers");
+                        return strCookRecipe("Pepper Poppers") + "\n"
+                             + strBuyFromRandom("shopSaloon") + "\n"
+                             + strBuyFromKrobusWeekday("saturday");
                     
                     case ItemID.IT_DwarfGadget:
                         return strLocationalTilling("locationMinesArea2") + "\n"
@@ -1815,10 +1854,14 @@ namespace CommunityCenterHelper
                         return strCookRecipe("Chowder");
                     
                     case ItemID.IT_CheeseCauliflower:
-                        return strCookRecipe("Cheese Cauli.");
+                        return strCookRecipe("Cheese Cauli.") + "\n"
+                             + strBuyFromRandom("shopSaloon") + "\n"
+                             + strBuyFromKrobusWeekday("saturday");
                     
                     case ItemID.IT_EggplantParmesan:
-                        return strCookRecipe("Eggplant Parm.");
+                        return strCookRecipe("Eggplant Parm.") + "\n"
+                             + strBuyFromRandom("shopSaloon") + "\n"
+                             + strBuyFromKrobusWeekday("saturday");
                     
                     // [Minerva's Easy] Field Research Bundle
                     
@@ -1842,10 +1885,14 @@ namespace CommunityCenterHelper
                     // [Minerva's Regular] Saloon Menu Bundle
                     
                     case ItemID.IT_TroutSoup:
-                        return strCookRecipe("Trout Soup");
+                        return strCookRecipe("Trout Soup") + "\n"
+                             + strBuyFromRandom("shopSaloon") + "\n"
+                             + strBuyFromKrobusWeekday("saturday");
                     
                     case ItemID.IT_CrispyBass:
-                        return strCookRecipe("Crispy Bass");
+                        return strCookRecipe("Crispy Bass") + "\n"
+                             + strBuyFromRandom("shopSaloon") + "\n"
+                             + strBuyFromKrobusWeekday("saturday");
                     
                     // [Minerva's Regular] Field Research Bundle
                     
@@ -1863,27 +1910,35 @@ namespace CommunityCenterHelper
                     // [Minerva's Hard] Saloon Menu Bundle
                     
                     case ItemID.IT_ParsnipSoup:
-                        return strCookRecipe("Parsnip Soup");
+                        return strCookRecipe("Parsnip Soup") + "\n"
+                             + strBuyFromRandom("shopSaloon") + "\n"
+                             + strBuyFromKrobusWeekday("saturday");
                     
                     case ItemID.IT_Coleslaw:
                         return strCookRecipe("Coleslaw");
                     
                     case ItemID.IT_FriedMushroom:
-                        return strCookRecipe("Fried Mushroom");
+                        return strCookRecipe("Fried Mushroom") + "\n"
+                             + strBuyFromRandom("shopSaloon") + "\n"
+                             + strBuyFromKrobusWeekday("saturday");
                     
                     /********** [Minerva's Harder CC (OJRebalance)] Bulletin Board **********/
                     
                     // [Minerva's OJRebalance] Saloon Menu Bundle
                     
                     case ItemID.IT_BakedFish:
-                        return strCookRecipe("Baked Fish");
+                        return strCookRecipe("Baked Fish") + "\n"
+                             + strBuyFromRandom("shopSaloon") + "\n"
+                             + strBuyFromKrobusWeekday("saturday");
                     
                     case ItemID.IT_GlazedYams:
-                        return strCookRecipe("Glazed Yams");
+                        return strCookRecipe("Glazed Yams") + "\n"
+                             + strBuyFromRandom("shopSaloon") + "\n"
+                             + strBuyFromKrobusWeekday("saturday");
                     
                     case ItemID.IT_FriedCalamari:
                         return strCookRecipe("Fried Calamari") + "\n"
-                             + strBuyFrom("shopSaloon") + "\n"
+                             + strBuyFromRandom("shopSaloon") + "\n"
                              + strBuyFromKrobusWeekday("saturday");
                     
                     /********** [Minerva's Harder CC (PPJA)] Crafts Room **********/
@@ -1938,7 +1993,7 @@ namespace CommunityCenterHelper
                     case ItemID.IT_JojaCola:
                         return str.Get("trash") + "\n"
                              + (isJojaOpen()? strBuyFrom("shopJoja") + "\n" : "")
-                             + strBuyFrom("shopSaloon");
+                             + strBuyFromRandom("shopSaloon");
                     
                     /********** [Community Center Bundle Overhaul] Fish Tank **********/
                     
@@ -1999,27 +2054,35 @@ namespace CommunityCenterHelper
                              + strDroppedByMonster("Iridium Crab");
                     
                     case ItemID.IT_RootsPlatter:
-                        return strCookRecipe("Roots Platter");
+                        return strCookRecipe("Roots Platter") + "\n"
+                             + strBuyFromKrobusWeekday("saturday");
                     
                     case ItemID.IT_MapleBar:
                         return strCookRecipe("Maple Bar");
                     
                     case ItemID.IT_Sashimi:
-                        return strCookRecipe("Sashimi");
+                        return strCookRecipe("Sashimi") + "\n"
+                             + strBuyFromRandom("shopSaloon") + "\n"
+                             + strBuyFromKrobusWeekday("saturday");
                     
                     /********** [Alternate Bundles] Bulletin Board **********/
                     
                     // [Alternate Bundles] Chef's Bundle
                     
                     case ItemID.IT_Omelet:
-                        return strCookRecipe("Omelet");
+                        return strCookRecipe("Omelet") + "\n"
+                             + strBuyFromRandom("shopSaloon") + "\n"
+                             + strBuyFromKrobusWeekday("saturday");
                     
                     case ItemID.IT_Hashbrowns:
-                        return strCookRecipe("Hashbrowns");
+                        return strCookRecipe("Hashbrowns") + "\n"
+                             + strBuyFromRandom("shopSaloon") + "\n"
+                             + strBuyFromKrobusWeekday("saturday");
                     
                     case ItemID.IT_Bread:
                         return strCookRecipe("Bread") + "\n"
-                             + strBuyFrom("shopSaloon");
+                             + strBuyFrom("shopSaloon") + "\n"
+                             + strBuyFromKrobusWeekday("saturday");
                     
                     case ItemID.IT_Oil:
                         return strPutItemInMachine(itemLiteral: multiItem(ItemID.IT_Corn, ItemID.IT_SunflowerSeeds, ItemID.IT_Sunflower),
@@ -2078,10 +2141,12 @@ namespace CommunityCenterHelper
                     case ItemID.IT_SpicyEel:
                         return strCookRecipe("Spicy Eel") + "\n"
                              + strDroppedByMonster("Serpent") + "\n"
+                             + strBuyFromRandom("shopSaloon") + "\n"
+                             + strBuyFromKrobusWeekday("saturday") + "\n"
                              + strFishPond(ItemID.IT_LavaEel, 9);
                     
                     case ItemID.IT_DinosaurEgg:
-                        return strLocationalArtifact(locationList: new string[] { "locationMountains", "locationQuarry" }) + "\n"
+                        return strLocationalArtifact("locationMountains") + "\n"
                              + strFishingChest(2) + "\n"
                              + strDroppedByMonster("Pepper Rex") + "\n"
                              + strLocationalForage(isDesertKnown()? "locationSkullPrehistoric" : "locationUnknown") + "\n"
@@ -2122,16 +2187,22 @@ namespace CommunityCenterHelper
                     // [Very Hard 1YC 1.02] Cooking Bundle
                     
                     case ItemID.IT_RicePudding:
-                        return strCookRecipe("Rice Pudding");
+                        return strCookRecipe("Rice Pudding") + "\n"
+                             + strBuyFromRandom("shopSaloon") + "\n"
+                             + strBuyFromKrobusWeekday("saturday");
                     
                     case ItemID.IT_AutumnsBounty:
-                        return strCookRecipe("Autumn's Bounty");
+                        return strCookRecipe("Autumn's Bounty") + "\n"
+                             + strBuyFromRandom("shopSaloon") + "\n"
+                             + strBuyFromKrobusWeekday("saturday");
                     
                     case ItemID.IT_FishStew:
                         return strCookRecipe("Fish Stew");
                     
                     case ItemID.IT_TomKhaSoup:
-                        return strCookRecipe("Tom Kha Soup");
+                        return strCookRecipe("Tom Kha Soup") + "\n"
+                             + strBuyFromRandom("shopSaloon") + "\n"
+                             + strBuyFromKrobusWeekday("saturday");
                     
                     /********** [Very Hard for 1 Year Challenge 1.02C] Bulletin Board **********/
                     
@@ -2157,24 +2228,24 @@ namespace CommunityCenterHelper
                     
                     case ItemID.IT_FriedEel:
                         return strCookRecipe("Fried Eel") + "\n"
-                             + strBuyFrom("shopSaloon") + "\n"
+                             + strBuyFromRandom("shopSaloon") + "\n"
                              + strBuyFromKrobusWeekday("saturday");
                     
                     case ItemID.IT_ChocolateCake:
                         return strCookRecipe("Chocolate Cake") + "\n"
-                             + strBuyFrom("shopSaloon") + "\n"
+                             + strBuyFromRandom("shopSaloon") + "\n"
                              + strBuyFromKrobusWeekday("saturday");
                     
                     // [Legacy CC Bundles] Loved Cook's Bundle
                     
                     case ItemID.IT_StrangeBun:
                         return strCookRecipe("Strange Bun") + "\n"
-                             + strBuyFrom("shopSaloon") + "\n"
+                             + strBuyFromRandom("shopSaloon") + "\n"
                              + strBuyFromKrobusWeekday("saturday");
                     
                     case ItemID.IT_BeanHotpot:
                         return strCookRecipe("Bean Hotpot") + "\n"
-                             + strBuyFrom("shopSaloon") + "\n"
+                             + strBuyFromRandom("shopSaloon") + "\n"
                              + strBuyFromKrobusWeekday("saturday");
                     
                     // [Legacy CC Bundles] Fisherman's Bundle
@@ -2195,6 +2266,306 @@ namespace CommunityCenterHelper
                     case ItemID.IT_TreasureHunter:
                         return strBuyFrom("shopFish") + (Game1.player.FishingLevel < 7? levelRequirementString("fishing", 7) : "") + "\n"
                              + strCraftRecipe("Treasure Hunter");
+                    
+                    /********** [Base Game Collections Tab] Farm & Forage **********/
+                    
+                    case ItemID.IT_Banana:
+                        return strFruitTreeDuringSeason("treeBanana", "summer", isIslandKnown()? "shopIslandTrader" : "shopUnknown") + "\n"
+                             + strFishPond(ItemID.IT_BlueDiscus, 4);
+                    
+                    case ItemID.IT_OstrichEgg:
+                        return strAnimalProduct("animalOstrich");
+                    
+                    case ItemID.IT_TaroRoot:
+                        return strGrowSeeds(ItemID.IT_TaroTuber, isIslandKnown()? parenthesize(strLocationalForage("locationIsland")) : "", quality) + "\n"
+                             + (isIslandKnown()? parenthesize(strBuyFrom("shopIslandTrader")) + "\n" : "")
+                             + parenthesize(strDroppedByMonster("Tiger Slime")) + "\n"
+                             + parenthesize(strDroppedByMonster("Magma Duggy")) + "\n"
+                             + parenthesize(strFishPond(ItemID.IT_Lionfish, 4));
+                    
+                    case ItemID.IT_Pineapple:
+                        return strGrowSeeds(ItemID.IT_PineappleSeeds, isIslandKnown()? parenthesize(strBuyFrom("shopIslandTrader")) : "", quality);
+                    
+                    case ItemID.IT_Mango:
+                        return strFruitTreeDuringSeason("treeMango", "summer", isIslandKnown()? "shopIslandTrader" : "shopUnknown");
+                    
+                    case ItemID.IT_CinderShard:
+                        return (isVolcanoKnown()? str.Get("gemCinderShard") : str.Get("unknownSource")) + "\n"
+                             + strDroppedByMonster("Magma Sprite") + "\n"
+                             + strDroppedByMonster("Magma Sparker") + "\n"
+                             + strDroppedByMonster("Magma Duggy") + "\n"
+                             + strDroppedByMonster("False Magma Cap") + "\n"
+                             + strFishPond(ItemID.IT_Stingray, 7);
+                    
+                    case ItemID.IT_MagmaCap:
+                        return (isVolcanoKnown()? strLocationalForage("locationVolcano") : str.Get("unknownSource")) + "\n"
+                             + strDroppedByMonster("False Magma Cap") + "\n"
+                             + strFishPond(ItemID.IT_Stingray, 4);
+                    
+                    case ItemID.IT_RadioactiveOre:
+                        return str.Get("mineRadioactiveOre");
+                    
+                    case ItemID.IT_RadioactiveBar:
+                        return strPutItemInMachine(ItemID.IT_RadioactiveOre, ItemID.BC_Furnace);
+                    
+                    case ItemID.IT_MysticSyrup:
+                        return strTapTree("treeMystic");
+                    
+                    /********** [Base Game Collections Tab] Fish **********/
+                    
+                    case ItemID.IT_Stingray:
+                        return strFishBase(isIslandKnown()? "waterIslandCove" : "waterUnknown");
+                    
+                    case ItemID.IT_Lionfish:
+                        return strFishBase(isIslandKnown()? "waterIslandOcean" : "waterUnknown");
+                    
+                    case ItemID.IT_BlueDiscus:
+                        return strFishBase(isIslandKnown()? "waterIslandRiver" : "waterUnknown");
+                    
+                    case ItemID.IT_SeaJelly:
+                        return strFishBase("waterOcean") + "\n"
+                             + strFishPond(ItemID.IT_Flounder, 7);
+                    
+                    case ItemID.IT_Goby:
+                        return strFishBase("waterForestFalls");
+                    
+                    /********** [Base Game Collections Tab] Artifacts **********/
+                    
+                    case ItemID.IT_ChippedAmphora:
+                        return strLocationalArtifact("locationTown");
+                    
+                    case ItemID.IT_Arrowhead:
+                        return strLocationalArtifact("locationMountains") + "\n"
+                             + strLocationalArtifact("locationForest");
+                    
+                    case ItemID.IT_ElvishJewelry:
+                        return strLocationalArtifact("locationForest") + "\n"
+                             + strFishingChest();
+                    
+                    case ItemID.IT_OrnamentalFan:
+                        return strLocationalArtifact("locationBeach") + "\n"
+                             + strLocationalArtifact("locationForest") + "\n"
+                             + strLocationalArtifact("locationTown");
+                    
+                    case ItemID.IT_RareDisc:
+                        return strDroppedByMonster("Bat") + "\n"
+                             + strDroppedByMonster("Shadow Brute") + "\n"
+                             + strDroppedByMonster("Shadow Shaman") + "\n"
+                             + strDroppedByMonster("Spider") + "\n"
+                             + strFishingChest();
+                    
+                    case ItemID.IT_RustySpoon:
+                        return strLocationalArtifact("locationTown") + "\n"
+                             + strLocationalTilling("locationMines") + "\n"
+                             + strFishingChest();
+                    
+                    case ItemID.IT_RustySpur:
+                        return strLocationalArtifact("locationFarm") + "\n"
+                             + strLocationalArtifact("locationMines") + "\n"
+                             + strFishingChest();
+                    
+                    case ItemID.IT_AncientSeedArtifact:
+                        return strLocationalArtifact("locationForest") + "\n"
+                             + strLocationalArtifact("locationMountains") + "\n"
+                             + strFishingChest(2) + "\n"
+                             + strDroppedByMonster("Bug") + "\n"
+                             + strDroppedByMonster("Grub") + "\n"
+                             + strDroppedByMonster("Fly");
+                    
+                    case ItemID.IT_PrehistoricTool:
+                        return strLocationalArtifact("locationForest") + "\n"
+                             + strLocationalArtifact("locationMountains") + "\n"
+                             + strFishingChest();
+                    
+                    case ItemID.IT_DriedStarfish:
+                        return strLocationalArtifact("locationBeach") + "\n"
+                             + strFishingChest();
+                    
+                    case ItemID.IT_Anchor:
+                        return strLocationalArtifact("locationBeach") + "\n"
+                             + strFishingChest();
+                    
+                    case ItemID.IT_PrehistoricHandaxe:
+                        return strLocationalArtifact("locationForest") + "\n"
+                             + strLocationalArtifact("locationMountains");
+                    
+                    case ItemID.IT_DwarvishHelm:
+                        return strLocationalTilling("locationMinesArea1") + "\n"
+                             + strOpenGeode(ItemID.IT_Geode, ItemID.IT_OmniGeode);
+                    
+                    case ItemID.IT_AncientDrum:
+                        return strLocationalArtifact("locationForest") + "\n"
+                             + strLocationalArtifact("locationTown") + "\n"
+                             + strOpenGeode(ItemID.IT_FrozenGeode, ItemID.IT_OmniGeode);
+                    
+                    case ItemID.IT_GoldenRelic:
+                        return strLocationalArtifact(isDesertKnown()? "locationDesert" : "locationUnknown");
+                    
+                    case ItemID.IT_StrangeDollGreen:
+                        return strLocationalArtifact("locationFarm") + "\n"
+                             + strLocationalArtifact("locationTown") + "\n"
+                             + strLocationalArtifact("locationBeach") + "\n"
+                             + strLocationalArtifact("locationForest") + "\n"
+                             + strLocationalArtifact("locationMountains") + "\n"
+                             + strFishingChest(2) + "\n"
+                             + strLocationalTilling("locationMines");
+                    
+                    case ItemID.IT_StrangeDollYellow:
+                        return strLocationalArtifact("locationFarm") + "\n"
+                             + strLocationalArtifact("locationTown") + "\n"
+                             + strLocationalArtifact("locationBeach") + "\n"
+                             + strLocationalArtifact("locationForest") + "\n"
+                             + strLocationalArtifact("locationMountains") + "\n"
+                             + strFishingChest(2) + "\n"
+                             + strLocationalTilling("locationMines");
+                    
+                    case ItemID.IT_PrehistoricScapula:
+                        return strLocationalArtifact("locationForest") + "\n"
+                             + strLocationalArtifact("locationTown") + "\n"
+                             + strDroppedByMonster("Skeleton") + "\n"
+                             + (isIslandKnown()? str.Get("boneNode") : str.Get("unknownSource"));
+                    
+                    case ItemID.IT_PrehistoricTibia:
+                        return strLocationalArtifact("locationForest") + "\n"
+                             + strDroppedByMonster("Pepper Rex") + "\n"
+                             + (isIslandKnown()? str.Get("boneNode") : str.Get("unknownSource"));
+                    
+                    case ItemID.IT_PrehistoricSkull:
+                        return strLocationalArtifact("locationMountains") + "\n"
+                             + strDroppedByMonster(monsterKey: "monsterHauntedSkull") + "\n"
+                             + (isIslandKnown()? str.Get("boneNode") : str.Get("unknownSource"));
+                    
+                    case ItemID.IT_SkeletalHand:
+                        return strLocationalArtifact("locationBeach") + "\n"
+                             + strDroppedByMonster(monsterKey: "monsterHauntedSkull") + "\n"
+                             + (isIslandKnown()? str.Get("boneNode") : str.Get("unknownSource"));
+                    
+                    case ItemID.IT_PrehistoricRib:
+                        return strLocationalArtifact("locationTown") + "\n"
+                             + strLocationalArtifact("locationFarm") + "\n"
+                             + strDroppedByMonster("Pepper Rex") + "\n"
+                             + (isIslandKnown()? str.Get("boneNode") : str.Get("unknownSource"));
+                    
+                    case ItemID.IT_PrehistoricVertebra:
+                        return strLocationalArtifact("locationBus") + "\n"
+                             + strDroppedByMonster("Pepper Rex") + "\n"
+                             + (isIslandKnown()? str.Get("boneNode") : str.Get("unknownSource"));
+                    
+                    case ItemID.IT_SkeletalTail:
+                        return strFishingChest() + "\n"
+                             + strLocationalTilling("locationMines") + "\n"
+                             + (isIslandKnown()? str.Get("boneNode") : str.Get("unknownSource"));
+                    
+                    case ItemID.IT_NautilusFossil:
+                        return strLocationalArtifact("locationBeach") + "\n"
+                             + strFishingChest() + "\n"
+                             + (isIslandKnown()? str.Get("boneNode") : str.Get("unknownSource"));
+                    
+                    case ItemID.IT_PalmFossil:
+                        return strLocationalArtifact(isDesertKnown()? "locationDesert" : "locationUnknown") + "\n"
+                             + strLocationalArtifact("locationForest") + "\n"
+                             + strLocationalArtifact("locationBeach") + "\n"
+                             + (isIslandKnown()? str.Get("boneNode") : str.Get("unknownSource"));
+                    
+                    case ItemID.IT_Trilobite:
+                        return strLocationalArtifact("locationBeach") + "\n"
+                             + strLocationalArtifact("locationForest") + "\n"
+                             + strLocationalArtifact("locationMountains") + "\n"
+                             + (isIslandKnown()? str.Get("boneNode") : str.Get("unknownSource"));
+                    
+                    /********** [Base Game Collections Tab] Minerals **********/
+                    
+                    case ItemID.IT_Bixite:
+                        return strOpenGeode(ItemID.IT_MagmaGeode, ItemID.IT_OmniGeode);
+                    
+                    case ItemID.IT_Baryte:
+                        return strOpenGeode(ItemID.IT_MagmaGeode, ItemID.IT_OmniGeode);
+                    
+                    case ItemID.IT_Dolomite:
+                        return strOpenGeode(ItemID.IT_MagmaGeode, ItemID.IT_OmniGeode) + "\n"
+                             + strFishPond(ItemID.IT_Coral, 9);
+                    
+                    case ItemID.IT_Jagoite:
+                        return strOpenGeode(ItemID.IT_Geode, ItemID.IT_OmniGeode);
+                    
+                    case ItemID.IT_Lunarite:
+                        return strOpenGeode(ItemID.IT_FrozenGeode, ItemID.IT_OmniGeode);
+                    
+                    case ItemID.IT_Malachite:
+                        return strOpenGeode(ItemID.IT_Geode, ItemID.IT_OmniGeode);
+                    
+                    case ItemID.IT_LemonStone:
+                        return strOpenGeode(ItemID.IT_MagmaGeode, ItemID.IT_OmniGeode);
+                    
+                    case ItemID.IT_Nekoite:
+                        return strOpenGeode(ItemID.IT_Geode, ItemID.IT_OmniGeode);
+                    
+                    case ItemID.IT_ThunderEgg:
+                        return strOpenGeode(ItemID.IT_Geode, ItemID.IT_OmniGeode);
+                    
+                    case ItemID.IT_Pyrite:
+                        return strOpenGeode(ItemID.IT_FrozenGeode, ItemID.IT_OmniGeode);
+                    
+                    case ItemID.IT_Tigerseye:
+                        return strOpenGeode(ItemID.IT_MagmaGeode, ItemID.IT_OmniGeode);
+                    
+                    case ItemID.IT_Jasper:
+                        return strOpenGeode(ItemID.IT_MagmaGeode, ItemID.IT_OmniGeode);
+                    
+                    case ItemID.IT_Marble:
+                        return strOpenGeode(ItemID.IT_FrozenGeode, ItemID.IT_OmniGeode);
+                    
+                    case ItemID.IT_Basalt:
+                        return strOpenGeode(ItemID.IT_MagmaGeode, ItemID.IT_OmniGeode);
+                    
+                    case ItemID.IT_Hematite:
+                        return strOpenGeode(ItemID.IT_FrozenGeode, ItemID.IT_OmniGeode);
+                    
+                    case ItemID.IT_Obsidian:
+                        return strOpenGeode(ItemID.IT_MagmaGeode, ItemID.IT_OmniGeode);
+                    
+                    /********** [Base Game Collections Tab] Cooking **********/
+                    
+                    case ItemID.IT_LuckyLunch:
+                        return strCookRecipe("Lucky Lunch") + "\n"
+                             + strBuyFromRandom("shopSaloon") + "\n"
+                             + strBuyFromKrobusWeekday("saturday");
+                    
+                    case ItemID.IT_CarpSurprise:
+                        return strCookRecipe("Carp Surprise") + "\n"
+                             + strBuyFromRandom("shopSaloon") + "\n"
+                             + strBuyFromKrobusWeekday("saturday");
+                    
+                    case ItemID.IT_RhubarbPie:
+                        return strCookRecipe("Rhubarb Pie") + "\n"
+                             + strBuyFromRandom("shopSaloon") + "\n"
+                             + strBuyFromKrobusWeekday("saturday");
+                    
+                    case ItemID.IT_FarmersLunch:
+                        return strCookRecipe("Farmer's Lunch") + "\n"
+                             + strBuyFromKrobusWeekday("saturday");
+                    
+                    case ItemID.IT_DishOTheSea:
+                        return strCookRecipe("Dish o' The Sea") + "\n"
+                             + strBuyFromKrobusWeekday("saturday");
+                    
+                    case ItemID.IT_FiddleheadRisotto:
+                        return strCookRecipe("Fiddlehead Risotto");
+                    
+                    case ItemID.IT_GingerAle:
+                        return strCookRecipe("Ginger Ale");
+                    
+                    case ItemID.IT_BananaPudding:
+                        return strCookRecipe("Banana Pudding");
+                    
+                    case ItemID.IT_MangoStickyRice:
+                        return strCookRecipe("Mango Sticky Rice");
+                    
+                    case ItemID.IT_Poi:
+                        return strCookRecipe("Poi");
+                    
+                    case ItemID.IT_TropicalCurry:
+                        return strCookRecipe("Tropical Curry");
                     
                     /********** Additional/Orphaned Base Game Item Hints **********/
                     
@@ -3182,7 +3553,7 @@ namespace CommunityCenterHelper
                 string machineName = getBigCraftableName(machineID, true);
                 bool canMakeMachine = Game1.MasterPlayer.craftingRecipes.ContainsKey(machineName);
                 
-                if (!canMakeMachine)
+                if (!canMakeMachine && machineID != ItemID.BC_StatueOfPerfection)
                 {
                     machineUnlockTip = getCraftingRecipeSources(machineName);
                     if (machineUnlockTip != "")
@@ -3230,9 +3601,10 @@ namespace CommunityCenterHelper
                         locationKey = "monsterAreaMinesAndSkull"; break;
                     case "monsterGeneralBat":
                     case "monsterGeneralAnyInMines":
+                    case "monsterHauntedSkull":
                         locationKey = "monsterAreaMinesAll"; break;
                     case "monsterPurpleSlime":
-                        locationKey = "monsterAreaSkull"; break;
+                        locationKey = "monsterAreaSkull"; skullReq = true; break;
                 }
             }
             else
@@ -3241,9 +3613,6 @@ namespace CommunityCenterHelper
                 {
                     case "Green Slime":
                         locationKey = "monsterAreaMinesAndSkull";
-                        break;
-                    case "Haunted Skull":
-                        locationKey = "monsterAreaMinesAll";
                         break;
                     case "Bug":
                     case "Fly":
@@ -3330,6 +3699,7 @@ namespace CommunityCenterHelper
                         skullReq = true;
                         locationKey = "monsterAreaSkullMummy";
                         break;
+                    case "Tiger Slime":
                     case "Lava Lurk":
                     case "Hot Head":
                     case "Spider":
@@ -3398,7 +3768,8 @@ namespace CommunityCenterHelper
                 tapperUnlockTip = levelRequirementString("foraging", 3);
             
             string tapperStr = getBigCraftableName(ItemID.BC_Tapper) + tapperUnlockTip;
-            string treeStr = treeSeed != ""? str.Get(treeKey) + parenthesize(str.Get("treeDescNonFruit", new { treeSeed = treeSeed }))
+            string treeStr = treeKey == "treeMystic"? str.Get(treeKey, new { craftingInfo = strCraftRecipe("Mystic Tree Seed") })
+                           : treeSeed != ""? str.Get(treeKey) + parenthesize(str.Get("treeDescNonFruit", new { treeSeed = treeSeed }))
                                            : str.Get(treeKey);
             return str.Get("tapTree", new { tapper = tapperStr, tree = treeStr });
         }
@@ -3495,6 +3866,14 @@ namespace CommunityCenterHelper
         {
             return str.Get("buyFrom", new { shop = shopLiteral != ""? shopLiteral : str.Get(shopKey) });
         }
+
+        /// <summary>Suggestion to buy from a shop that only randomly has the item available.</summary>
+        /// <param name="shopKey">String key for shop (shopX).</param>
+        /// <param name="shopLiteral">Override for preformatted text (usually used with multiKey).</param>
+        private static string strBuyFromRandom(string shopKey = "", string shopLiteral = "")
+        {
+            return strBuyFrom(shopKey, shopLiteral) + parenthesize(str.Get("randomlyAvailable"));
+        }
         
         /// <summary>Suggestion to buy from Dwarf, or an unknown shop if not yet known.</summary>
         private static string strBuyFromDwarf()
@@ -3509,10 +3888,11 @@ namespace CommunityCenterHelper
                                                  + (!Game1.player.hasRustyKey? parenthesize(str.Get("sewerRequirement")) : "") });
         }
         
-        /// <summary>Suggestion to buy from Krobus on a certain day, or an unknown shop if not yet known.</summary>
+        /// <summary>Suggestion to buy from Krobus on a certain day, or an unknown shop if not yet known. Auto-appends "(random)" for Saturday's cooked dishes.</summary>
         private static string strBuyFromKrobusWeekday(string dayKey)
         {
             return str.Get("buyFrom", new { shop = (isSewerKnown()? str.Get("shopKrobusWeekday", new { day = str.Get(dayKey) })
+                                                                 + (dayKey == "saturday"? parenthesize(str.Get("randomlyAvailable")) : "")
                                                                   : str.Get("shopUnknown"))
                                                  + (!Game1.player.hasRustyKey? parenthesize(str.Get("sewerRequirement")) : "") });
         }
@@ -3636,7 +4016,19 @@ namespace CommunityCenterHelper
                 if (internalName)
                     return Game1.objectData[id].Name;
                 else
+                {
+                    // Override item name for generic Dried and Smoked items.
+                    switch (id)
+                    {
+                        case ItemID.IT_DriedFruit:
+                            return Game1.content.LoadString("Strings\\Objects:DriedFruit_CollectionsTabName");
+                        case ItemID.IT_DriedMushrooms:
+                            return Game1.content.LoadString("Strings\\Objects:DriedMushrooms_CollectionsTabName");
+                        case ItemID.IT_SmokedFish:
+                            return Game1.content.LoadString("Strings\\Objects:SmokedFish_CollectionsTabName");
+                    }
                     return TokenParser.ParseText(Game1.objectData[id].DisplayName);
+                }
             }
             
             return internalName? "" : "[Item " + id + "]";
@@ -3815,7 +4207,7 @@ namespace CommunityCenterHelper
                     string skillName = dataZero.Equals("s")? data[1].ToLower() : dataZero;
                     if (int.TryParse(dataZero.Equals("s")? data[2] : data[1], out value))
                         if (value >= 1 && !skillName.Equals("luck")) // Ignore if inconsequential or Luck skill
-                            recipeSources = str.Get(skillName + "LvRequirement", new { num = value });
+                            recipeSources = str.Get("skillLvRequirement", new { skill = str.Get(skillName + "Skill"), num = value });
                     break;
                 case "l": // Total Skill Level (l Lv#), combined total divided by two
                     if (int.TryParse(data[1], out value))
@@ -3825,7 +4217,10 @@ namespace CommunityCenterHelper
                     break;
                 case "f": // Friendship (f PersonName Heart#)
                     if (int.TryParse(data[2], out value))
-                        recipeSources = str.Get("recipeSourceFriendship", new { person = getPersonName(data[1]), hearts = value });
+                    {
+                        if (data[1] != "Leo" || isIslandKnown()) // Don't mention Leo before island is known
+                            recipeSources = str.Get("recipeSourceFriendship", new { person = getPersonName(data[1]), hearts = value });
+                    }
                     break;
             }
             
@@ -4056,6 +4451,10 @@ namespace CommunityCenterHelper
                                                          new { person = getPersonName("Robin"), hearts = 6 });
                     break;
                 
+                case "Mystic Tree Seed":
+                    recipeSources += separator + str.Get("skillMastery", new { skill = str.Get("foragingSkill") });
+                    break;
+                
                 // Cooking Recipes
                 case "Hashbrowns":
                 case "Omelet":
@@ -4071,6 +4470,21 @@ namespace CommunityCenterHelper
                 case "Cookies":
                     recipeSources += separator + str.Get("recipeSourceHeartEvent",
                                                          new { person = getPersonName("Evelyn"), hearts = 4 });
+                    break;
+                
+                case "Banana Pudding":
+                    if (isIslandKnown())
+                        recipeSources += separator + str.Get("shopIslandTrader");
+                    break;
+                    
+                case "Tropical Curry":
+                    if (isIslandKnown())
+                        recipeSources += separator + str.Get("shopIslandResort");
+                    break;
+                
+                case "Ginger Ale":
+                    if (isVolcanoKnown())
+                        recipeSources += separator + str.Get("shopDwarfVolcano");
                     break;
                 
                 // PPJA Cooking Recipes
@@ -4218,7 +4632,7 @@ namespace CommunityCenterHelper
                 friendReq = str.Get("mailConditionFriendship", new { person = getPersonName(person), hearts = hearts });
             
             if (skill != "")
-                skillReq = str.Get(skill + "LvRequirement", new { num = level });
+                skillReq = str.Get("skillLvRequirement", new { skill = str.Get(skill + "Skill"), num = level });
             
             // Return string combining the requirements depending on which are specified.
             if (time != "" && friendReq != "" && skillReq != "")
@@ -4298,7 +4712,7 @@ namespace CommunityCenterHelper
         /// <param name="level">The level required.</param>
         private static string levelRequirementString(string skillName, int level)
         {
-            return parenthesize(str.Get(skillName + "LvRequirement", new { num = level }));
+            return parenthesize(str.Get("skillLvRequirement", new { skill = str.Get(skillName + "Skill"), num = level }));
         }
         
         /// <summary>Returns a string with parentheses (and preceding space) put around it.</summary>
