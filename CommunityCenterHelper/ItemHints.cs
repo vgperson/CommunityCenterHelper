@@ -323,7 +323,7 @@ namespace CommunityCenterHelper
                                            weatherKey: "weatherRain");
                     
                     case ItemID.IT_Bream:
-                        return strFishBase("waterRivers");
+                        return strFishBase("waterRivers", "6pm", "2am");
                     
                     case ItemID.IT_Eel:
                         return strFishBase("waterOcean", "4pm", "2am", seasonList: new string[] { "spring", "fall" },
