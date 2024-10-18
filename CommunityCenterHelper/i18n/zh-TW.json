@@ -1,0 +1,415 @@
+{
+	/***** Suggestions *****/
+	
+	// Crops
+	"seasonalCrop": "在{{season}}種植從{{seedShop}}處買入的種子{{startingYear}}{{qualityCrop}}",
+	"growSeeds": "種植{{seeds}}{{qualityCrop}}",
+	"startingYear": "（第 {{num}} 年開始販售）", // included if seeds only become available starting a certain year
+	"qualityCrop": "（需要肥料）", // included if higher quality is required
+	
+	// Foraging
+	"seasonalForage": "可於{{season}}時採集到",
+	"locationalForage": "可於{{location}}中採集到",
+	"seasonalLocationalForage": "可於{{season}}的{{location}}中採集到",
+	"salmonberryForage": "可於春季 15~18 日從灌木叢上採集到",
+	
+	// illing
+	"generalTilling": "鋤地",
+	"seasonalTilling": "在{{season}}時鋤地",
+	"locationalTilling": "在{{location}}中鋤地",
+	"artifactDigging": "鋤開挖掘點 (\"蚯蚓\")",
+	"locationalArtifact": "鋤開{{location}}中的挖掘點",
+	
+	// Mining
+	"hitRocks": "使用{{pickaxe}}敲碎岩石",
+	"hitRocksInLocation": "在{{location}}敲碎岩石",
+	
+	// Fishing
+	"fishBase": "可在{{water}}、{{extraLinebreak}}{{time}}{{weather}}，{{season}}中釣到",
+	// {{extraLinebreak}} is a linebreak inserted for some fish with long location descriptions, {{weather}} is left blank if no particular weather is required
+	"weatherSun": "（晴天）", // included if only available in sunny weather
+	"weatherRain": "（僅限雨天）", // included if only available in rain
+	"fishSubmarine": "在夜市的釣魚潛艇內釣出（冬季 15-17 日間）",
+	"fishingChest": "釣魚寶箱",
+	"crabPot": "使用{{crabPot}}捕獲（{{waterType}}）",
+	
+	// Animal Products
+	"animalProduct": "由{{animal}}{{details}}產出",
+	"inGoodMood": "（心情值足夠時）", // included if a certain level of happiness is required to produce the item
+	"animalOutside": "（讓動物外出時）", // included if animal must be outside to produce it
+	
+	// Machines
+	"putItemInMachine": "將{{rawItem}}放入{{machine}}中加工",
+	"machineItemQuantity": "{{item}} x {{num}} ", // used for {{rawItem}} above if more than 1 of item is required
+	"putItemInMachineThenCask": "將{{rawItem}}放入{{machine}}加工，完成後再將{{resultItem}}放入{{cask}}中釀造",
+	"noItemMachine": "由{{machine}}產出",
+	
+	// Constructions
+	"putItemInMill": "將{{rawItem}}放進磨坊中",
+	"fishPond": "當魚池內有 {{num}} 條{{fish}}時產出",
+	"fishPondAny": "當魚池內有任意魚類時產出",
+	
+	// Monsters
+	"droppedByMonster": "{{monster}}掉落",
+	
+	// Trees
+	"treeDuringSeason": "{{tree}}在{{season}}期間會結果",
+	"tapTree": "將{{tapper}}放置於{{tree}}上",
+	"seedFromTree": "搖晃/砍倒{{tree}}",
+	"treeMoss": "在苔樹上隨機找到",
+	
+	// Crafting/Cooking
+	"craftRecipeByName": "合成{{recipe}}",
+	"craftRecipe": "合成",
+	"cookRecipe": "烹飪",
+	
+	// From Geodes
+	"openGeode": "在鐵匠鋪破開{{geode}}",
+	"openAnyGeode": "在鐵匠鋪破開任意晶球",
+	
+	// Panning
+	"panning": "淘金",
+	
+	// Ore Through Mining
+	"mineCopperOre": "採集銅礦（礦井 31~39 層較多）",
+	"mineIronOre": "採集鐵礦（礦井 41 層以上，其中 71-79 層較多）",
+	"mineGoldOre": "採集金礦（礦井 81 層以上）",
+	"mineIridiumOre": "採集神秘礦石（礦坑 101 層以上）、隕石（罕見事件）",
+	"mineRadioactiveOre": "採集放射性礦（當礦井處於危險階段時）",
+	
+	// Gems Through Mining
+	"gemEmerald": "採集綠寶石礦（礦井 81 層以上）、寶石礦",
+	"gemAquamarine": "採集海藍寶石礦（礦井 41 層以上）、寶石礦",
+	"gemRuby": "採集紅寶石（礦井 81 層以上）、寶石礦",
+	"gemAmethyst": "採集紫水晶、寶石礦",
+	"gemTopaz": "採集黃玉、寶石礦",
+	"gemJade": "採集翡翠礦（礦井 41 層以上）、寶石礦",
+	"gemDiamond": "採集鑽石礦（礦井 51 層以上）, 寶石礦",
+	"gemPrismaticShard": "採集寶石礦、神秘礦石（礦井 101 層以上，機率 25%）、銥礦（機率 4%）",
+	"gemCinderShard": "採集火山晶石礦（火山）",
+	"boneNode": "採集骨頭礦（薑之島挖掘場）",
+	
+	// Farm Cave
+	"caveYours": "可在農場的山洞中找到", // once cave type has been chosen, the other type is disregarded and this is used
+	"caveFruitBats": "可在農場山洞中找到（果蝠洞穴）", // if spoilers are allowed, cave type is specified until player selects type
+	"caveMushrooms": "可在農場山洞中找到（蘑菇山洞）", // if spoilers are allowed, cave type is specified until player selects type
+	
+	// Buying
+	"buyFrom": "可在{{shop}}處購買",
+	
+	// General Actions
+	"chopWood": "使用{{axe}}砍伐樹木和樹枝獲得",
+	"chopHardwood": "使用{{copperAxe}}砍伐大樹樁，或使用{{steelAxe}}砍伐大圓木獲得",
+	"chopTrees": "使用{{axe}}砍伐樹木",
+	"smashCrates": "破壞箱子中的木箱",
+	"clearWeeds": "破壞雜草",
+	"harvestHay": "收穫草或{{wheat}}",
+	"trash": "釣魚、蟹籠可獲得垃圾、垃圾桶中也可找到垃圾",
+	"trashCan": "垃圾來自於垃圾桶",
+	"prizeTicket": "完成一般任務及特別任務板後獲得的獎勵",
+	
+	// Miscellaneous Sources
+	"luckyShorts": "瑪妮的房間（在夏季第 3 日接獲『鎮長的「短褲」任務』後）",
+	"goldenPumpkin": "萬靈節迷宮（秋季第 27 日）",
+	"mermaidPearl": "夜市（冬季第 15~17 日）的美人魚船{{hint}}",
+	"mermaidHint": "（1-5-4-2-3）", // included as hint for how to get the mermaid's pearl, if spoilers are allowed or secret note read
+	"winCraneGame": "在電影院的抓娃娃機遊戲中獲勝",
+	"voidEggEvent": "女巫隨機事件",
+	"mysteryBoxesLocked": "尚未解鎖（必須先在每日結算事件中，該物品被空投後才能獲得）",
+	"foxbloom": "Appears in Ridge Forest on random Sunday each season\n(Weather must be sunny and Relic Fox Mask equipped）", // RSV
+	
+	// Concealed Source (for when entire suggestion is a spoiler)
+	"unknownSource": "？？？",
+	
+	/***** Short Hints *****/
+	
+	"shortHintSeasonalCrop": "{{season}}農作物",
+	"shortHintSeasonalCropStartingYear": "第 {{year}}+ 年{{season}}農作物",
+	"shortHintSeasonalSeed": "{{season}}種子",
+	"shortHintMachine": "{{machine}}加工{{item}}",
+	"shortHintTrash": "垃圾",
+	"shortHintFishPond": "魚池",
+	"shortHintFiber": "雜草",
+	"shortHintHay": "草/{{wheat}}",
+	
+	/***** Partial Strings *****/
+	
+	// General Formatting
+	"parenthesized": "（{{text}}）", // general form for appending descriptive text after a thing
+	"multipleThingSeparator": "/", // general separator for lists of multiple seasons, locations, etc.
+	
+	// Season Names
+	"spring": "春季",
+	"summer": "夏季",
+	"fall": "秋季",
+	"winter": "冬季",
+	"allSeasons": "任意季節",
+	
+	// Location Names (for foraging suggestions)
+	"locationFarm": "農場",
+	"locationTown": "鵜鶘鎮",
+	"locationMines": "礦井",
+	"locationMinesArea1": "礦井 1-39 層",
+	"locationMinesArea2": "礦井 41-79 層",
+	"locationMinesArea3": "礦井 81-119 層",
+	"locationMines21Plus": "礦井 21 層以上",
+	"locationMountains": "深山",
+	"locationBeach": "沙灘",
+	"locationBeachEast": "沙灘（右方）",
+	"locationBeachEastInaccessible": "沙灘右方（需要先使用 300 塊{{wood}}修復小橋）", // tip displayed if bridge is not fixed
+	"locationForest": "煤礦森林",
+	"locationBus": "巴士站",
+	"locationWoods": "秘密森林",
+	"locationSewer": "下水道",
+	"locationDesert": "卡利科沙漠",
+	"locationSkullPrehistoric": "骷髏洞穴的史前層",
+	"locationIsland": "薑之島",
+	"locationVolcano": "火山",
+	"locationRidgeForest": "in Ridge Forest", // RSV
+	"locationUnknown": "？？？",
+	
+	// Water Locations (for fishing suggestions)
+	"waterRivers": "河流", // Town river or Cindersap Forest river
+	"waterOcean": "海洋",
+	"waterTown": "小鎮河流",
+	"waterMountain": "深山湖泊",
+	"waterForestPond": "煤礦森林湖泊",
+	"waterForestRiver": "煤礦森林河流",
+	"waterForestFalls": "煤礦森林的瀑布底部",
+	"waterSpecialFarm": "農場",
+	"waterWoods": "秘密森林湖泊",
+	"waterDesert": "沙漠池塘",
+	"waterSewer": "下水道",
+	"waterBugLand": "突變蟲穴",
+	"waterMines": "礦井第 20/60/100 層",
+	"waterMines20": "礦井第 20 層",
+	"waterMines60": "礦井第 60 層",
+	"waterMines100": "礦井第 100 層",
+	"waterSwamp": "巫婆沼澤",
+	"waterIsland": "薑之島",
+	"waterIslandRiver": "薑之島河流",
+	"waterIslandOcean": "薑之島海洋",
+	"waterIslandOceanWest": "薑之島海洋（西部）",
+	"waterIslandCove": "海盜灣",
+	"waterAnglerSpot": "小鎮河流的最北端",
+	"waterCrimsonfishSpot": "沙灘西部的海岸/碼頭邊",
+	"waterGlacierfishSpot": "煤礦森林中心小島的最南端處",
+	"waterLegendSpot": "環繞深山的湖泊",
+	"waterBlueMoonVineyard": "at Blue Moon Vineyard", // SVE
+	"waterShearwaterBridge": "at Shearwater Bridge", // SVE
+	"waterForestWest": "煤礦森林（西部）", // SVE
+	"waterAdventurerSummit": "at Adventurer Summit", // SVE
+	"waterRidgesideRiver": "in Ridgeside Village river", // RSV
+	"waterRidge": "on the Ridge", // RSV
+	"waterRidgeForest": "in Ridge Forest", // RSV
+	"waterRidgeFalls": "at Ridge Falls", // RSV
+	"waterUnknown": "？？？",
+	
+	// Water Types (for crab pot suggestions)
+	"waterTypeOcean": "海洋",
+	"waterTypeFresh": "淡水",
+	
+	// Shop Names (for buying suggestions)
+	"shopPierre": "皮耶爾的雜貨店",
+	"shopPierreSeason": "{{season}}時皮耶爾的雜貨店{{startingYear}}",
+	"shopJoja": "Joja 超市",
+	"shopMarnie": "瑪妮的牧場",
+	"shopCarpenter": "木匠的商店",
+	"shopBlacksmith": "鐵匠鋪",
+	"shopSaloon": "星之果實酒吧",
+	"shopClinic": "哈維的診所",
+	"shopFish": "魚店",
+	"shopGuild": "探險家公會",
+	"shopDwarf": "矮人",
+	"shopKrobus": "柯洛布斯",
+	"shopKrobusWeekday": "柯洛布斯（{{day}}）",
+	"shopDesertTrader": "沙漠商人",
+	"shopOasis": "綠洲",
+	"shopOasisWeekday": "綠洲（{{day}}）",
+	"shopIslandTrader": "薑之島商人",
+	"shopIslandResort": "Island Resort",
+	"shopDwarfVolcano": "火山矮人",
+	"shopTravelingCartRandom": "旅行貨車（隨機出現）",
+	"shopTravelingCartSeason": "{{season}}時的旅行貨車",
+	"shopEggFestival": "彩蛋節中皮耶爾的貨攤（春季 13 日）",
+	"shopFlowerDance": "花舞節中皮耶爾的貨攤（春季 24 日）",
+	"shopSpiritsEve": "萬靈節中皮耶爾的貨攤（秋季 27 日）",
+	"shopSophiaLedger": "Sophia's ledger", // SVE
+	"shopWestForestBear": "Forest West bear", // SVE
+	"shopNightingaleOrchard": "Nightingale Orchard", // RSV
+	"shopHotelPastry": "Hotel Pastry Shop", // RSV
+	"shopPikaRestaurant": "Pika's Restaurant", // RSV
+	"shopUnknown": "？？？",
+	"randomlyAvailable": "隨機", // appended in parentheses after shop name when item is only randomly in stock
+	"mustHaveShipped": "出貨 {{item}}", // appended in parentheses after shop name if you have to have shipped a certain other item
+	"sewerRequirement": "需先捐獻 60 件物品給博物館", // appended in parentheses after Krobus's shop name if sewer is not yet accessible
+	
+	// Item Categories (for when any item from a category is allowed as machine input or recipe ingredient)
+	"itemCategoryGem": "任意寶石",
+	"itemCategoryFish": "任意魚類",
+	"itemCategoryEgg": "任意蛋類",
+	"itemCategoryMilk": "任意奶類",
+	"itemCategoryMineral": "任意礦物",
+	"itemCategoryJunk": "任意垃圾",
+	"itemCategorySeed": "任意種子",
+	"itemCategoryVegetable": "任意蔬菜",
+	"itemCategoryFruit": "任意水果",
+	"itemCategoryFlower": "任意花朵",
+	"itemCategoryWildSeed": "任意野生種子", // category -777; not defined as a constant, but used for Tea Sapling recipe
+	"itemCategoryNut": "any nut", // not a category strictly defined by base game, but used to summarize machine input
+	"itemCategoryMushroom": "任意蘑菇", // not a category strictly defined by base game, but used to summarize machine input
+	
+	// Tree Names (for tree suggestions)
+	"treeApple": "蘋果樹",
+	"treeApricot": "杏桃樹",
+	"treeOrange": "柳橙樹",
+	"treePeach": "桃子樹",
+	"treePomegranate": "石榴樹",
+	"treeCherry": "櫻桃樹",
+	"treeMahogany": "桃花心樹",
+	"treeBanana": "香蕉樹",
+	"treeMango": "芒果樹",
+	"treeLime": "Lime Tree", // Cornucopia
+	"treePapaya": "木瓜樹", // Cornucopia
+	"treeWalnut": "胡桃樹", // Cornucopia
+	"treePersimmon": "柿子樹", // Cornucopia
+	"treeEucalyptus": "桉樹", // Cornucopia
+	"treeGranny": "Granny Smith Tree", // PPJA More Trees
+	"treeAvocado": "酪梨樹", // Cornucopia
+	"treeCocoaPod": "可可豆莢樹", // Cornucopia
+	"treePear": "梨子樹", // Cornucopia
+	"treeCherryPluot": "Cherry Pluot Tree", // RSV
+	"treeMountainPlumcot": "Mountain Plumcot Tree", // RSV
+	"treeDesertTangelo": "Desert Tangelo Tree", // RSV
+	"treeTropiUgliFruit": "Tropi Ugli Fruit Tree", // RSV
+	"treeParadiseRangpur": "Paradise Rangpur Tree", // RSV
+	"treeEmberBloomLime": "Ember Blood Lime Tree", // RSV
+	"treeMaple": "楓樹",
+	"treeOak": "橡樹",
+	"treePine": "松樹",
+	"treeMystic": "神秘樹（{{craftingInfo}}）",
+	"treeMushroom": "蘑菇樹（秋季的罕見事件）",
+	"treeDescSeedling": "樹苗來自{{shop}}{{startingYear}}", // advice for fruit trees
+	"treeDescNonFruit": "{{treeSeed}}已經種植及生長在農場中", // advice for Maple/Oak/Pine trees
+	
+	// General Monster Names (most monster names are taken from data, so these are either categories of monster or specific colors/etc.)
+	"monsterGeneralAnyInMines": "大多數怪物",
+	"monsterGeneralSlime": "史萊姆類怪物",
+	"monsterGeneralBat": "蝙蝠類怪物",
+	"monsterGeneralBug": "蟲類怪物",
+	"monsterBlueSlime": "藍色史萊姆",
+	"monsterRedSlime": "紅色史萊姆",
+	"monsterPurpleSlime": "紫色史萊姆",
+	"monsterBRPCISlime": "藍色/紅色/紫色/銅/鐵史萊姆",
+	"monsterHauntedSkull": "幽靈頭骨",
+	"monsterRidgeForest": "Ridge Forest monsters", // RSV
+	"monsterUnknown": "？？？",
+	
+	// Monster Locations (appended after monster names)
+	"monsterAreaMinesAll": "礦井",
+	"monsterAreaMinesAndSkull": "礦井、骷髏洞穴",
+	"monsterAreaMinesRange": "礦井 {{start}}~{{end}} 層",
+	"monsterAreaSkull": "骷髏洞穴",
+	"monsterAreaSkullFloorPlus": "骷髏洞穴 {{start}}+ 層",
+	"monsterAreaSkullPrehistoric": "骷髏洞穴的史前層",
+	"monsterAreaSkullMummy": "骷髏洞穴的木乃伊層",
+	"monsterAreaVolcano": "火山",
+	"monsterAreaUnknown": "？？？",
+	
+	// Animal Names (for animal product suggestions)
+	"animalCow": "牛",
+	"animalChicken": "雞",
+	"animalVoidChicken": "虛空雞",
+	"animalGoat": "山羊",
+	"animalSheep": "綿羊",
+	"animalRabbit": "兔子",
+	"animalDuck": "鴨子",
+	"animalPig": "豬",
+	"animalOstrich": "鴕鳥",
+	
+	// Animal Building Requirements (advice on how to obtain animals, if not currently available to purchase)
+	"animalReqCoopLv1": "需要雞舍",
+	"animalReqCoopLv2": "需要大雞舍",
+	"animalReqCoopLv3": "需要高級雞舍",
+	"animalReqBarnLv1": "需要畜棚",
+	"animalReqBarnLv2": "需要大畜棚",
+	"animalReqBarnLv3": "需要高級畜棚",
+	
+	// Recipe Help
+	"recipeTipHouseUpgrade": "需要先升級農舍", // displayed for cooking recipes if cooking is not yet available
+	"recipeFrom": "配方：{{sources}}",
+	"recipeSourceSeparator": " / ",
+	
+	// Recipe Sources (compiled into list for recipeFrom)
+	"recipeSourceSaloon": "星之果實酒吧",
+	"recipeSourceTV": "電視（{{date}}）",
+	"recipeSourceTVAlreadyAired": "電視（星期三重播或{{date}}）",
+	"recipeSourceFriendship": "與{{person}}的好感度達到 {{hearts}}+", // sent in mail or available for purchase when you have enough hearts
+	"recipeSourceHeartEvent": "與{{person}}的 {{hearts}} 好感度事件", // received from heart event specifically
+	"recipeSourceFirstCopper": "獲得{{copperOre}}",
+	"recipeSourceAfterGreenhouse": "修復溫室",
+	"recipeSourceFinalFarmhouse": "農舍升級完畢",
+	"recipeSourceAncientSeed": "將{{seedArtifact}}捐獻給博物館",
+	"recipeSourceRarecrows": "收集所有稀有稻草人",
+	
+	// Recipe Ingredient Lists (for learned recipes)
+	"recipeIngredientSingle": "{{ingredient}}", // for ingredient x1
+	"recipeIngredientMultiple": "{{ingredient}} x{{num}}", // for ingredient x2 or more
+	"recipeIngredientSeparator": ", ",
+	
+	// Skill Level Requirements
+	"skillLvRequirement": "{{skill}} Lv. {{num}}",
+	"totalSkillLvRequirement": "技能總數 Lv. {{num}}",
+	"skillMastery": "{{skill}}精通",
+	"farmingSkill": "耕種",
+	"miningSkill": "採礦",
+	"fishingSkill": "釣魚",
+	"foragingSkill": "採集",
+	"combatSkill": "戰鬥",
+	
+	// Machine Sources
+	"statueOfPerfectionTip": "爺爺的完美評價", // advice for statue if you haven't had evaluation or achieved 4 candles
+	"statueOfPerfectionAvailable": "爺爺的神龕", // advice for statue if you've unlocked it, but haven't collected it
+	
+	// Conditional Mail
+	"conditionalMailAll": "{{time}} 且{{friendReq}} & {{skillReq}}後收到",
+	"conditionalMailTimeFriend": "{{time}} 且 {{friendReq}}後收到",
+	"conditionalMailTimeSkill": "{{time}} 且 {{skillReq}}後收到",
+	"conditionalMailFriendSkill": "{{friendReq}} & {{skillReq}}後收到",
+	"conditionalMailSpecialOrder": "完成特別任務「{{orderName}}」後收到",
+	"mailConditionFriendship": "與{{person}}好感度 {{hearts}}",
+	
+	// Times (for fishing)
+	"timeAM": "上午 {{hour}} 點",
+	"timePM": "下午 {{hour}} 點",
+	"time24Hour": "{{hour}}：00",
+	"timeRange": "{{start}}~{{end}}",
+	"anyTime": "任意時間",
+	
+	// Days of the Week (for daily shop stocks)
+	"monday": "星期一",
+	"tuesday": "星期二",
+	"wednesday": "星期三",
+	"thursday": "星期四",
+	"friday": "星期五",
+	"saturday": "星期六",
+	"sunday": "星期日",
+	
+	// Dates (for things that happen on or after specific date/season/year)
+	"specificDate": "第 {{year}} 年{{season}}的第 {{day}} 年",
+	"generalDate": "{{season}} {{day}}",
+	"yearSeason": "第 {{year}} 年{{season}}",
+	"year": "第 {{year}} 年",
+	"today": "今日", // when Queen of Sauce episode is airing that very day
+	
+	/***** Mod Config Menu Text *****/
+	
+	"optionShowSpoilersName": "顯示劇透內容",
+	"optionShowSpoilersTooltip": "提示內容是否要包含尚未遇到的遊戲內容",
+	
+	"optionCollectionsTabName": "收集品頁面提示",
+	"optionCollectionsTabTooltip": "額外於收集品頁面中顯示如何取得物品的提示。對於「所有物品」的設定，點擊/動作鍵/工具按鈕可切換顯示。(不保證能正常顯示來自其他模組的物品的提示)",
+	"collectionsTabOff": "關閉",
+	"collectionsTabUnknowns": "僅限於尚未獲得的物品",
+	"collectionsTabAll": "所有物品",
+}
