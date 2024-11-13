@@ -3930,11 +3930,9 @@ namespace CommunityCenterHelper
         /// <summary>Suggestion to chop stumps and logs with upgraded axe for hardwood.</summary>
         private static string strChopHardwood()
         {
-            string axe = TokenParser.ParseText(DataLoader.Tools(Game1.content)["Axe"].DisplayName); // Axe tool name
-            string copperTool = Game1.content.LoadString("Strings\\StringsFromCSFiles:Tool.cs.14299"); // "Copper {0}" string
-            string steelTool = Game1.content.LoadString("Strings\\StringsFromCSFiles:Tool.cs.14300"); // "Steel {0}" string
-            return str.Get("chopHardwood", new { copperAxe = string.Format(copperTool, axe),
-                                                 steelAxe = string.Format(steelTool, axe) });
+            string copperAxe = Game1.content.LoadString("Strings\\Tools:Axe_Copper_Name");
+            string steelAxe = Game1.content.LoadString("Strings\\Tools:Axe_Steel_Name");
+            return str.Get("chopHardwood", new { copperAxe = copperAxe, steelAxe = steelAxe });
         }
         
         /// <summary>Suggestion to chop trees with axe.</summary>
@@ -4107,7 +4105,7 @@ namespace CommunityCenterHelper
         private static string getFishRoeName(string id)
         {
             string fish = getItemName(id); // Fish name
-            string fishRoe = Game1.content.LoadString("Strings\\StringsFromCSFiles:Roe_DisplayName"); // "{0} Roe" string
+            string fishRoe = Game1.content.LoadString("Strings\\Objects:Roe_Flavored_Name"); // "{0} Roe" string
             return string.Format(fishRoe, fish);
         }
         
