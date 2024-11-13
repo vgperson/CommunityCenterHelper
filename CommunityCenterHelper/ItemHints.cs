@@ -21,7 +21,8 @@ namespace CommunityCenterHelper
         /// <param name="id">The item ID.</param>
         /// <param name="quality">Minimum required quality of item.</param>
         /// <param name="category">The item category, for items that accept anything in the category.</param>
-        public static string getHintText(string id, int quality, int? category = 0)
+        /// <param name="preservesID">The ID of the base item for artisan goods.</param>
+        public static string getHintText(string id, int quality, int? category = 0, string preservesID = null)
         {
             try
             {
@@ -115,7 +116,9 @@ namespace CommunityCenterHelper
                              + strBuyFromOasisWeekday("friday");
                     
                     case ItemID.IT_Jelly:
-                        return strPutItemInMachine(StardewValley.Object.FruitsCategory.ToString(), ItemID.BC_PreservesJar);
+                        return strPutItemInMachine(preservesID == null? StardewValley.Object.FruitsCategory.ToString() : preservesID,
+                                                   ItemID.BC_PreservesJar)
+                             + (preservesID != null? "\n" + parenthesize(getHintText(preservesID, 0)) : "");
                     
                     case ItemID.IT_Apple:
                         return strFruitTreeDuringSeason("treeApple", "fall")
@@ -607,7 +610,9 @@ namespace CommunityCenterHelper
                         return strMachineOrCaskForQuality(ItemID.IT_Honey, ItemID.BC_Keg, ItemID.IT_Mead, quality);
                     
                     case ItemID.IT_Juice:
-                        return strPutItemInMachine(StardewValley.Object.VegetableCategory.ToString(), ItemID.BC_Keg);
+                        return strPutItemInMachine(preservesID == null? StardewValley.Object.VegetableCategory.ToString() : preservesID,
+                                                   ItemID.BC_Keg)
+                             + (preservesID != null? "\n" + parenthesize(getHintText(preservesID, 0)) : "");
                     
                     case ItemID.IT_PaleAle:
                         return strMachineOrCaskForQuality(ItemID.IT_Hops, ItemID.BC_Keg, ItemID.IT_PaleAle, quality);
@@ -875,7 +880,9 @@ namespace CommunityCenterHelper
                     // [Challenging Vanilla] Artisan Bundle
                     
                     case ItemID.IT_Pickles:
-                        return strPutItemInMachine(StardewValley.Object.VegetableCategory.ToString(), ItemID.BC_PreservesJar);
+                        return strPutItemInMachine(preservesID == null? StardewValley.Object.VegetableCategory.ToString() : preservesID,
+                                                   ItemID.BC_PreservesJar)
+                             + (preservesID != null? "\n" + parenthesize(getHintText(preservesID, 0)) : "");
                     
                     // [Challenging Vanilla] Brewer's Bundle
                     
@@ -1220,7 +1227,11 @@ namespace CommunityCenterHelper
                         return strLocationalArtifact(isDesertKnown()? "locationDesert" : "locationUnknown");
                     
                     case ItemID.IT_DriedMushrooms:
-                        return strPutItemInMachine(itemLiteral: str.Get("itemCategoryMushroom"), machineID: ItemID.BC_Dehydrator);
+                        if (preservesID == null)
+                            return strPutItemInMachine(itemLiteral: str.Get("itemCategoryMushroom"), machineID: ItemID.BC_Dehydrator);
+                        else
+                            return strPutItemInMachine(preservesID, ItemID.BC_Dehydrator) + "\n"
+                                 + parenthesize(getHintText(preservesID, 0));
                     
                     case ItemID.IT_LifeElixir:
                         return strCraftRecipe("Life Elixir") + "\n"
@@ -1324,7 +1335,9 @@ namespace CommunityCenterHelper
                              + strNoItemMachine(ItemID.BC_DeluxeWormBin);
                         
                     case ItemID.IT_SmokedFish:
-                        return strPutItemInMachine(StardewValley.Object.FishCategory.ToString(), ItemID.BC_FishSmoker);
+                        return strPutItemInMachine(preservesID == null? StardewValley.Object.FishCategory.ToString() : preservesID,
+                                                   ItemID.BC_FishSmoker)
+                             + (preservesID != null? "\n" + parenthesize(getHintText(preservesID, 0)) : "");
                         
                     case ItemID.IT_MossSoup:
                         return strCookRecipe("Moss Soup");
@@ -1388,7 +1401,9 @@ namespace CommunityCenterHelper
                         return strPutItemInMachine(ItemID.IT_Grape, ItemID.BC_Dehydrator, itemQuantity: 5);
                     
                     case ItemID.IT_DriedFruit:
-                        return strPutItemInMachine(StardewValley.Object.FruitsCategory.ToString(), ItemID.BC_Dehydrator);
+                        return strPutItemInMachine(preservesID == null? StardewValley.Object.FruitsCategory.ToString() : preservesID,
+                                                   ItemID.BC_Dehydrator)
+                             + (preservesID != null? "\n" + parenthesize(getHintText(preservesID, 0)) : "");
                     
                     case ItemID.IT_FluteBlock:
                         return strCraftRecipe("Flute Block");
@@ -3986,7 +4001,7 @@ namespace CommunityCenterHelper
         /// <summary>Returns item name for the current language (or internal name), or category for negative category IDs.</summary>
         /// <param name="id">The item ID or negative category ID.</param>
         /// <param name="internalName">Whether to return the internal name instead of the display name.</param>
-        public static string getItemName(string id, bool internalName = false)
+        public static string getItemName(string id, bool internalName = false, string preservesID = null)
         {
             int intID;
             if (int.TryParse(id, out intID))
@@ -4017,15 +4032,23 @@ namespace CommunityCenterHelper
                     return Game1.objectData[id].Name;
                 else
                 {
-                    // Override item name for generic Dried and Smoked items.
-                    switch (id)
+                    // Override item name for generic Dried and Smoked items, which would otherwise just return "Dried" or "Smoked."
+                    if (preservesID == null)
                     {
-                        case ItemID.IT_DriedFruit:
-                            return Game1.content.LoadString("Strings\\Objects:DriedFruit_CollectionsTabName");
-                        case ItemID.IT_DriedMushrooms:
-                            return Game1.content.LoadString("Strings\\Objects:DriedMushrooms_CollectionsTabName");
-                        case ItemID.IT_SmokedFish:
-                            return Game1.content.LoadString("Strings\\Objects:SmokedFish_CollectionsTabName");
+                        switch (id)
+                        {
+                            case ItemID.IT_DriedFruit:
+                                return Game1.content.LoadString("Strings\\Objects:DriedFruit_CollectionsTabName");
+                            case ItemID.IT_DriedMushrooms:
+                                return Game1.content.LoadString("Strings\\Objects:DriedMushrooms_CollectionsTabName");
+                            case ItemID.IT_SmokedFish:
+                                return Game1.content.LoadString("Strings\\Objects:SmokedFish_CollectionsTabName");
+                        }
+                    }
+                    else // Use flavored name for artisan goods if preservesID is given
+                    {
+                        Item flavoredItem = Utility.CreateFlavoredItem(id, preservesID);
+                        return TokenParser.ParseText(flavoredItem.DisplayName);
                     }
                     return TokenParser.ParseText(Game1.objectData[id].DisplayName);
                 }

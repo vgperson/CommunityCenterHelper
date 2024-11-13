@@ -25,6 +25,7 @@ namespace CommunityCenterHelper
         public static bool debugClearCompletedBundles = false;
         public static bool debugUnlockMissingBundle = false;
         public static bool debugUnlockCooking = false;
+        public static bool debugUnlockRaccoonRequests = false;
         public static bool debugTreatRecipesAsKnown = false;
         public static bool debugShowUnknownIDs = false;
         public static bool debugAddBundleTestCommand = false;
@@ -168,6 +169,8 @@ namespace CommunityCenterHelper
                     debugTempClearBundles(__instance);
                 if (debugUnlockMissingBundle)
                     debugUnlockMissing();
+                if (debugUnlockRaccoonRequests)
+                    debugUnlockRaccoon();
                 
                 ingredientHoverTitle = new string[__instance.ingredientList.Count];
                 ingredientHoverText = new string[__instance.ingredientList.Count];
@@ -177,10 +180,10 @@ namespace CommunityCenterHelper
                     try
                     {
                         BundleIngredientDescription ingredient = b.ingredients[i];
-                        string hintText = ItemHints.getHintText(ingredient.id, ingredient.quality, ingredient.category);
+                        string hintText = ItemHints.getHintText(ingredient.id, ingredient.quality, ingredient.category, ingredient.preservesId);
                         if (hintText != "")
                         {
-                            ingredientHoverTitle[i] = ItemHints.getItemName(ingredient.id);
+                            ingredientHoverTitle[i] = ItemHints.getItemName(ingredient.id, preservesID: ingredient.preservesId);
                             ingredientHoverText[i] = hintText;
                             __instance.ingredientList[i].hoverText = "";
                         }
@@ -457,6 +460,17 @@ namespace CommunityCenterHelper
         {
             if (!Game1.MasterPlayer.mailReceived.Contains("abandonedJojaMartAccessible"))
                 Game1.MasterPlayer.mailReceived.Add("abandonedJojaMartAccessible");
+        }
+        
+        /// <summary>Debug method to make Mr. Raccoon appear at forest stump to test his requests.</summary>
+        public static void debugUnlockRaccoon()
+        {
+            if (!Game1.MasterPlayer.mailReceived.Contains("raccoonTreeFallen"))
+                Game1.MasterPlayer.mailReceived.Add("raccoonTreeFallen");
+            if (!Game1.MasterPlayer.mailReceived.Contains("checkedRaccoonStump"))
+                Game1.MasterPlayer.mailReceived.Add("checkedRaccoonStump");
+            if (!Game1.MasterPlayer.mailReceived.Contains("raccoonMovedIn"))
+                Game1.MasterPlayer.mailReceived.Add("raccoonMovedIn");
         }
         
         /// <summary>Debug method to test item hint function on a list of JSON bundle definitions from clipboard.</summary>
