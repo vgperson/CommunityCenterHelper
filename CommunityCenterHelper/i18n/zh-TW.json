@@ -13,7 +13,7 @@
 	"seasonalLocationalForage": "可於{{season}}的{{location}}中採集到",
 	"salmonberryForage": "可於春季 15~18 日從灌木叢上採集到",
 	
-	// illing
+	// Tilling
 	"generalTilling": "鋤地",
 	"seasonalTilling": "在{{season}}時鋤地",
 	"locationalTilling": "在{{location}}中鋤地",
@@ -137,6 +137,10 @@
 	// General Formatting
 	"parenthesized": "（{{text}}）", // general form for appending descriptive text after a thing
 	"multipleThingSeparator": "/", // general separator for lists of multiple seasons, locations, etc.
+	
+	// Sub-Item Hints (for added suggestions on how to get a different item that is required to get the main item)
+	"subItemHints": "（{{subItemName}}:\n{{sourceList}}）", // starts on its own line, \n is linebreak, sourceList will use multiple lines for multiple hints
+	"subItemSourceListEntry": "- {{hintLine}}", // form for each line of sub-hints
 	
 	// Season Names
 	"spring": "春季",

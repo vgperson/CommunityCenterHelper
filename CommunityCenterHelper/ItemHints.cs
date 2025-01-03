@@ -118,7 +118,7 @@ namespace CommunityCenterHelper
                     case ItemID.IT_Jelly:
                         return strPutItemInMachine(preservesID == null? StardewValley.Object.FruitsCategory.ToString() : preservesID,
                                                    ItemID.BC_PreservesJar)
-                             + (preservesID != null? "\n" + parenthesize(getHintText(preservesID, 0)) : "");
+                             + (preservesID != null? "\n" + subItemHints(preservesID) : "");
                     
                     case ItemID.IT_Apple:
                         return strFruitTreeDuringSeason("treeApple", "fall")
@@ -612,7 +612,7 @@ namespace CommunityCenterHelper
                     case ItemID.IT_Juice:
                         return strPutItemInMachine(preservesID == null? StardewValley.Object.VegetableCategory.ToString() : preservesID,
                                                    ItemID.BC_Keg)
-                             + (preservesID != null? "\n" + parenthesize(getHintText(preservesID, 0)) : "");
+                             + (preservesID != null? "\n" + subItemHints(preservesID) : "");
                     
                     case ItemID.IT_PaleAle:
                         return strMachineOrCaskForQuality(ItemID.IT_Hops, ItemID.BC_Keg, ItemID.IT_PaleAle, quality);
@@ -882,7 +882,7 @@ namespace CommunityCenterHelper
                     case ItemID.IT_Pickles:
                         return strPutItemInMachine(preservesID == null? StardewValley.Object.VegetableCategory.ToString() : preservesID,
                                                    ItemID.BC_PreservesJar)
-                             + (preservesID != null? "\n" + parenthesize(getHintText(preservesID, 0)) : "");
+                             + (preservesID != null? "\n" + subItemHints(preservesID) : "");
                     
                     // [Challenging Vanilla] Brewer's Bundle
                     
@@ -1231,7 +1231,7 @@ namespace CommunityCenterHelper
                             return strPutItemInMachine(itemLiteral: str.Get("itemCategoryMushroom"), machineID: ItemID.BC_Dehydrator);
                         else
                             return strPutItemInMachine(preservesID, ItemID.BC_Dehydrator) + "\n"
-                                 + parenthesize(getHintText(preservesID, 0));
+                                 + subItemHints(preservesID);
                     
                     case ItemID.IT_LifeElixir:
                         return strCraftRecipe("Life Elixir") + "\n"
@@ -1337,7 +1337,7 @@ namespace CommunityCenterHelper
                     case ItemID.IT_SmokedFish:
                         return strPutItemInMachine(preservesID == null? StardewValley.Object.FishCategory.ToString() : preservesID,
                                                    ItemID.BC_FishSmoker)
-                             + (preservesID != null? "\n" + parenthesize(getHintText(preservesID, 0)) : "");
+                             + (preservesID != null? "\n" + subItemHints(preservesID) : "");
                         
                     case ItemID.IT_MossSoup:
                         return strCookRecipe("Moss Soup");
@@ -1403,7 +1403,7 @@ namespace CommunityCenterHelper
                     case ItemID.IT_DriedFruit:
                         return strPutItemInMachine(preservesID == null? StardewValley.Object.FruitsCategory.ToString() : preservesID,
                                                    ItemID.BC_Dehydrator)
-                             + (preservesID != null? "\n" + parenthesize(getHintText(preservesID, 0)) : "");
+                             + (preservesID != null? "\n" + subItemHints(getHintText(preservesID, 0)) : "");
                     
                     case ItemID.IT_FluteBlock:
                         return strCraftRecipe("Flute Block");
@@ -4741,6 +4741,18 @@ namespace CommunityCenterHelper
         private static string parenthesize(string text)
         {
             return str.Get("parenthesized", new { text = text });
+        }
+        
+        /// <summary>Returns a standalone multi-line string listing hints for an sub-item in parentheses.</summary>
+        /// <param name="itemID">The item ID of the sub-item.</param>
+        /// <param name="quality">Required quality of the sub-item.</param>
+        private static string subItemHints(string itemID, int quality = 0)
+        {
+            string hintText = getHintText(itemID, quality);
+            string sourceList = "";
+            foreach (string line in hintText.Split('\n'))
+                sourceList += (sourceList != ""? "\n" : "") + str.Get("subItemSourceListEntry", new { hintLine = line });
+            return str.Get("subItemHints", new { subItemName = getItemName(itemID), sourceList = sourceList });
         }
         
         /// <summary>Returns combined string for multiple seasons.</summary>

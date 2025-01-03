@@ -22,13 +22,13 @@ namespace CommunityCenterHelper
         public static bool collectionHintsToggle = false;
         public static string collectionLastHoverItemID = "";
         
-        public static bool debugClearCompletedBundles = false;
-        public static bool debugUnlockMissingBundle = false;
-        public static bool debugUnlockCooking = false;
-        public static bool debugUnlockRaccoonRequests = false;
-        public static bool debugTreatRecipesAsKnown = false;
-        public static bool debugShowUnknownIDs = false;
-        public static bool debugAddBundleTestCommand = false;
+        public static bool debugClearCompletedBundles = false; // Activated when opening a bundle
+        public static bool debugUnlockMissingBundle = false; // Activated when opening a bundle
+        public static bool debugUnlockCooking = false; // Activated when showing a cooking suggestion
+        public static bool debugUnlockRaccoonRequests = false; // Activated when opening a bundle
+        public static bool debugTreatRecipesAsKnown = false; // Affects display of cooking suggestions
+        public static bool debugShowUnknownIDs = false; // Indicates item's ID in hint text if not covered
+        public static bool debugAddBundleTestCommand = false; // "testbundlehints" in console
         
         /***************************
          ** Mod Injection Methods **
