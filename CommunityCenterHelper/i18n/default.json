@@ -11,7 +11,10 @@
 	"seasonalForage": "Forage in {{season}}",
 	"locationalForage": "Forage {{location}}",
 	"seasonalLocationalForage": "Forage in {{season}} {{location}}",
-	"salmonberryForage": "Forage from bushes Spring 15-18",
+	"bushForage": "Forage from bushes",
+	"locationalBushForage": "Forage from bushes {{location}}",
+	"bushForageDayRange": "Forage from bushes {{season}} {{startDay}}-{{endDay}}",
+	"locationalBushForageDayRange": "Forage from bushes {{location}} {{season}} {{startDay}}-{{endDay}}",
 	
 	// Tilling
 	"generalTilling": "Till dirt",
@@ -62,6 +65,7 @@
 	"craftRecipeByName": "Craft {{recipe}}",
 	"craftRecipe": "Crafting",
 	"cookRecipe": "Cooking",
+	"apothecaryCauldron": "Apothecary's Cauldron", // Alchemistry
 	
 	// From Geodes
 	"openGeode": "Open {{geode}} at blacksmith",
@@ -170,6 +174,7 @@
 	"locationIsland": "on Ginger Island",
 	"locationVolcano": "in the Volcano",
 	"locationRidgeForest": "in Ridge Forest", // RSV
+	"locationMagesRest": "in Mage's Rest", // Alchemistry
 	"locationUnknown": "in ???",
 	
 	// Water Locations (for fishing suggestions)
@@ -207,6 +212,7 @@
 	"waterRidge": "on the Ridge", // RSV
 	"waterRidgeForest": "in Ridge Forest", // RSV
 	"waterRidgeFalls": "at Ridge Falls", // RSV
+	"waterMagesRest": "in Mage's Rest", // Alchemistry
 	"waterUnknown": "in ???",
 	
 	// Water Types (for crab pot suggestions)
@@ -243,6 +249,7 @@
 	"shopNightingaleOrchard": "Nightingale Orchard", // RSV
 	"shopHotelPastry": "Hotel Pastry Shop", // RSV
 	"shopPikaRestaurant": "Pika's Restaurant", // RSV
+	"shopSevinae": "Sevinae's Shop", // Alchemistry
 	"shopUnknown": "???",
 	"randomlyAvailable": "random", // appended in parentheses after shop name when item is only randomly in stock
 	"mustHaveShipped": "ship {{item}}", // appended in parentheses after shop name if you have to have shipped a certain other item
@@ -262,6 +269,7 @@
 	"itemCategoryWildSeed": "any wild seeds", // category -777; not defined as a constant, but used for Tea Sapling recipe
 	"itemCategoryNut": "any nut", // not a category strictly defined by base game, but used to summarize machine input
 	"itemCategoryMushroom": "any mushroom", // not a category strictly defined by base game, but used to summarize machine input
+	"itemCategoryBodyPart": "any body part", // Alchemistry
 	
 	// Tree Names (for tree suggestions)
 	"treeApple": "Apple Tree",

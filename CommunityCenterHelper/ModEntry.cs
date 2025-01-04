@@ -26,7 +26,7 @@ namespace CommunityCenterHelper
         public static bool debugUnlockMissingBundle = false; // Activated when opening a bundle
         public static bool debugUnlockCooking = false; // Activated when showing a cooking suggestion
         public static bool debugUnlockRaccoonRequests = false; // Activated when opening a bundle
-        public static bool debugTreatRecipesAsKnown = false; // Affects display of cooking suggestions
+        public static bool debugTreatRecipesAsKnown = false; // Affects display of cooking/crafting suggestions
         public static bool debugShowUnknownIDs = false; // Indicates item's ID in hint text if not covered
         public static bool debugAddBundleTestCommand = false; // "testbundlehints" in console
         

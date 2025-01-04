@@ -11,7 +11,10 @@
 	"seasonalForage": "可於{{season}}時採集到",
 	"locationalForage": "可於{{location}}中採集到",
 	"seasonalLocationalForage": "可於{{season}}的{{location}}中採集到",
-	"salmonberryForage": "可於春季 15~18 日從灌木叢上採集到",
+	"bushForage": "Forage from bushes", // TODO
+	"locationalBushForage": "Forage from bushes {{location}}", // TODO
+	"bushForageDayRange": "可於{{season}} {{startDay}}~{{endDay}} 日從灌木叢上採集到",
+	"locationalBushForageDayRange": "Forage from bushes {{location}} {{season}} {{startDay}}-{{endDay}}", // TODO
 	
 	// Tilling
 	"generalTilling": "鋤地",
@@ -62,6 +65,7 @@
 	"craftRecipeByName": "合成{{recipe}}",
 	"craftRecipe": "合成",
 	"cookRecipe": "烹飪",
+	"apothecaryCauldron": "Apothecary's Cauldron", // Alchemistry // TODO
 	
 	// From Geodes
 	"openGeode": "在鐵匠鋪破開{{geode}}",
@@ -170,6 +174,7 @@
 	"locationIsland": "薑之島",
 	"locationVolcano": "火山",
 	"locationRidgeForest": "in Ridge Forest", // RSV
+	"locationMagesRest": "in Mage's Rest", // Alchemistry // TODO
 	"locationUnknown": "？？？",
 	
 	// Water Locations (for fishing suggestions)
@@ -207,6 +212,7 @@
 	"waterRidge": "on the Ridge", // RSV
 	"waterRidgeForest": "in Ridge Forest", // RSV
 	"waterRidgeFalls": "at Ridge Falls", // RSV
+	"waterMagesRest": "in Mage's Rest", // Alchemistry // TODO
 	"waterUnknown": "？？？",
 	
 	// Water Types (for crab pot suggestions)
@@ -243,6 +249,7 @@
 	"shopNightingaleOrchard": "Nightingale Orchard", // RSV
 	"shopHotelPastry": "Hotel Pastry Shop", // RSV
 	"shopPikaRestaurant": "Pika's Restaurant", // RSV
+	"shopSevinae": "Sevinae's Shop", // Alchemistry // TODO
 	"shopUnknown": "？？？",
 	"randomlyAvailable": "隨機", // appended in parentheses after shop name when item is only randomly in stock
 	"mustHaveShipped": "出貨 {{item}}", // appended in parentheses after shop name if you have to have shipped a certain other item
@@ -262,6 +269,7 @@
 	"itemCategoryWildSeed": "任意野生種子", // category -777; not defined as a constant, but used for Tea Sapling recipe
 	"itemCategoryNut": "any nut", // not a category strictly defined by base game, but used to summarize machine input
 	"itemCategoryMushroom": "任意蘑菇", // not a category strictly defined by base game, but used to summarize machine input
+	"itemCategoryBodyPart": "any body part", // Alchemistry // TODO
 	
 	// Tree Names (for tree suggestions)
 	"treeApple": "蘋果樹",

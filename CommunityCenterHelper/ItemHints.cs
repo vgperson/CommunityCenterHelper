@@ -396,12 +396,14 @@ namespace CommunityCenterHelper
                         return strPutItemInMachine(ItemID.IT_CopperOre, ItemID.BC_Furnace);
                     
                     case ItemID.IT_IronBar:
-                        return strPutItemInMachine(ItemID.IT_IronOre, ItemID.BC_Furnace) + "\n"
-                             + strCraftRecipe("Transmute (Fe)");
+                        return strPutItemInMachine(ItemID.IT_IronOre, ItemID.BC_Furnace)
+                             + (DataLoader.CraftingRecipes(Game1.content).ContainsKey("Transmute (Fe)")?
+                                "\n" + strCraftRecipe("Transmute (Fe)") : ""); // Recipe may be removed by Alchemistry
                     
                     case ItemID.IT_GoldBar:
-                        return strPutItemInMachine(ItemID.IT_GoldOre, ItemID.BC_Furnace) + "\n"
-                             + strCraftRecipe("Transmute (Au)");
+                        return strPutItemInMachine(ItemID.IT_GoldOre, ItemID.BC_Furnace)
+                             + (DataLoader.CraftingRecipes(Game1.content).ContainsKey("Transmute (Au)")?
+                                "\n" + strCraftRecipe("Transmute (Au)") : ""); // Recipe may be removed by Alchemistry
                     
                     // Geologist's Bundle
                     
@@ -756,7 +758,7 @@ namespace CommunityCenterHelper
                     // [Remixed] Children's Bundle
                     
                     case ItemID.IT_Salmonberry:
-                        return str.Get("salmonberryForage")
+                        return strBushForageDayRange("spring", 15, 18)
                              + possibleSourceFruitBatCave();
                     
                     case ItemID.IT_Cookies:
@@ -2292,11 +2294,14 @@ namespace CommunityCenterHelper
                         return strAnimalProduct("animalOstrich");
                     
                     case ItemID.IT_TaroRoot:
-                        return strGrowSeeds(ItemID.IT_TaroTuber, isIslandKnown()? parenthesize(strLocationalForage("locationIsland")) : "", quality) + "\n"
-                             + (isIslandKnown()? parenthesize(strBuyFrom("shopIslandTrader")) + "\n" : "")
-                             + parenthesize(strDroppedByMonster("Tiger Slime")) + "\n"
-                             + parenthesize(strDroppedByMonster("Magma Duggy")) + "\n"
-                             + parenthesize(strFishPond(ItemID.IT_Lionfish, 4));
+                        return strGrowSeeds(ItemID.IT_TaroTuber, isIslandKnown()? parenthesize(strLocationalForage("locationIsland")) : "", quality)
+                             + (isIslandKnown()? "\n" + subItemHints(ItemID.IT_TaroTuber, quality) : "");
+                    
+                    case ItemID.IT_TaroTuber: // For use in above Taro Root hint
+                        return strBuyFrom("shopIslandTrader") + "\n"
+                             + strDroppedByMonster("Tiger Slime") + "\n"
+                             + strDroppedByMonster("Magma Duggy") + "\n"
+                             + strFishPond(ItemID.IT_Lionfish, 4);
                     
                     case ItemID.IT_Pineapple:
                         return strGrowSeeds(ItemID.IT_PineappleSeeds, isIslandKnown()? parenthesize(strBuyFrom("shopIslandTrader")) : "", quality);
@@ -2581,6 +2586,501 @@ namespace CommunityCenterHelper
                     
                     case ItemID.IT_TropicalCurry:
                         return strCookRecipe("Tropical Curry");
+                    
+                    /********** [Alchemistry Bundles] Pantry **********/
+                    
+                    // [Alchemistry] Spring Crops Bundle
+                    
+                    case ItemID.ALC_Hemlock:
+                        return strSeasonalCrop("spring", quality);
+                    
+                    case ItemID.ALC_Inkberry:
+                        return strSeasonalCrop("spring", quality);
+                    
+                    // [Alchemistry] Summer Crops Bundle
+                    
+                    case ItemID.ALC_StarlightHellebore:
+                        return strSeasonalCrop("summer", quality);
+                    
+                    case ItemID.ALC_WerewolfsBane:
+                        return strSeasonalCrop("summer", quality);
+                    
+                    // [Alchemistry] Fall Crops Bundle
+                    
+                    case ItemID.ALC_SunsetCastor:
+                        return strSeasonalCrop("fall", quality);
+                    
+                    case ItemID.ALC_BansheesBell:
+                        return strSeasonalCrop("fall", quality);
+                    
+                    // [Alchemistry] Magic Crops (Rare Crops) Bundle
+                    
+                    case ItemID.ALC_AddersTongue:
+                        return strSeasonalCrop("spring", quality, "shopSevinae");
+                    
+                    case ItemID.ALC_DollsEyes:
+                        return strSeasonalCrop("summer", quality, "shopSevinae");
+                    
+                    case ItemID.ALC_NightsShade:
+                        return strSeasonalCrop("fall", quality, "shopSevinae");
+                    
+                    case ItemID.ALC_BleedingHeart:
+                        return strSeasonalCrop("winter", quality, "shopSevinae");
+                    
+                    // [Alchemistry] Dried Herbs (Animal) Bundle
+                    
+                    case ItemID.ALC_DriedHemlock:
+                        return strPutItemInMachine(ItemID.ALC_Hemlock, ItemID.BC_Dehydrator);
+                    
+                    case ItemID.ALC_DriedInkberry:
+                        return strPutItemInMachine(ItemID.ALC_Inkberry, ItemID.BC_Dehydrator);
+                    
+                    case ItemID.ALC_DriedStarlightHellebore:
+                        return strPutItemInMachine(ItemID.ALC_StarlightHellebore, ItemID.BC_Dehydrator);
+                    
+                    case ItemID.ALC_DriedWerewolfsBane:
+                        return strPutItemInMachine(ItemID.ALC_WerewolfsBane, ItemID.BC_Dehydrator);
+                    
+                    case ItemID.ALC_DriedSunsetCastor:
+                        return strPutItemInMachine(ItemID.ALC_SunsetCastor, ItemID.BC_Dehydrator);
+                    
+                    case ItemID.ALC_DriedBansheesBell:
+                        return strPutItemInMachine(ItemID.ALC_BansheesBell, ItemID.BC_Dehydrator);
+                    
+                    case ItemID.ALC_DriedWinterWailer:
+                        return strPutItemInMachine(ItemID.ALC_WinterWailer, ItemID.BC_Dehydrator);
+                    
+                    case ItemID.ALC_DriedMistletoe:
+                        return strPutItemInMachine(ItemID.ALC_Mistletoe, ItemID.BC_Dehydrator);
+                    
+                    // [Alchemistry] Alchemist's Aquatic Goods (Fish Farmer's) Bundle
+                    
+                    case ItemID.ALC_OilOfNewt:
+                        return strPutItemInMachine(ItemID.ALC_NewtsTail, ItemID.BC_OilMaker);
+                    
+                    case ItemID.ALC_FreshSqueezedLamprey:
+                        return strPutItemInMachine(ItemID.ALC_Lamprey, ItemID.BC_OilMaker);
+                    
+                    case ItemID.ALC_ManaOrb:
+                        return strPutItemInMachine(StardewValley.Object.FishCategory.ToString(), ItemID.ALC_BC_ManaExtractor) + "\n"
+                             + strPutItemInMachine(itemLiteral: str.Get("itemCategoryBodyPart"), machineID: ItemID.ALC_BC_ManaExtractor);
+                    
+                    // [Alchemistry] Winter Crops (Garden) Bundle
+                    
+                    case ItemID.ALC_WinterWailer:
+                        return strSeasonalCrop("winter", quality);
+                    
+                    case ItemID.ALC_Mistletoe:
+                        return strSeasonalCrop("winter", quality);
+                    
+                    // [Alchemistry] Apothecary's Brews (Artisan) Bundle
+                    
+                    case ItemID.ALC_HemlockTincture:
+                        return strPutItemInMachine(ItemID.ALC_HemlockPowder, ItemID.ALC_BC_TinctureBin);
+                    
+                    case ItemID.ALC_InkberryTincture:
+                        return strPutItemInMachine(ItemID.ALC_InkberryPowder, ItemID.ALC_BC_TinctureBin);
+                    
+                    case ItemID.ALC_WerewolfsBaneTincture:
+                        return strPutItemInMachine(ItemID.ALC_WerewolfsBanePowder, ItemID.ALC_BC_TinctureBin);
+                    
+                    case ItemID.ALC_StarlightHelleboreTincture:
+                        return strPutItemInMachine(ItemID.ALC_StarlightHelleborePowder, ItemID.ALC_BC_TinctureBin);
+                    
+                    case ItemID.ALC_SunsetCastorTincture:
+                        return strPutItemInMachine(ItemID.ALC_SunsetCastorPowder, ItemID.ALC_BC_TinctureBin);
+                    
+                    case ItemID.ALC_BansheesBellTincture:
+                        return strPutItemInMachine(ItemID.ALC_BansheesBellPowder, ItemID.ALC_BC_TinctureBin);
+                    
+                    case ItemID.ALC_WinterWailerTincture:
+                        return strPutItemInMachine(ItemID.ALC_WinterWailerPowder, ItemID.ALC_BC_TinctureBin);
+                    
+                    case ItemID.ALC_MistletoeTincture:
+                        return strPutItemInMachine(ItemID.ALC_MistletoePowder, ItemID.ALC_BC_TinctureBin);
+                    
+                    // [Alchemistry] Apothecary's Rare Brews (Brewer's) Bundle
+                    
+                    case ItemID.ALC_AddersTongueTincture:
+                        return strPutItemInMachine(ItemID.ALC_AddersTonguePowder, ItemID.ALC_BC_TinctureBin);
+                    
+                    case ItemID.ALC_DollsEyesTincture:
+                        return strPutItemInMachine(ItemID.ALC_DollsEyesPowder, ItemID.ALC_BC_TinctureBin);
+                    
+                    case ItemID.ALC_NightsShadeTincture:
+                        return strPutItemInMachine(ItemID.ALC_NightsShadePowder, ItemID.ALC_BC_TinctureBin);
+                    
+                    case ItemID.ALC_BleedingHeartTincture:
+                        return strPutItemInMachine(ItemID.ALC_BleedingHeartPowder, ItemID.ALC_BC_TinctureBin);
+                    
+                    /********** [Alchemistry Bundles] Crafts Room **********/
+                    
+                    // [Alchemistry] Spring Foraging Bundle
+                    
+                    case ItemID.ALC_WizardsEye:
+                        return strSeasonalLocationalForage("spring", "locationForest") + "\n"
+                             + strSeasonalLocationalForage("spring", "locationWoods");
+                    
+                    case ItemID.ALC_NightCap:
+                        return strSeasonalForage("spring");
+                    
+                    case ItemID.ALC_SunriseGlory:
+                        return strSeasonalForage("spring");
+                    
+                    case ItemID.ALC_LostSouls:
+                        return strSeasonalLocationalForage("spring", "locationWoods") + "\n"
+                             + strSeasonalLocationalForage("spring", "locationMagesRest");
+                    
+                    case ItemID.ALC_WitchsWatcher:
+                        return strLocationalBushForage("spring", 8, 14, "locationForest") + "\n"
+                             + strLocationalBushForage("spring", 22, 28, "locationForest");
+                    
+                    // [Alchemistry] Summer Foraging Bundle
+                    
+                    case ItemID.ALC_LunarGlowcap:
+                        return strSeasonalForage("summer");
+                    
+                    case ItemID.ALC_RedSmilers:
+                        return strSeasonalLocationalForage("summer", "locationMagesRest");
+                    
+                    case ItemID.ALC_BeachedOyster:
+                        return strLocationalForage("locationBeach")
+                             + (isDesertKnown()? "\n" + strLocationalForage("locationDesert") : "");
+                    
+                    case ItemID.ALC_FalseMorel:
+                        return strSeasonalLocationalForage("summer", "locationWoods") + "\n"
+                             + strSeasonalLocationalForage("summer", "locationMagesRest");
+                    
+                    case ItemID.ALC_WeepingWidow:
+                        return strBushForageDayRange("summer", 8, 14) + "\n"
+                             + strBushForageDayRange("summer", 22, 28);
+                    
+                    // [Alchemistry] Fall Foraging Bundle
+                    
+                    case ItemID.ALC_InkCap:
+                        return strSeasonalLocationalForage("fall", "locationWoods") + "\n"
+                             + strSeasonalLocationalForage("fall", "locationMagesRest");
+                    
+                    case ItemID.ALC_MeteorCap:
+                        return strSeasonalForage("fall");
+                    
+                    case ItemID.ALC_HellfireBolete:
+                        return strSeasonalLocationalForage("fall", "locationForest") + "\n"
+                             + strSeasonalLocationalForage("fall", "locationMagesRest");
+                    
+                    case ItemID.ALC_CapOLantern:
+                        return strSeasonalLocationalForage("fall", "locationWoods") + "\n"
+                             + strSeasonalLocationalForage("fall", "locationMagesRest");
+                    
+                    case ItemID.ALC_SoulFruit:
+                        return strLocationalBushForage("fall", 12, 16, "locationForest") + "\n"
+                             + strLocationalBushForage("fall", 24, 28, "locationForest");
+                    
+                    // [Alchemistry] Winter Foraging Bundle
+                    
+                    case ItemID.ALC_DawnsingerToadstool:
+                        return strSeasonalForage("winter");
+                    
+                    case ItemID.ALC_FairieWings:
+                        return strSeasonalLocationalForage("winter", "locationForest") + "\n"
+                             + strSeasonalLocationalForage("winter", "locationWoods");
+                    
+                    case ItemID.ALC_PoisonPine:
+                        return strBushForageDayRange("winter", 3, 7) + "\n"
+                             + strBushForageDayRange("winter", 15, 18) + "\n"
+                             + strBushForageDayRange("winter", 24, 28);
+                    
+                    // [Alchemistry] Dried Mushrooms (Construction) Bundle
+                    
+                    case ItemID.ALC_DriedNightCap:
+                        return strPutItemInMachine(ItemID.ALC_NightCap, ItemID.BC_Dehydrator);
+                    
+                    case ItemID.ALC_DriedInkCap:
+                        return strPutItemInMachine(ItemID.ALC_InkCap, ItemID.BC_Dehydrator);
+                    
+                    case ItemID.ALC_DriedBeachedOyster:
+                        return strPutItemInMachine(ItemID.ALC_BeachedOyster, ItemID.BC_Dehydrator);
+                    
+                    case ItemID.ALC_DriedLunarGlowcap:
+                        return strPutItemInMachine(ItemID.ALC_LunarGlowcap, ItemID.BC_Dehydrator);
+                    
+                    case ItemID.ALC_DriedMeteorCap:
+                        return strPutItemInMachine(ItemID.ALC_MeteorCap, ItemID.BC_Dehydrator);
+                    
+                    case ItemID.ALC_DriedHellfireBolete:
+                        return strPutItemInMachine(ItemID.ALC_HellfireBolete, ItemID.BC_Dehydrator);
+                    
+                    case ItemID.ALC_DriedDawnsingerToadstool:
+                        return strPutItemInMachine(ItemID.ALC_DawnsingerToadstool, ItemID.BC_Dehydrator);
+                    
+                    // [Alchemistry] More Dried Mushrooms (Sticky) Bundle
+                    
+                    case ItemID.ALC_DriedLostSouls:
+                        return strPutItemInMachine(ItemID.ALC_LostSouls, ItemID.BC_Dehydrator);
+                    
+                    case ItemID.ALC_DriedRedSmilers:
+                        return strPutItemInMachine(ItemID.ALC_RedSmilers, ItemID.BC_Dehydrator);
+                    
+                    case ItemID.ALC_DriedCapOLantern:
+                        return strPutItemInMachine(ItemID.ALC_CapOLantern, ItemID.BC_Dehydrator);
+                    
+                    case ItemID.ALC_DriedFairieWings:
+                        return strPutItemInMachine(ItemID.ALC_FairieWings, ItemID.BC_Dehydrator);
+                    
+                    case ItemID.ALC_DriedFalseMorel:
+                        return strPutItemInMachine(ItemID.ALC_FalseMorel, ItemID.BC_Dehydrator);
+                    
+                    case ItemID.ALC_DriedSunriseGlory:
+                        return strPutItemInMachine(ItemID.ALC_SunriseGlory, ItemID.BC_Dehydrator);
+                    
+                    case ItemID.ALC_DriedWizardsEye:
+                        return strPutItemInMachine(ItemID.ALC_WizardsEye, ItemID.BC_Dehydrator);
+                    
+                    // [Alchemistry] Forest Foraging (Forest) Bundle
+                    
+                    case ItemID.ALC_BirdSkull:
+                        return strLocationalForage("locationForest") + "\n"
+                             + strLocationalForage("locationWoods") + "\n"
+                             + strLocationalForage("locationMountains") + "\n"
+                             + strLocationalForage("locationBeach");
+                    
+                    case ItemID.ALC_StagsAntler:
+                        return strSeasonalLocationalForage(seasonList: new string[] { "spring", "winter" }, locationKey: "locationForest") + "\n"
+                             + strSeasonalLocationalForage(seasonList: new string[] { "spring", "winter" }, locationKey: "locationWoods");
+                    
+                    case ItemID.ALC_DeerHoof:
+                        return strLocationalForage("locationForest") + "\n"
+                             + strLocationalForage("locationWoods");
+                    
+                    case ItemID.ALC_DragonRoot:
+                        return strLocationalForage("locationMagesRest");
+                    
+                    // [Alchemistry] Bush's Bounty (Exotic Foraging) Bundle
+                    
+                    case ItemID.ALC_MoonBerry:
+                        return str.Get("bushForage");
+                    
+                    // [Alchemistry] Nature's Magic (Wild Medicine) Bundle
+                    
+                    case ItemID.ALC_AquaticEctoplasm:
+                        return strPutItemInMachine(StardewValley.Object.FishCategory.ToString(), ItemID.ALC_BC_EssenceRestabilizer) + "\n"
+                             + strFishPond(ItemID.ALC_Lamprey, 6);
+                    
+                    case ItemID.ALC_WildEctoplasm:
+                        return strPutItemInMachine(itemLiteral: str.Get("itemCategoryBodyPart"), machineID: ItemID.ALC_BC_EssenceRestabilizer);
+                    
+                    case ItemID.ALC_MysticEctoplasm:
+                        return strPutItemInMachine(ItemID.ALC_TrappedSoul, ItemID.ALC_BC_EssenceRestabilizer);
+                    
+                    /********** [Alchemistry Bundles] Fish Tank **********/
+                    
+                    // [Alchemistry] River Fish Bundle
+                    
+                    case ItemID.ALC_Lamprey:
+                        return strFishBase(waterList: new string[] { "waterForestRiver", "waterTown" },
+                                           seasonList: new string[] { "spring", "fall" }) + "\n"
+                             + strFishBase("waterSwamp");
+                    
+                    // [Alchemistry] Lake Fish Bundle
+                    
+                    case ItemID.ALC_Newt:
+                        return strFishBase(waterList: new string[] { "waterForestRiver", "waterMountain" },
+                                           seasonList: new string[] { "spring", "summer", "fall" });
+                    
+                    // [Alchemistry] Ocean Fish Bundle
+                    
+                    case ItemID.ALC_VampireAnemone:
+                        return strFishBase("waterOcean", seasonList: new string[] { "spring", "summer" })
+                             + (isIslandKnown()? "\n" + strFishBase("waterIsland") : "");
+                    
+                    case ItemID.ALC_MoonlightJellyfish:
+                        return strFishBase("waterOcean", seasonKey: "summer");
+                    
+                    // [Alchemistry] Aquatic Harvester's (Night Fishing) Bundle
+                    
+                    case ItemID.ALC_NewtsTail:
+                        return strFishPond(ItemID.ALC_Newt);
+                    
+                    case ItemID.ALC_MoonlightJelly:
+                        return strFishPond(ItemID.ALC_MoonlightJellyfish);
+                    
+                    case ItemID.ALC_CuredMoonlightJelly:
+                        return strPutItemInMachine(ItemID.ALC_MoonlightJelly, ItemID.BC_PreservesJar);
+                    
+                    // [Alchemistry] Specialty Fish Bundle
+                    
+                    case ItemID.ALC_ZombieFish:
+                        return strFishBase("waterMagesRest");
+                    
+                    /********** [Alchemistry Bundles] Boiler Room **********/
+                    
+                    // [Alchemistry] Gemologist's (Geologist's) Bundle
+                    
+                    case ItemID.ALC_MagmaRuby:
+                        return strPutItemInMachine(ItemID.IT_Ruby, ItemID.ALC_BC_TransmuterCoil);
+                    
+                    case ItemID.ALC_MoonlitTear:
+                        return strPutItemInMachine(ItemID.IT_Diamond, ItemID.ALC_BC_TransmuterCoil);
+                    
+                    case ItemID.ALC_NaturesEmerald:
+                        return strPutItemInMachine(ItemID.IT_Emerald, ItemID.ALC_BC_TransmuterCoil);
+                    
+                    case ItemID.ALC_MagiWand:
+                        return strPutItemInMachine(ItemID.IT_Amethyst, ItemID.ALC_BC_TransmuterCoil);
+                    
+                    // [Alchemistry] Adventurer's Bundle
+                    
+                    case ItemID.ALC_TrappedSoul:
+                        return strDroppedByMonster("Ghost") + "\n"
+                             + strDroppedByMonster("Putrid Ghost") + "\n"
+                             + strDroppedByMonster("Carbon Ghost");
+                    
+                    case ItemID.ALC_EngorgedTick:
+                        return strDroppedByMonster("Bat") + "\n"
+                             + strDroppedByMonster("Frost Bat") + "\n"
+                             + strDroppedByMonster("Lava Bat") + "\n"
+                             + strDroppedByMonster("Iridium Bat");
+                    
+                    case ItemID.ALC_InsectMandible:
+                        return strDroppedByMonster("Fly") + "\n"
+                             + strDroppedByMonster("Bug");
+                    
+                    case ItemID.ALC_VampireFang:
+                        return strDroppedByMonster("Lava Bat") + "\n"
+                             + strDroppedByMonster("Iridium Bat");
+                    
+                    case ItemID.ALC_ShadowEye:
+                        return strDroppedByMonster("Shadow Brute") + "\n"
+                             + strDroppedByMonster("Shadow Shaman") + "\n"
+                             + strDroppedByMonster("Shadow Sniper");
+                    
+                    // [Alchemistry] Treasure Hunter's Bundle
+                    
+                    case ItemID.ALC_IridiumCrabClaw:
+                        return strDroppedByMonster("Iridium Crab");
+                    
+                    case ItemID.ALC_RottingBrain:
+                        return strDroppedByMonster("Mummy") + "\n"
+                             + strDroppedByMonster("Skeleton Warrior");
+                    
+                    case ItemID.ALC_ForkedLasher:
+                        return strDroppedByMonster("Serpent") + "\n"
+                             + strDroppedByMonster("Royal Serpent");
+                    
+                    // [Alchemistry] Engineer's Extractions (Engineer's) Bundle
+                    
+                    case ItemID.ALC_EmptyFlask:
+                        return strPutItemInMachine(ItemID.IT_RefinedQuartz, ItemID.BC_Furnace) + "\n"
+                             + strBuyFrom("shopClinic") + "\n"
+                             + strBuyFrom("shopSevinae");
+                    
+                    /********** [Alchemistry Bundles] Bulletin Board **********/
+                    
+                    // [Alchemistry] On the Grind (Chef's) Bundle
+                    
+                    case ItemID.ALC_BoneDust:
+                        return strPutItemInMachine(ItemID.ALC_BirdSkull, ItemID.ALC_BC_MortarPestle) + "\n"
+                             + strPutItemInMachine(ItemID.ALC_StagsAntler, ItemID.ALC_BC_MortarPestle);
+                    
+                    case ItemID.ALC_HemlockPowder:
+                        return strPutItemInMachine(ItemID.ALC_DriedHemlock, ItemID.ALC_BC_MortarPestle);
+                    
+                    case ItemID.ALC_InkberryPowder:
+                        return strPutItemInMachine(ItemID.ALC_DriedInkberry, ItemID.ALC_BC_MortarPestle);
+                    
+                    case ItemID.ALC_WerewolfsBanePowder:
+                        return strPutItemInMachine(ItemID.ALC_DriedWerewolfsBane, ItemID.ALC_BC_MortarPestle);
+                    
+                    case ItemID.ALC_StarlightHelleborePowder:
+                        return strPutItemInMachine(ItemID.ALC_DriedStarlightHellebore, ItemID.ALC_BC_MortarPestle);
+                    
+                    case ItemID.ALC_SunsetCastorPowder:
+                        return strPutItemInMachine(ItemID.ALC_DriedSunsetCastor, ItemID.ALC_BC_MortarPestle);
+                    
+                    case ItemID.ALC_BansheesBellPowder:
+                        return strPutItemInMachine(ItemID.ALC_DriedBansheesBell, ItemID.ALC_BC_MortarPestle);
+                    
+                    case ItemID.ALC_WinterWailerPowder:
+                        return strPutItemInMachine(ItemID.ALC_DriedWinterWailer, ItemID.ALC_BC_MortarPestle);
+                    
+                    case ItemID.ALC_MistletoePowder:
+                        return strPutItemInMachine(ItemID.ALC_DriedMistletoe, ItemID.ALC_BC_MortarPestle);
+                    
+                    // [Alchemistry] Mushroom Tinctures (Field Research) Bundle
+                    
+                    case ItemID.ALC_WizardsEyeTincture:
+                        return strPutItemInMachine(ItemID.ALC_WizardsEyePowder, ItemID.ALC_BC_TinctureBin);
+                    
+                    case ItemID.ALC_MeteorCapTincture:
+                        return strPutItemInMachine(ItemID.ALC_MeteorCapPowder, ItemID.ALC_BC_TinctureBin);
+                    
+                    case ItemID.ALC_LunarGlowcapTincture:
+                        return strPutItemInMachine(ItemID.ALC_LunarGlowcapPowder, ItemID.ALC_BC_TinctureBin);
+                    
+                    case ItemID.ALC_CapOLanternTincture:
+                        return strPutItemInMachine(ItemID.ALC_CapOLanternPowder, ItemID.ALC_BC_TinctureBin);
+                    
+                    case ItemID.ALC_InkCapTincture:
+                        return strPutItemInMachine(ItemID.ALC_InkCapPowder, ItemID.ALC_BC_TinctureBin);
+                    
+                    case ItemID.ALC_DawnsingerToadstoolTincture:
+                        return strPutItemInMachine(ItemID.ALC_DawnsingerToadstoolPowder, ItemID.ALC_BC_TinctureBin);
+                    
+                    // [Alchemistry] Precious Potions (Dye) Bundle
+                    
+                    case ItemID.ALC_BarkskinElixir:
+                        return strAlchemistryCauldron("Morghoula.AlchemistryCP_BarkskinElixir");
+                    
+                    case ItemID.ALC_LesserWylderBrew:
+                        return strAlchemistryCauldron("Morghoula.AlchemistryCP_LesserWylderBrew");
+                    
+                    case ItemID.ALC_TearOfDreamer:
+                        return strAlchemistryCauldron("Morghoula.AlchemistryCP_TearofDreamer");
+                    
+                    case ItemID.ALC_Polaritea:
+                        return strAlchemistryCauldron("Morghoula.AlchemistryCP_Polaritea");
+                    
+                    case ItemID.ALC_IronbarkElixir:
+                        return strAlchemistryCauldron("Morghoula.AlchemistryCP_IronbarkElixir");
+                    
+                    case ItemID.ALC_GreaterWylderBrew:
+                        return strAlchemistryCauldron("Morghoula.AlchemistryCP_GreaterWylderBrew");
+                    
+                    // [Alchemistry] Chemist's (Fodder) Bundle
+                    
+                    case ItemID.ALC_Glycerin:
+                        return strAlchemistryCauldron("Morghoula.AlchemistryCP_Glycerin_Recipe");
+                    
+                    case ItemID.ALC_Lye:
+                        return strCookRecipe("Morghoula.AlchemistryCP_Lye_Recipe");
+                    
+                    case ItemID.ALC_MoonBerryTincture:
+                        return strPutItemInMachine(ItemID.ALC_MoonBerryPowder, ItemID.ALC_BC_TinctureBin);
+                    
+                    // [Alchemistry] Witch's Rare Reagents (Children's) Bundle
+                    
+                    case ItemID.ALC_ForestWisp:
+                        return strSeasonalLocationalForage(seasonList: new string[] { "summer", "winter" }, locationKey: "locationWoods");
+                    
+                    // [Alchemistry] Back to the Grind (Home Cook's) Bundle
+                    
+                    case ItemID.ALC_AddersTonguePowder:
+                        return strPutItemInMachine(ItemID.ALC_DriedAddersTongue, ItemID.ALC_BC_MortarPestle);
+                    
+                    case ItemID.ALC_DollsEyesPowder:
+                        return strPutItemInMachine(ItemID.ALC_DriedDollsEyes, ItemID.ALC_BC_MortarPestle);
+                    
+                    case ItemID.ALC_NightsShadePowder:
+                        return strPutItemInMachine(ItemID.ALC_DriedNightsShade, ItemID.ALC_BC_MortarPestle);
+                    
+                    case ItemID.ALC_BleedingHeartPowder:
+                        return strPutItemInMachine(ItemID.ALC_DriedBleedingHeart, ItemID.ALC_BC_MortarPestle);
+                    
+                    /********** [Alchemistry Bundles] The Missing Bundle **********/
+                    
+                    case ItemID.ALC_ArcaneEye:
+                        return strPutItemInMachine(ItemID.ALC_ShadowEye, ItemID.ALC_BC_TransmuterCoil) + "\n"
+                             + strFishPond(ItemID.ALC_VampireAnemone, 10);
                     
                     /********** Additional/Orphaned Base Game Item Hints **********/
                     
@@ -3205,6 +3705,9 @@ namespace CommunityCenterHelper
                     case ItemID.IT_Quartz:
                     case ItemID.IT_FireQuartz:
                     case ItemID.IT_Amethyst:
+                    case ItemID.IT_Ruby:
+                    case ItemID.IT_Emerald:
+                    case ItemID.IT_Diamond:
                         return str.Get("locationMines");
                 }
                 
@@ -3321,7 +3824,32 @@ namespace CommunityCenterHelper
                                                           string[] seasonList = null, string locationLiteral = "")
         {
             return str.Get("seasonalLocationalForage", new { season = seasonList != null? multiSeason(seasonList) : str.Get(seasonKey),
-                                                             location = locationLiteral != ""? locationLiteral :str.Get(locationKey) });
+                                                             location = locationLiteral != ""? locationLiteral : str.Get(locationKey) });
+        }
+        
+        /// <summary>Suggestion of an item forageable from bushes during a range of days in a season.</summary>
+        /// <param name="seasonKey">String key for season name (spring/summer/fall/winter).</param>
+        /// <param name="startDay">The start of the day range.</param>
+        /// <param name="endDay">The end of the day range.</param>
+        /// <param name="seasonList">Override for array of multiple season keys.</param>
+        private static string strBushForageDayRange(string seasonKey = "", int startDay = 1, int endDay = 28, string[] seasonList = null)
+        {
+            return str.Get("bushForageDayRange", new { season = seasonList != null? multiSeason(seasonList) : str.Get(seasonKey),
+                                                       startDay = startDay, endDay = endDay });
+        }
+        
+        /// <summary>Suggestion of an item forageable from bushes in particular location during a range of days in a season.</summary>
+        /// <param name="seasonKey">String key for season name (spring/summer/fall/winter).</param>
+        /// <param name="startDay">The start of the day range.</param>
+        /// <param name="endDay">The end of the day range.</param>
+        /// <param name="locationKey">String key for location name (locationX).</param>
+        /// <param name="seasonList">Override for array of multiple season keys.</param>
+        /// <param name="locationLiteral">Override for preformatted text.</param>
+        private static string strLocationalBushForage(string seasonKey = "", int startDay = 1, int endDay = 28, string locationKey = "", string[] seasonList = null, string locationLiteral = "")
+        {
+            return str.Get("locationalBushForageDayRange", new { season = seasonList != null? multiSeason(seasonList) : str.Get(seasonKey),
+                                                                 startDay = startDay, endDay = endDay,
+                                                                 location = locationLiteral != ""? locationLiteral : str.Get(locationKey) });
         }
         
         /// <summary>Suggestion for a diggable item during particular season(s).</summary>
@@ -3475,9 +4003,31 @@ namespace CommunityCenterHelper
                     return "";
             }
             else
+            {
                 machineName = getBigCraftableName(machineID, true);
+                if (machineName == "")
+                    return str.Get("unknownSource");
+            }
             
-            bool canMakeMachine = Game1.MasterPlayer.craftingRecipes.ContainsKey(machineName);
+            string machineRecipeName = machineName;
+            switch (machineName) // Convert modded machine names that don't match the internal names of their recipes
+            {
+                case ItemID.ALC_BC_EssenceRestabilizer:
+                case ItemID.ALC_BC_ManaExtractor:
+                case ItemID.ALC_BC_MortarPestle:
+                case ItemID.ALC_BC_TinctureBin:
+                case ItemID.ALC_BC_TransmuterCoil:
+                    machineRecipeName += "_Recipe";
+                    break;
+            }
+            
+            bool canMakeMachine = Game1.MasterPlayer.craftingRecipes.ContainsKey(machineRecipeName);
+            switch (machineName) // Ensure some modded default recipes are treated as makeable
+            {
+                case ItemID.ALC_BC_MortarPestle:
+                    canMakeMachine = true;
+                    break;
+            }
             
             string itemTip = getShortHint(itemID);
             if (itemTip != "")
@@ -3486,7 +4036,7 @@ namespace CommunityCenterHelper
             string machineUnlockTip = "";
             if (!canMakeMachine)
             {
-                machineUnlockTip = getCraftingRecipeSources(machineName);
+                machineUnlockTip = getCraftingRecipeSources(machineRecipeName);
                 if (machineUnlockTip != "")
                     machineUnlockTip = parenthesize(machineUnlockTip);
             }
@@ -3860,6 +4410,33 @@ namespace CommunityCenterHelper
             return str.Get("cookRecipe") + recipeDesc;
         }
         
+        /// <summary>Suggestion for Apothecary's Cauldron brew from Alchemistry. Includes either how to get recipe, or ingredients.</summary>
+        /// <param name="recipeName">Internal string name of the recipe.</param>
+        private static string strAlchemistryCauldron(string recipeName)
+        {
+            System.Collections.Generic.Dictionary<string, string> recipes = DataLoader.CookingRecipes(Game1.content);
+            if (!recipes.ContainsKey(recipeName))
+                return str.Get("unknownSource");
+            
+            string[] recipeData = recipes[recipeName].Split('/');
+            string ingredientDefinition = recipeData[0];
+            
+            string recipeDesc = "";
+            
+            if (!Game1.player.knowsRecipe("Morghoula.AlchemistryCP_ApothecaryCauldron_Recipe") && !ModEntry.debugTreatRecipesAsKnown) // Don't know how to make cauldron yet
+                recipeDesc = parenthesize(str.Get("recipeFrom", new { sources = conditionalMailSource("Wizard", 2) }));
+            else if (ModEntry.debugTreatRecipesAsKnown || Game1.player.knowsRecipe(recipeName)) // Have recipe, so list ingredients
+                recipeDesc = getRecipeIngredientsString(ingredientDefinition);
+            else // Describe where to get recipe
+            {
+                string recipeSources = getCookingRecipeSources(recipeName);
+                if (recipeSources != "")
+                    recipeDesc = parenthesize(str.Get("recipeFrom", new { sources = recipeSources }));
+            }
+            
+            return str.Get("apothecaryCauldron") + recipeDesc;
+        }
+        
         /// <summary>Suggestion for items randomly obtainable from geodes.</summary>
         /// <param name="geodeIDs">List of item IDs for geode types.</param>
         private static string strOpenGeode(params string[] geodeIDs)
@@ -4116,7 +4693,7 @@ namespace CommunityCenterHelper
         {
             foreach (string id in Game1.objectData.Keys)
             {
-                if (Game1.objectData[id] != null)
+                if (Game1.objectData[id] != null && Game1.objectData[id].Name != null)
                 {
                     if (Game1.objectData[id].Name.Equals(name))
                     {
@@ -4329,6 +4906,26 @@ namespace CommunityCenterHelper
                 case "Sweet Cranberry Cheesecake":
                     if (modRegistry.IsLoaded("Rafseazz.RSVCP")) // Ridgeside Village mail
                         recipeSources = conditionalMailSource("Faye", 8);
+                    break;
+                
+                case "Morghoula.AlchemistryCP_EssenceRestabilizer_Recipe":
+                    if (modRegistry.IsLoaded("Morghoula.AlchemistryCP"))
+                        recipeSources = conditionalMailSource("Wizard", 4);
+                    break;
+                
+                case "Morghoula.AlchemistryCP_ManaExtractor_Recipe":
+                    if (modRegistry.IsLoaded("Morghoula.AlchemistryCP"))
+                        recipeSources = conditionalMailSource(skill: str.Get("fishingSkill"), level: 3);
+                    break;
+                
+                case "Morghoula.AlchemistryCP_TinctureBin_Recipe":
+                    if (modRegistry.IsLoaded("Morghoula.AlchemistryCP"))
+                        recipeSources = conditionalMailSource(skill: str.Get("farmingSkill"), level: 3);
+                    break;
+                
+                case "Morghoula.AlchemistryCP_TransmuterCoil_Recipe":
+                    if (modRegistry.IsLoaded("Morghoula.AlchemistryCP"))
+                        recipeSources = conditionalMailSource("Wizard", 6, str.Get("miningSkill"), 8);
                     break;
             }
             

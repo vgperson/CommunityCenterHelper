@@ -11,7 +11,10 @@
 	"seasonalForage": "在{{season}}采集",
 	"locationalForage": "在{{location}}采集",
 	"seasonalLocationalForage": "在{{season}}于{{location}}",
-	"salmonberryForage": "在春季15-18日间于灌木丛里采集",
+	"bushForage": "Forage from bushes", // TODO
+	"locationalBushForage": "Forage from bushes {{location}}", // TODO
+	"bushForageDayRange": "在{{season}}{{startDay}}-{{endDay}}日间于灌木丛里采集",
+	"locationalBushForageDayRange": "Forage from bushes {{location}} {{season}} {{startDay}}-{{endDay}}", // TODO
 	
 	// Tilling
 	"generalTilling": "锄地",
@@ -62,6 +65,7 @@
 	"craftRecipeByName": "制作{{recipe}}",
 	"craftRecipe": "制作",
 	"cookRecipe": "烹饪",
+	"apothecaryCauldron": "Apothecary's Cauldron", // Alchemistry // TODO
 	
 	// From Geodes
 	"openGeode": "在铁匠处打开{{geode}}",
@@ -170,6 +174,7 @@
 	"locationIsland": "on Ginger Island", // TODO
 	"locationVolcano": "in the Volcano", // TODO
 	"locationRidgeForest": "in Ridge Forest", // RSV // TODO
+	"locationMagesRest": "in Mage's Rest", // Alchemistry // TODO
 	"locationUnknown": "in ???",
 	
 	// Water Locations (for fishing suggestions)
@@ -207,6 +212,7 @@
 	"waterRidge": "on the Ridge", // RSV // TODO
 	"waterRidgeForest": "in Ridge Forest", // RSV // TODO
 	"waterRidgeFalls": "at Ridge Falls", // RSV // TODO
+	"waterMagesRest": "in Mage's Rest", // Alchemistry // TODO
 	"waterUnknown": "in ???",
 	
 	// Water Types (for crab pot suggestions)
@@ -243,6 +249,7 @@
 	"shopNightingaleOrchard": "Nightingale Orchard", // RSV // TODO
 	"shopHotelPastry": "Hotel Pastry Shop", // RSV // TODO
 	"shopPikaRestaurant": "Pika's Restaurant", // RSV // TODO
+	"shopSevinae": "Sevinae's Shop", // Alchemistry // TODO
 	"shopUnknown": "???",
 	"randomlyAvailable": "随机", // appended in parentheses after shop name when item is only randomly in stock
 	"mustHaveShipped": "售卖{{item}}(出货箱)", // appended in parentheses after shop name if you have to have shipped a certain other item
@@ -262,6 +269,7 @@
 	"itemCategoryWildSeed": "任意野生种子", // category -777; not defined as a constant, but used for Tea Sapling recipe
 	"itemCategoryNut": "任意坚果", // not a category strictly defined by base game, but used to summarize machine input
 	"itemCategoryMushroom": "任意蘑菇", // not a category strictly defined by base game, but used to summarize machine input
+	"itemCategoryBodyPart": "any body part", // Alchemistry // TODO
 	
 	// Tree Names (for tree suggestions)
 	"treeApple": "苹果树",

@@ -11,7 +11,10 @@
     "seasonalForage": "Fourrager en {{season}}",
     "locationalForage": "Fourrage à {{location}}",
     "seasonalLocationalForage": "Fourrager en {{season}} {{location}}",
-    "salmonberryForage": "Fourrager dans les buissons en printemps (15-18)",
+    "bushForage": "Forage from bushes", // TODO
+	"locationalBushForage": "Forage from bushes {{location}}", // TODO
+	"bushForageDayRange": "Fourrager dans les buissons en {{season}} ({{startDay}}-{{endDay}})",
+	"locationalBushForageDayRange": "Forage from bushes {{location}} {{season}} {{startDay}}-{{endDay}}", // TODO
     
     // Tilling
     "generalTilling": "Labourer le sol",
@@ -62,6 +65,7 @@
     "craftRecipeByName": "Fabriquer {{recipe}}",
     "craftRecipe": "Artisanat",
     "cookRecipe": "Cuisine",
+	"apothecaryCauldron": "Apothecary's Cauldron", // Alchemistry // TODO
     
     // From Geodes
     "openGeode": "Ouvrir {{geode}} chez le forgeron",
@@ -170,6 +174,7 @@
     "locationIsland": "sur l'île Gingembre",
     "locationVolcano": "dans le volcan",
     "locationRidgeForest": "dans la forêt de la Crête", // RSV
+	"locationMagesRest": "in Mage's Rest", // Alchemistry // TODO
     "locationUnknown": "dans ???",
     
     // Water Locations (for fishing suggestions)
@@ -207,6 +212,7 @@
     "waterRidge": "sur la crête", // RSV
     "waterRidgeForest": "dans la forêt de la Crête", // RSV
     "waterRidgeFalls": "au cascades de la Crête", // RSV
+	"waterMagesRest": "in Mage's Rest", // Alchemistry // TODO
     "waterUnknown": "dans ???",
     
     // Water Types (for crab pot suggestions)
@@ -243,6 +249,7 @@
     "shopNightingaleOrchard": "au Verger de rossignol", // RSV
     "shopHotelPastry": "à la Pâtisserie d’hôtel (RSV)", // RSV
     "shopPikaRestaurant": "au Restaurant Pika", // RSV
+	"shopSevinae": "chez Sevinae", // Alchemistry
     "shopUnknown": "???",
     "randomlyAvailable": "aléatoire", // appended in parentheses after shop name when item is only randomly in stock
     "mustHaveShipped": "envoyer {{item}}", // appended in parentheses after shop name if you have to have shipped a certain other item
@@ -262,6 +269,7 @@
     "itemCategoryWildSeed": "n'importe quelle graine sauvage", // category -777; not defined as a constant, but used for Tea Sapling recipe
     "itemCategoryNut": "n'importe quelle noix", // not a category strictly defined by base game, but used to summarize machine input
     "itemCategoryMushroom": "n'importe quel champignon", // not a category strictly defined by base game, but used to summarize machine input
+	"itemCategoryBodyPart": "any body part", // Alchemistry // TODO
     
     // Tree Names (for tree suggestions)
     "treeApple": "Pommier",

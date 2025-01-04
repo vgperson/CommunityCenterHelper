@@ -11,7 +11,10 @@
 	"seasonalForage": "Colete durante {{season}}",
 	"locationalForage": "Colete em {{location}}",
 	"seasonalLocationalForage": "Colete durante {{season}} {{location}}",
-	"salmonberryForage": "Colete em arbustos durante a Primavera nos dias 15-18",
+	"bushForage": "Forage from bushes", // TODO
+	"locationalBushForage": "Forage from bushes {{location}}", // TODO
+	"bushForageDayRange": "Colete em arbustos durante a {{season}} nos dias {{startDay}}-{{endDay}}",
+	"locationalBushForageDayRange": "Forage from bushes {{location}} {{season}} {{startDay}}-{{endDay}}", // TODO
 	
 	// Tilling
 	"generalTilling": "Arando terra",
@@ -62,6 +65,7 @@
 	"craftRecipeByName": "Craft {{recipe}}",
 	"craftRecipe": "Crafting",
 	"cookRecipe": "Cozinhando",
+	"apothecaryCauldron": "Apothecary's Cauldron", // Alchemistry // TODO
 	
 	// From Geodes
 	"openGeode": "Abra um {{geode}} no ferreiro",
@@ -170,6 +174,7 @@
 	"locationIsland": "on Ginger Island", // TODO
 	"locationVolcano": "in the Volcano", // TODO
 	"locationRidgeForest": "in Ridge Forest", // RSV // TODO
+	"locationMagesRest": "in Mage's Rest", // Alchemistry // TODO
 	"locationUnknown": "na ???",
 	
 	// Water Locations (for fishing suggestions)
@@ -207,6 +212,7 @@
 	"waterRidge": "on the Ridge", // RSV // TODO
 	"waterRidgeForest": "in Ridge Forest", // RSV // TODO
 	"waterRidgeFalls": "at Ridge Falls", // RSV // TODO
+	"waterMagesRest": "in Mage's Rest", // Alchemistry // TODO
 	"waterUnknown": "na ???",
 	
 	// Water Types (for crab pot suggestions)
@@ -243,6 +249,7 @@
 	"shopNightingaleOrchard": "Nightingale Orchard", // RSV // TODO
 	"shopHotelPastry": "Hotel Pastry Shop", // RSV // TODO
 	"shopPikaRestaurant": "Pika's Restaurant", // RSV // TODO
+	"shopSevinae": "Sevinae's Shop", // Alchemistry // TODO
 	"shopUnknown": "???",
 	"randomlyAvailable": "aleatório", // appended in parentheses after shop name when item is only randomly in stock
 	"mustHaveShipped": "envie pelo correio o(a) {{item}}", // appended in parentheses after shop name if you have to have shipped a certain other item
@@ -262,6 +269,7 @@
 	"itemCategoryWildSeed": "qualquer semente silvestre", // category -777; not defined as a constant, but used for Tea Sapling recipe
 	"itemCategoryNut": "qualquer noz", // not a category strictly defined by base game, but used to summarize machine input
 	"itemCategoryMushroom": "qualquer cogumelo", // not a category strictly defined by base game, but used to summarize machine input
+	"itemCategoryBodyPart": "any body part", // Alchemistry // TODO
 	
 	// Tree Names (for tree suggestions)
 	"treeApple": "Macieira",

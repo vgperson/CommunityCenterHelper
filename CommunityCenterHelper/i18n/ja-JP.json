@@ -11,7 +11,10 @@
 	"seasonalForage": "{{season}}に採集",
 	"locationalForage": "{{location}}で採集",
 	"seasonalLocationalForage": "{{season}}に{{location}}で採集",
-	"salmonberryForage": "春の15-18日に茂みから採集",
+	"bushForage": "茂みから採集",
+	"locationalBushForage": "{{location}}で茂みから採集",
+	"bushForageDayRange": "{{season}}の{{startDay}}-{{endDay}}日に茂みから採集",
+	"locationalBushForageDayRange": "{{season}}の{{startDay}}-{{endDay}}日に{{location}}で茂みから採集",
 	
 	// Tilling
 	"generalTilling": "土を耕す",
@@ -62,6 +65,7 @@
 	"craftRecipeByName": "「{{recipe}}」のクラフト",
 	"craftRecipe": "クラフトで作る",
 	"cookRecipe": "料理する",
+	"apothecaryCauldron": "薬剤師の大鍋で作る", // Alchemistry
 	
 	// From Geodes
 	"openGeode": "鍛冶屋に「{{geode}}」を割れてもらう",
@@ -170,6 +174,7 @@
 	"locationIsland": "ジンジャーアイランド",
 	"locationVolcano": "火山",
 	"locationRidgeForest": "尾根の森", // RSV
+	"locationMagesRest": "メイジズ・レスト", // Alchemistry
 	"locationUnknown": "???",
 	
 	// Water Locations (for fishing suggestions)
@@ -207,6 +212,7 @@
 	"waterRidge": "尾根", // RSV
 	"waterRidgeForest": "尾根の森", // RSV
 	"waterRidgeFalls": "尾根の滝", // RSV
+	"waterMagesRest": "メイジズ・レスト", // Alchemistry
 	"waterUnknown": "???",
 	
 	// Water Types (for crab pot suggestions)
@@ -243,6 +249,7 @@
 	"shopNightingaleOrchard": "ナイチンゲールオーチャード", // SVE
 	"shopHotelPastry": "ホテルのお菓子屋", // RSV
 	"shopPikaRestaurant": "ピカの店", // RSV
+	"shopSevinae": "セヴィーネの店", // Alchemistry
 	"shopUnknown": "???",
 	"randomlyAvailable": "ランダム", // appended in parentheses after shop name when item is only randomly in stock
 	"mustHaveShipped": "{{item}}を出荷", // appended in parentheses after shop name if you have to have shipped a certain other item
@@ -262,6 +269,7 @@
 	"itemCategoryWildSeed": "野生のタネ", // category -777; not defined as a constant, but used for Tea Sapling recipe
 	"itemCategoryNut": "木の実", // not a category strictly defined by base game, but used to summarize machine input
 	"itemCategoryMushroom": "キノコ", // not a category strictly defined by base game, but used to summarize machine input
+	"itemCategoryBodyPart": "生物の一部", // Alchemistry
 	
 	// Tree Names (for tree suggestions)
 	"treeApple": "リンゴの木",
