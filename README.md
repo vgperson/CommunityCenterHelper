@@ -49,6 +49,7 @@ In addition to the bundles (both normal and remixed) in the base game, the follo
 - Challenging Community Center Bundles (by Alja)
 - Minerva's Harder Community Center Bundles
 - Legacy Community Center Bundles (by Lunatyx)
+- Alchemistry Bundles (Easy and Harder) (by Morghoula)
 - Community Center Bundle Overhaul (by 7Yrs, SMAPI version by Chaos234)
 - EasierBundles (by Quirinea)
 - Alternative Bundles (by Quirinea)
