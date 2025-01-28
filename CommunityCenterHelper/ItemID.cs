@@ -612,18 +612,24 @@
         public const string CNC_Basil = "Cornucopia_Basil";
         public const string CNC_BellPepper = "Cornucopia_BellPepper";
         public const string CNC_BlueMist = "Cornucopia_BlueMist";
+        public const string CNC_Butter = "Cornucopia_Butter";
+        public const string CNC_Candles = "Cornucopia_Candles";
+        public const string CNC_CenturyEgg = "Cornucopia_CenturyEgg";
         public const string CNC_Chives = "Cornucopia_Chives";
         public const string CNC_Chrysanthemum = "Cornucopia_Chrysanthemum";
         public const string CNC_ClarySage = "Cornucopia_ClarySage";
         public const string CNC_CocoaPod = "Cornucopia_CocoaPod";
         public const string CNC_CottonBoll = "Cornucopia_CottonBoll";
         public const string CNC_Cucumber = "Cornucopia_Cucumber";
+        public const string CNC_DriedHerb = "Cornucopia_DriedHerb";
         public const string CNC_EucalyptusLeaves = "Cornucopia_EucalyptusLeaves";
         public const string CNC_Fennel = "Cornucopia_Fennel";
+        public const string CNC_FlavoredYogurt = "Cornucopia_FlavoredYogurt";
         public const string CNC_Honeysuckle = "Cornucopia_Honeysuckle";
         public const string CNC_Iris = "Cornucopia_Iris";
         public const string CNC_Jasmine = "Cornucopia_Jasmine";
         public const string CNC_Kiwifruit = "Cornucopia_Kiwi";
+        public const string CNC_Lettuce = "Cornucopia_Lettuce";
         public const string CNC_Lily = "Cornucopia_Lily";
         public const string CNC_Lime = "Cornucopia_Lime";
         public const string CNC_Lotus = "Cornucopia_Lotus";
@@ -640,9 +646,12 @@
         public const string CNC_Pear = "Cornucopia_Pear";
         public const string CNC_Peppercorn = "Cornucopia_Peppercorn";
         public const string CNC_Persimmon = "Cornucopia_Persimmon";
+        public const string CNC_Pistachio = "Cornucopia_Pistachio";
         public const string CNC_Raspberry = "Cornucopia_Raspberry";
         public const string CNC_Rose = "Cornucopia_Rose";
+        public const string CNC_SeaSalt = "Cornucopia_SeaSalt";
         public const string CNC_Shiitake = "Cornucopia_Shiitake";
+        public const string CNC_SnackCheese = "Cornucopia_SnackCheese";
         public const string CNC_Soybeans = "Cornucopia_Soybeans";
         public const string CNC_Spinach = "Cornucopia_Spinach";
         public const string CNC_Sugarcane = "Cornucopia_Sugarcane";
@@ -656,39 +665,65 @@
         public const string CNC_WasabiRoot = "Cornucopia_WasabiRoot";
         public const string CNC_Watermelon = "Cornucopia_Watermelon";
         
+        public const string CNC_BC_ButterChurn = "Cornucopia_ButterChurn";
+        public const string CNC_BC_DryingRack = "Cornucopia_DryingRack";
+        public const string CNC_BC_WaxBarrel = "Cornucopia_WaxBarrel";
+        public const string CNC_BC_YogurtJar = "Cornucopia_YogurtJar";
+        
         // Stardew Valley Expanded Item IDs
         public const string SVE_AgedBlueMoonWine = "FlashShifter.StardewValleyExpandedCP_Aged_Blue_Moon_Wine";
+        public const string SVE_Amber = "FlashShifter.StardewValleyExpandedCP_Amber";
         public const string SVE_AncientFernSeed = "FlashShifter.StardewValleyExpandedCP_Ancient_Ferns_Seed";
         public const string SVE_AncientFiber = "FlashShifter.StardewValleyExpandedCP_Ancient_Fiber";
         public const string SVE_BakedBerryOatmeal = "FlashShifter.StardewValleyExpandedCP_Baked_Berry_Oatmeal";
         public const string SVE_Bearberry = "FlashShifter.StardewValleyExpandedCP_Bearberrys";
         public const string SVE_BigBarkBurger = "FlashShifter.StardewValleyExpandedCP_Big_Bark_Burger";
+        public const string SVE_BirchSyrup = "FlashShifter.StardewValleyExpandedCP_Birch_Syrup";
         public const string SVE_BlueMoonWine = "FlashShifter.StardewValleyExpandedCP_Blue_Moon_Wine";
+        public const string SVE_Butter = "FlashShifter.StardewValleyExpandedCP_Butter";
         public const string SVE_Butterfish = "FlashShifter.StardewValleyExpandedCP_Butterfish";
+        public const string SVE_ButternutSquash = "FlashShifter.StardewValleyExpandedCP_Butternut_Squash";
+        public const string SVE_Candy = "FlashShifter.StardewValleyExpandedCP_Candy";
         public const string SVE_Clownfish = "FlashShifter.StardewValleyExpandedCP_Clownfish";
+        public const string SVE_Cucumber = "FlashShifter.StardewValleyExpandedCP_Cucumber";
         public const string SVE_Conch = "FlashShifter.StardewValleyExpandedCP_Big_Conch";
         public const string SVE_DulseSeaweed = "FlashShifter.StardewValleyExpandedCP_Dulse_Seaweed";
+        public const string SVE_FirWax = "FlashShifter.StardewValleyExpandedCP_Fir_Wax";
         public const string SVE_Frog = "FlashShifter.StardewValleyExpandedCP_Frog";
+        public const string SVE_FrogLegs = "FlashShifter.StardewValleyExpandedCP_Frog_Legs";
         public const string SVE_GlazedButterfish = "FlashShifter.StardewValleyExpandedCP_Glazed_Butterfish";
         public const string SVE_GrassCarp = "FlashShifter.StardewValleyExpandedCP_Grass_Carp";
+        public const string SVE_GrilledCheeseSandwich = "FlashShifter.StardewValleyExpandedCP_Grilled_Cheese_Sandwich";
+        public const string SVE_IceCreamSundae = "FlashShifter.StardewValleyExpandedCP_Ice_Cream_Sundae";
         public const string SVE_KingSalmon = "FlashShifter.StardewValleyExpandedCP_King_Salmon";
         public const string SVE_Minnow = "FlashShifter.StardewValleyExpandedCP_Minnow";
         public const string SVE_MixedBerryPie = "FlashShifter.StardewValleyExpandedCP_Mixed_Berry_Pie";
         public const string SVE_MushroomBerryRice = "FlashShifter.StardewValleyExpandedCP_Mushroom_Berry_Rice";
         public const string SVE_MushroomColony = "FlashShifter.StardewValleyExpandedCP_Mushroom_Colony";
+        public const string SVE_Nectarine = "FlashShifter.StardewValleyExpandedCP_Nectarine";
+        public const string SVE_NectarineFruitBread = "FlashShifter.StardewValleyExpandedCP_Nectarine_Fruit_Bread";
+        public const string SVE_Pear = "FlashShifter.StardewValleyExpandedCP_Pear";
+        public const string SVE_Persimmon = "FlashShifter.StardewValleyExpandedCP_Persimmon";
+        public const string SVE_PineappleCustardCrepe = "FlashShifter.StardewValleyExpandedCP_Pineapple_Custard_Crepe";
+        public const string SVE_PoisonMushroom = "FlashShifter.StardewValleyExpandedCP_Poison_Mushroom";
         public const string SVE_Puppyfish = "FlashShifter.StardewValleyExpandedCP_Puppyfish";
         public const string SVE_RadioactiveBass = "FlashShifter.StardewValleyExpandedCP_Radioactive_Bass";
+        public const string SVE_Rafflesia = "FlashShifter.StardewValleyExpandedCP_Smelly_Rafflesia";
         public const string SVE_SalalBerry = "FlashShifter.StardewValleyExpandedCP_Salal_Berry";
         public const string SVE_SandDollar = "FlashShifter.StardewValleyExpandedCP_Dried_Sand_Dollar";
         public const string SVE_ShrubSeed = "FlashShifter.StardewValleyExpandedCP_Shrub_Seed";
-        public const string SVE_Rafflesia = "FlashShifter.StardewValleyExpandedCP_Smelly_Rafflesia";
+        public const string SVE_SweetPotato = "FlashShifter.StardewValleyExpandedCP_Sweet_Potato";
         public const string SVE_Starfish = "FlashShifter.StardewValleyExpandedCP_Starfish";
+        public const string SVE_Tadpole = "FlashShifter.StardewValleyExpandedCP_Tadpole";
         public const string SVE_VoidDelight = "FlashShifter.StardewValleyExpandedCP_Void_Delight";
         public const string SVE_VoidPebble = "FlashShifter.StardewValleyExpandedCP_Void_Pebble";
         public const string SVE_VoidSalmonSushi = "FlashShifter.StardewValleyExpandedCP_Void_Salmon_Sushi";
         
+        public const string SVE_BC_ButterChurner = "FlashShifter.StardewValleyExpandedCP_Butter_Churner";
+        
         // Ridgeside Village Item IDs
         public const string RSV_AutumnDropBerry = "Rafseazz.RSVCP_Autumn_Drop_Berry";
+        public const string RSV_CardiaSeptalJellyfish = "Rafseazz.RSVCP_Cardia_Septal_Jellyfish";
         public const string RSV_CherryPluot = "Rafseazz.RSVCP_Cherry_Pluot";
         public const string RSV_ClementineCake = "Rafseazz.RSVCP_Clementine_Cake";
         public const string RSV_CrimsonSpikedClam = "Rafseazz.RSVCP_Crimson_Spiked_Clam";
@@ -703,6 +738,7 @@
         public const string RSV_HarvesterTrout = "Rafseazz.RSVCP_Harvester_Trout";
         public const string RSV_HighlandBlueberryPie = "Rafseazz.RSVCP_Highland_Blueberry_Pie";
         public const string RSV_HighlandIceCream = "Rafseazz.RSVCP_Highland_Ice_Cream";
+        public const string RSV_KeksStyleShortcake = "Rafseazz.RSVCP_Kek_s_Style_Shortcake";
         public const string RSV_LavaLily = "Rafseazz.RSVCP_Lava_Lily";
         public const string RSV_LullabyCarp = "Rafseazz.RSVCP_Lullaby_Carp";
         public const string RSV_MatchaLatte = "Rafseazz.RSVCP_Matcha_Latte";
@@ -713,6 +749,7 @@
         public const string RSV_ParadiseRangpur = "Rafseazz.RSVCP_Paradise_Rangpur";
         public const string RSV_PebbleBackCrab = "Rafseazz.RSVCP_Pebble_Back_Crab";
         public const string RSV_PillowsoftCheezySandwich = "Rafseazz.RSVCP_Pillowsoft_Cheezy_Sandwich";
+        public const string RSV_PinkFrostedSprinkledDoughnut = "Rafseazz.RSVCP_Pink_Frosted_Sprinkled_Doughnut";
         public const string RSV_RidgeAzoreanFlower = "Rafseazz.RSVCP_Ridge_Azorean_Flower";
         public const string RSV_RidgeCherry = "Rafseazz.RSVCP_Ridge_Cherry";
         public const string RSV_RidgesideBass = "Rafseazz.RSVCP_Ridgeside_Bass";
@@ -722,6 +759,7 @@
         public const string RSV_SummitSnowbell = "Rafseazz.RSVCP_Summit_Snowbell";
         public const string RSV_SweetCranberryCheesecake = "Rafseazz.RSVCP_Sweet_Cranberry_Cheesecake";
         public const string RSV_TropiUgliFruit = "Rafseazz.RSVCP_Tropi_Ugli_Fruit";
+        public const string RSV_WildAppleJuice = "Rafseazz.RSVCP_Wild_Apple_Juice";
         
         // Alchemistry Item IDs
         public const string ALC_AddersTongue = "Morghoula.AlchemistryCP_AddersTongue";

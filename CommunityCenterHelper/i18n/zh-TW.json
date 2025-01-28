@@ -173,6 +173,7 @@
 	"locationSkullPrehistoric": "骷髏洞穴的史前層",
 	"locationIsland": "薑之島",
 	"locationVolcano": "火山",
+	"locationAdventurerSummit": "in Adventurer Summit", // SVE // TODO
 	"locationRidgeForest": "in Ridge Forest", // RSV
 	"locationMagesRest": "in Mage's Rest", // Alchemistry // TODO
 	"locationUnknown": "？？？",
@@ -237,8 +238,9 @@
 	"shopOasis": "綠洲",
 	"shopOasisWeekday": "綠洲（{{day}}）",
 	"shopIslandTrader": "薑之島商人",
-	"shopIslandResort": "Island Resort",
+	"shopIslandResort": "Island Resort", // TODO
 	"shopDwarfVolcano": "火山矮人",
+	"shopIceCream": "Ice Cream Stand", // TODO
 	"shopTravelingCartRandom": "旅行貨車（隨機出現）",
 	"shopTravelingCartSeason": "{{season}}時的旅行貨車",
 	"shopEggFestival": "彩蛋節中皮耶爾的貨攤（春季 13 日）",
@@ -249,6 +251,7 @@
 	"shopNightingaleOrchard": "Nightingale Orchard", // RSV
 	"shopHotelPastry": "Hotel Pastry Shop", // RSV
 	"shopPikaRestaurant": "Pika's Restaurant", // RSV
+	"shopMalayaRecipes": "Malaya's Shop", // RSV // TODO
 	"shopSevinae": "Sevinae's Shop", // Alchemistry // TODO
 	"shopUnknown": "？？？",
 	"randomlyAvailable": "隨機", // appended in parentheses after shop name when item is only randomly in stock
@@ -269,6 +272,7 @@
 	"itemCategoryWildSeed": "任意野生種子", // category -777; not defined as a constant, but used for Tea Sapling recipe
 	"itemCategoryNut": "any nut", // not a category strictly defined by base game, but used to summarize machine input
 	"itemCategoryMushroom": "任意蘑菇", // not a category strictly defined by base game, but used to summarize machine input
+	"itemCategoryHerb": "any herb", // Cornucopia // TODO
 	"itemCategoryBodyPart": "any body part", // Alchemistry // TODO
 	
 	// Tree Names (for tree suggestions)
@@ -290,6 +294,9 @@
 	"treeAvocado": "酪梨樹", // Cornucopia
 	"treeCocoaPod": "可可豆莢樹", // Cornucopia
 	"treePear": "梨子樹", // Cornucopia
+	"treePistachio": "Pistachio Tree", // Cornucopia // TODO
+	"treeFir": "Fir Tree", // SVE // TODO
+	"treeNectarine": "Nectarine Tree", // SVE // TODO
 	"treeCherryPluot": "Cherry Pluot Tree", // RSV
 	"treeMountainPlumcot": "Mountain Plumcot Tree", // RSV
 	"treeDesertTangelo": "Desert Tangelo Tree", // RSV

@@ -173,6 +173,7 @@
 	"locationSkullPrehistoric": "в Пещере Черепа, доисторические уровни",
 	"locationIsland": "on Ginger Island", // TODO
 	"locationVolcano": "in the Volcano", // TODO
+	"locationAdventurerSummit": "in Adventurer Summit", // SVE // TODO
 	"locationRidgeForest": "in Ridge Forest", // RSV // TODO
 	"locationMagesRest": "in Mage's Rest", // Alchemistry // TODO
 	"locationUnknown": "в ???",
@@ -239,6 +240,7 @@
 	"shopIslandTrader": "Island Trader", // TODO
 	"shopIslandResort": "Island Resort", // TODO
 	"shopDwarfVolcano": "Volcano Dwarf", // TODO
+	"shopIceCream": "Ice Cream Stand", // TODO
 	"shopTravelingCartRandom": "у Странствующего Торговца (случайно)",
 	"shopTravelingCartSeason": "у Странствующего Торговца {{season}}",
 	"shopEggFestival": "у Пьера на Яичном фестивале (Весна 13)",
@@ -249,6 +251,7 @@
 	"shopNightingaleOrchard": "Nightingale Orchard", // RSV // TODO
 	"shopHotelPastry": "Hotel Pastry Shop", // RSV // TODO
 	"shopPikaRestaurant": "Pika's Restaurant", // RSV // TODO
+	"shopMalayaRecipes": "Malaya's Shop", // RSV // TODO
 	"shopSevinae": "Sevinae's Shop", // Alchemistry // TODO
 	"shopUnknown": "???",
 	"randomlyAvailable": "случайно", // appended in parentheses after shop name when item is only randomly in stock
@@ -269,6 +272,7 @@
 	"itemCategoryWildSeed": "любое семена волокон", // category -777; not defined as a constant, but used for Tea Sapling recipe
 	"itemCategoryNut": "любой орех", // not a category strictly defined by base game, but used to summarize machine input
 	"itemCategoryMushroom": "любой гриб", // not a category strictly defined by base game, but used to summarize machine input
+	"itemCategoryHerb": "any herb", // Cornucopia // TODO
 	"itemCategoryBodyPart": "any body part", // Alchemistry // TODO
 	
 	// Tree Names (for tree suggestions)
@@ -290,6 +294,9 @@
 	"treeAvocado": "Avocado Tree", // Cornucopia // TODO
 	"treeCocoaPod": "Cocoa Pod Tree", // Cornucopia // TODO
 	"treePear": "Pear Tree", // Cornucopia // TODO
+	"treePistachio": "Pistachio Tree", // Cornucopia // TODO
+	"treeFir": "Fir Tree", // SVE // TODO
+	"treeNectarine": "Nectarine Tree", // SVE // TODO
 	"treeCherryPluot": "Cherry Pluot Tree", // RSV // TODO
 	"treeMountainPlumcot": "Mountain Plumcot Tree", // RSV // TODO
 	"treeDesertTangelo": "Desert Tangelo Tree", // RSV // TODO

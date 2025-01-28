@@ -173,6 +173,7 @@
 	"locationSkullPrehistoric": "ドクロの洞窟の先史時代",
 	"locationIsland": "ジンジャーアイランド",
 	"locationVolcano": "火山",
+	"locationAdventurerSummit": "冒険者の山頂", // SVE
 	"locationRidgeForest": "尾根の森", // RSV
 	"locationMagesRest": "メイジズ・レスト", // Alchemistry
 	"locationUnknown": "???",
@@ -239,16 +240,19 @@
 	"shopIslandTrader": "島のトレーダー",
 	"shopIslandResort": "ビーチリゾート",
 	"shopDwarfVolcano": "火山のドワーフ",
+	"shopIceCream": "アイスクリーム店",
 	"shopTravelingCartRandom": "行商人のカート（ランダム）",
 	"shopTravelingCartSeason": "{{season}}に行商人のカート",
 	"shopEggFestival": "エッグフェスティバル（春の13日)でピエール",
 	"shopFlowerDance": "フラワーダンス（春の24日）でピエール",
+	"shopLuau": "ルアウパーティー（夏の11日）でピエール",
 	"shopSpiritsEve": "スピリットイブ（秋の27日）でピエール",
 	"shopSophiaLedger": "ソフィアの台帳", // SVE
 	"shopWestForestBear": "西の森のクマさん", // SVE
 	"shopNightingaleOrchard": "ナイチンゲールオーチャード", // SVE
 	"shopHotelPastry": "ホテルのお菓子屋", // RSV
 	"shopPikaRestaurant": "ピカの店", // RSV
+	"shopMalayaRecipes": "マラヤの店", // RSV
 	"shopSevinae": "セヴィーネの店", // Alchemistry
 	"shopUnknown": "???",
 	"randomlyAvailable": "ランダム", // appended in parentheses after shop name when item is only randomly in stock
@@ -269,6 +273,7 @@
 	"itemCategoryWildSeed": "野生のタネ", // category -777; not defined as a constant, but used for Tea Sapling recipe
 	"itemCategoryNut": "木の実", // not a category strictly defined by base game, but used to summarize machine input
 	"itemCategoryMushroom": "キノコ", // not a category strictly defined by base game, but used to summarize machine input
+	"itemCategoryHerb": "ハーブ", // Cornucopia
 	"itemCategoryBodyPart": "生物の一部", // Alchemistry
 	
 	// Tree Names (for tree suggestions)
@@ -290,6 +295,9 @@
 	"treeAvocado": "アボカドの木", // Cornucopia
 	"treeCocoaPod": "カカオポッドの木", // Cornucopia
 	"treePear": "梨の木", // Cornucopia
+	"treePistachio": "ピスタチオの木", // Cornucopia
+	"treeFir": "モミの木", // SVE
+	"treeNectarine": "ネクタリンの木", // SVE
 	"treeCherryPluot": "チェリープルオットの木", // RSV
 	"treeMountainPlumcot": "山岳プラムコットの木", // RSV
 	"treeDesertTangelo": "砂漠タンジェロの木", // RSV

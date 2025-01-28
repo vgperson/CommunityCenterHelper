@@ -3,6 +3,7 @@ using StardewValley;
 using StardewValley.Locations;
 using StardewValley.TokenizableStrings;
 using System;
+using System.Collections.Generic;
 
 namespace CommunityCenterHelper
 {
@@ -1464,7 +1465,7 @@ namespace CommunityCenterHelper
                     
                     // [Challenging Cornucopia_RSV_SVE] Summer Crops Bundle
                     
-                    case ItemID.CNC_Kiwifruit:
+                    case ItemID.CNC_Lettuce:
                         return strSeasonalCrop("summer", quality);
                     
                     case ItemID.CNC_BellPepper:
@@ -1473,24 +1474,41 @@ namespace CommunityCenterHelper
                     case ItemID.SVE_AncientFiber:
                         return strGrowSeeds(ItemID.SVE_AncientFernSeed, parenthesize(strLocationalForage("locationWoods")), quality);
                     
+                    case ItemID.SVE_ButternutSquash:
+                        return strSeasonalCrop("summer", quality);
+                    
+                    case ItemID.CNC_Kiwifruit:
+                        return strSeasonalCrop("summer", quality);
+                    
                     case ItemID.CNC_Lotus:
                         return strSeasonalCrop("summer", quality, "shopOasis");
                     
                     // [Challenging Cornucopia_RSV_SVE] Fall Crops Bundle
                     
                     case ItemID.CNC_Olive:
-                        return strSeasonalCrop("fall", quality);;
+                        return strSeasonalCrop("fall", quality);
                     
                     case ItemID.CNC_Peanut:
                         return strSeasonalCrop("fall", quality, startingYear: 2);
+                    
+                    case ItemID.SVE_SweetPotato:
+                        return strSeasonalCrop("fall", quality);
                     
                     // [Challenging Cornucopia_RSV_SVE] Quality Crops Bundle
                     
                     case ItemID.CNC_Rose:
                         return strSeasonalCrop(seasonList: new string[] { "spring", "summer", "fall" }, quality: quality);
                     
+                    case ItemID.SVE_Cucumber:
+                        return strSeasonalCrop("spring", quality);
+                    
                     case ItemID.CNC_Cucumber:
                         return strSeasonalCrop("summer", quality, startingYear: 2);
+                    
+                    // [Challenging Cornucopia_RSV_SVE] Animal Bundle
+                    
+                    case ItemID.CNC_Butter:
+                        return strPutItemInMachine(ItemID.IT_Milk, ItemID.CNC_BC_ButterChurn);
                     
                     // [Challenging Cornucopia_RSV_SVE] Garden Bundle
                     
@@ -1508,11 +1526,20 @@ namespace CommunityCenterHelper
                     
                     // [Challenging Cornucopia_RSV_SVE] Artisan Products Bundle
                     
-                    case ItemID.CNC_CocoaPod:
-                        return strFruitTreeDuringSeason("treeCocoaPod", "spring", startingYear: 2);
+                    case ItemID.CNC_Pistachio:
+                        return strFruitTreeDuringSeason("treePistachio", "fall");
+                    
+                    case ItemID.CNC_Avocado:
+                        return strFruitTreeDuringSeason("treeAvocado", "summer");
                     
                     case ItemID.RSV_TropiUgliFruit:
                         return strFruitTreeDuringSeason("treeTropiUgliFruit", "summer", "shopNightingaleOrchard");
+                    
+                    case ItemID.SVE_Persimmon:
+                        return strFruitTreeDuringSeason("treePersimmon", "fall");
+                    
+                    case ItemID.CNC_CocoaPod:
+                        return strFruitTreeDuringSeason("treeCocoaPod", "spring", startingYear: 2);
                     
                     case ItemID.CNC_Pear:
                         return strFruitTreeDuringSeason("treePear", "winter", startingYear: 2);
@@ -1579,7 +1606,19 @@ namespace CommunityCenterHelper
                     case ItemID.CNC_OliveOil:
                         return strPutItemInMachine(ItemID.CNC_Olive, ItemID.BC_OilMaker);
                     
+                    case ItemID.SVE_FirWax:
+                        return strTapTree("treeFir") + "\n"
+                             + strBuyFrom("shopWestForestBear");
+                    
+                    // [Challenging Cornucopia_RSV_SVE] Sticky Bundle
+                    
+                    case ItemID.SVE_BirchSyrup:
+                        return strCookRecipe("Birch Syrup");
+                    
                     // [Challenging Cornucopia_RSV_SVE] Exotic Foraging Bundle
+                    
+                    case ItemID.SVE_PoisonMushroom:
+                        return strSeasonalLocationalForage(seasonList: new string[] { "summer", "fall" }, locationKey: "locationWoods");
                     
                     case ItemID.RSV_LavaLily:
                         return strSeasonalForage("fall");
@@ -1588,6 +1627,10 @@ namespace CommunityCenterHelper
                     
                     case ItemID.SVE_Rafflesia:
                         return strSeasonalLocationalForage(seasonList: new string[] { "spring", "summer", "fall" }, locationKey: "locationWoods");
+                    
+                    case ItemID.CNC_DriedHerb:
+                        return strPutItemInMachine(itemLiteral: str.Get("itemCategoryHerb"), machineID: ItemID.BC_Dehydrator) + "\n"
+                             + strPutItemInMachine(itemLiteral: str.Get("itemCategoryHerb"), machineID: ItemID.CNC_BC_DryingRack);
                     
                     case ItemID.RSV_MountainMistbloom:
                         return strLocationalForage("locationRidgeForest");
@@ -1598,7 +1641,7 @@ namespace CommunityCenterHelper
                     
                     case ItemID.RSV_MountainRedbellyDace:
                         return strFishBase(waterList: new string[] { "waterRidgesideRiver", "waterRidge", "waterRidgeForest", "waterRidgeFalls" },
-                            start: "6am", end: "7pm", extraLinebreak: true);
+                                           start: "6am", end: "7pm", extraLinebreak: true);
                     
                     case ItemID.SVE_Butterfish:
                         return strFishBase("waterShearwaterBridge",
@@ -1628,8 +1671,16 @@ namespace CommunityCenterHelper
                     
                     // [Challenging Cornucopia_RSV_SVE] Night Fishing Bundle
                     
+                    case ItemID.SVE_Tadpole:
+                        return strFishBase("waterMountain", seasonList: new string[] { "spring", "summer" });
+                    
                     case ItemID.RSV_LullabyCarp:
                         return strFishBase("waterRidgeFalls", "3pm", "2am", seasonList: new string[] { "spring", "summer", "winter" });
+                    
+                    // [Challenging Cornucopia_RSV_SVE] Crab Pot Bundle
+                    
+                    case ItemID.CNC_SeaSalt:
+                        return strLocationalForage("locationBeach");
                     
                     // [Challenging Cornucopia_RSV_SVE] Specialty Fish Bundle
                     
@@ -1675,8 +1726,11 @@ namespace CommunityCenterHelper
                         return strCookRecipe("Glazed Butterfish") + "\n"
                              + strFishPond(fishItemName: "Butterfish", numRequired: 10);
                     
-                    case ItemID.SVE_BigBarkBurger:
-                        return strCookRecipe("Big Bark Burger");
+                    case ItemID.SVE_FrogLegs:
+                        return strCookRecipe("Frog Legs");
+                    
+                    case ItemID.CNC_CenturyEgg:
+                        return strPutItemInMachine(ItemID.IT_VoidEgg, ItemID.BC_PreservesJar);
                     
                     // [Challenging Cornucopia_RSV_SVE] Dye Bundle
                     
@@ -1688,11 +1742,23 @@ namespace CommunityCenterHelper
                     
                     // [Challenging Cornucopia_RSV_SVE] Field Research Bundle
                     
-                    case ItemID.SVE_MushroomBerryRice:
-                        return strCookRecipe("Mushroom Berry Rice");
+                    case ItemID.SVE_GrilledCheeseSandwich:
+                        return strCookRecipe("Grilled Cheese Sandwich");
+                    
+                    case ItemID.SVE_Amber:
+                        return strLocationalArtifact(locationList: new string[] { "locationAdventurerSummit", "locationMountains" });
+                    
+                    case ItemID.CNC_SnackCheese:
+                        return strPutItemInMachine(ItemID.IT_Cheese, ItemID.CNC_BC_WaxBarrel);
                     
                     case ItemID.RSV_PillowsoftCheezySandwich:
                         return strCookRecipe("Pillowsoft Cheezy Sandwich");
+                    
+                    case ItemID.SVE_Nectarine:
+                        return strFruitTreeDuringSeason("treeNectarine", "summer");
+                    
+                    case ItemID.SVE_MushroomBerryRice:
+                        return strCookRecipe("Mushroom Berry Rice");
                     
                     // [Challenging Cornucopia_RSV_SVE] Fodder Bundle
                     
@@ -1710,6 +1776,12 @@ namespace CommunityCenterHelper
                     
                     // [Challenging Cornucopia_RSV_SVE] Enchanter's Bundle
                     
+                    case ItemID.CNC_Candles:
+                        return strPutItemInMachine(itemLiteral: str.Get("itemCategoryFlower"), machineID: ItemID.CNC_BC_WaxBarrel) + "\n"
+                             + strPutItemInMachine(itemLiteral: str.Get("itemCategoryFruit"), machineID: ItemID.CNC_BC_WaxBarrel) + "\n"
+                             + strPutItemInMachine(itemLiteral: str.Get("itemCategoryNut"), machineID: ItemID.CNC_BC_WaxBarrel) + "\n"
+                             + strPutItemInMachine(itemLiteral: str.Get("itemCategoryHerb"), machineID: ItemID.CNC_BC_WaxBarrel);
+                    
                     case ItemID.SVE_Frog:
                         return strFishBase("waterMountain", "6pm", "2am",
                                            seasonList: new string[] { "spring", "summer" }, weatherKey: "weatherRain");
@@ -1722,10 +1794,16 @@ namespace CommunityCenterHelper
                     case ItemID.RSV_HighlandBlueberryPie:
                         return strCookRecipe("Highland Blueberry Pie");
                     
+                    case ItemID.SVE_Candy:
+                        return strCookRecipe("Candy");
+                    
                     case ItemID.SVE_MixedBerryPie:
                         return strCookRecipe("Mixed Berry Pie");
                     
                     // [Challenging Cornucopia_RSV_SVE] Home Cook's Bundle
+                    
+                    case ItemID.CNC_FlavoredYogurt:
+                        return strPutItemInMachine(itemLiteral: str.Get("itemCategoryFruit"), machineID: ItemID.CNC_BC_YogurtJar);
                     
                     case ItemID.SVE_BakedBerryOatmeal:
                         return strCookRecipe("Baked Berry Oatmeal");
@@ -1737,6 +1815,9 @@ namespace CommunityCenterHelper
                     
                     case ItemID.RSV_SweetCranberryCheesecake:
                         return strCookRecipe("Sweet Cranberry Cheesecake");
+                    
+                    case ItemID.SVE_NectarineFruitBread:
+                        return strCookRecipe("Nectarine Fruit Bread");
                     
                     /********** [Challenging CC Bundles Cornucopia_RSV_SVE] The Missing Bundle **********/
                     
@@ -1755,6 +1836,9 @@ namespace CommunityCenterHelper
                     case ItemID.SVE_VoidDelight:
                         return strCookRecipe("Void Delight");
                     
+                    case ItemID.SVE_PineappleCustardCrepe:
+                        return strCookRecipe("Pineapple Custard Crepe");
+                    
                     /********** [Challenging CC Bundles Cornucopia_SVE] Crafts Room **********/
                     
                     // [Challenging Cornucopia_SVE] Summer Foraging Bundle
@@ -1763,8 +1847,29 @@ namespace CommunityCenterHelper
                         return strSeasonalCrop("summer", quality, startingYear: 2)
                              + (modRegistry.IsLoaded("minervamaga.FTM.PPJAForage")? // Forage pack included with bundle mod
                                 "\n" + strSeasonalForage("summer") : "");
+                        
+                    /********** [Challenging CC Bundles Cornucopia_SVE] Pantry **********/
+                    
+                    // [Challenging Cornucopia_SVE] Artisan Bundle
+                    
+                    case ItemID.SVE_Pear:
+                        return strFruitTreeDuringSeason("treePear", "spring");
+                    
+                    /********** [Challenging CC Bundles Cornucopia_SVE] Bulletin Board **********/
+                    
+                    // [Challenging Cornucopia_SVE] // Children's Bundle 
+                    
+                    case ItemID.SVE_IceCreamSundae:
+                        return strCookRecipe("Ice Cream Sundae") + "\n"
+                             + strBuyFrom("shopIceCream");
                     
                     /********** [Challenging CC Bundles RSV_SVE] Pantry **********/
+                    
+                    // [Challenging RSV_SVE] Animal Bundle
+                    
+                    case ItemID.SVE_Butter:
+                        return strPutItemInMachine(itemLiteral: str.Get("itemCategoryMilk"), machineID: ItemID.SVE_BC_ButterChurner) + "\n"
+                             + strFishPond(ItemID.SVE_Butterfish, 7);
                     
                     // [Challenging RSV_SVE] Artisan Bundle
                     
@@ -1794,17 +1899,32 @@ namespace CommunityCenterHelper
                     case ItemID.RSV_ParadiseRangpur:
                         return strFruitTreeDuringSeason("treeParadiseRangpur", "summer", "shopNightingaleOrchard");
                     
-                    case ItemID.CNC_Avocado:
-                        return strFruitTreeDuringSeason("treeAvocado", "summer");
-                    
                     // [Custom Cornucopia_RSV_SVE] Brewer's Bundle
                     
                     case ItemID.SVE_AgedBlueMoonWine:
                         return strBuyFrom("shopSophiaLedger");
                     
+                    /********** [Custom CC Bundles Cornucopia_RSV_SVE] Fish Tank **********/
+                    
+                    // [Custom Cornucopia_RSV_SVE] Night Fishing Bundle
+                    
+                    case ItemID.RSV_CardiaSeptalJellyfish:
+                        return strFishBase("locationRidgeForest", "8pm", "2am", seasonList: new string[] { "spring", "fall", "winter" });
+                    
                     /********** [Custom CC Bundles Cornucopia_RSV_SVE] Bulletin Board **********/
                     
+                    // [Custom Cornucopia_RSV_SVE] Chef's Bundle
+                    
+                    case ItemID.SVE_BigBarkBurger:
+                        return strCookRecipe("Big Bark Burger");
+                    
+                    case ItemID.RSV_PinkFrostedSprinkledDoughnut:
+                        return strCookRecipe("Pink Frosted Sprinkled Doughnut");
+                    
                     // [Custom Cornucopia_RSV_SVE] Home Cook's Bundle
+                    
+                    case ItemID.RSV_KeksStyleShortcake:
+                        return strCookRecipe("Kek's Style Shortcake");
                     
                     case ItemID.CNC_Tofu:
                         return strPutItemInMachine(ItemID.CNC_Soybeans, ItemID.BC_CheesePress, itemQuantity: 2);
@@ -1813,6 +1933,13 @@ namespace CommunityCenterHelper
                     
                     case ItemID.CNC_Watermelon:
                         return strSeasonalCrop("summer", quality);
+                    
+                    /********** [Custom CC Bundles Cornucopia_RSV] Bulletin Board **********/
+                    
+                    // [Custom Cornucopia_RSV] Children's Bundle
+                    
+                    case ItemID.RSV_WildAppleJuice:
+                        return strCookRecipe("Wild Apple Juice");
                     
                     /********** [Minerva's Harder CC (Easy)] Pantry **********/
                     
@@ -4822,92 +4949,64 @@ namespace CommunityCenterHelper
                     break;
             }
             
+            Dictionary<string, StardewValley.GameData.SpecialOrders.SpecialOrderData> orders;
+            
             // Manual mail unlocks, often with multiple factors.
             switch (recipeName)
             {
-                // Base game recipes
+                // Base Game Recipes By Mail
                 case "Monster Musk":
                     recipeSources = str.Get("conditionalMailSpecialOrder",
                         new { orderName = TokenParser.ParseText("[LocalizedText Strings\\SpecialOrderStrings:Wizard2_Name]") }); // Prismatic Jelly
                     break;
                 
-                // Mod-added recipes
-                case "Butter Churn":
-                    if (modRegistry.IsLoaded("ppja.artisanvalleyforMFM")) // Artisan Valley mail
-                        recipeSources = conditionalMailSource("Marnie", 4, "farming", 5);
+                // Cornucopia Recipes By Mail
+                case "Cornucopia_WaxBarrel":
+                    orders = DataLoader.SpecialOrders(Game1.content);
+                    if (orders.ContainsKey("Cornucopia.ArtisanMachines_WaxBarrel"))
+                    {
+                        recipeSources = str.Get("conditionalMailSpecialOrder",
+                            new { orderName = TokenParser.ParseText(orders["Cornucopia.ArtisanMachines_WaxBarrel"].Name) }); // Gifts for Evelyn
+                    }
                     break;
                 
-                case "Still":
-                    if (modRegistry.IsLoaded("ppja.artisanvalleyforMFM")) // Artisan Valley mail
-                        recipeSources = conditionalMailSource(skill: "farming", level: 10, year: 3, seasonKey: "fall");
+                case "Cornucopia_YogurtJar":
+                    orders = DataLoader.SpecialOrders(Game1.content);
+                    if (orders.ContainsKey("Cornucopia.ArtisanMachines_YogurtJar"))
+                    {
+                        recipeSources = str.Get("conditionalMailSpecialOrder",
+                            new { orderName = TokenParser.ParseText(orders["Cornucopia.ArtisanMachines_YogurtJar"].Name) }); // Cultured Yogurt
+                    }
                     break;
                 
-                case "Poached Pear":
-                    if (modRegistry.IsLoaded("ppja.MoreRecipesforMFM")) // More Recipes mail
-                        recipeSources = conditionalMailSource("Gus", 5, year: 2);
-                    break;
-                
-                case "PB&J Sandwich":
-                    if (modRegistry.IsLoaded("ppja.MoreRecipesforMFM")) // More Recipes mail
-                        recipeSources = conditionalMailSource(skill: "farming", level: 4);
-                    break;
-                
-                case "Seaweed Chips":
-                    if (modRegistry.IsLoaded("ppja.EvenMoreRecipesforMFM")) // Even More Recipes mail
-                        recipeSources = str.Get("recipeSourceFriendship", new { person = getPersonName("Willy"), hearts = 5 });
-                    break;
-                
-                case "Chocolate Mouse Bread":
-                    if (modRegistry.IsLoaded("ppja.EvenMoreRecipesforMFM")) // Even More Recipes mail
-                        recipeSources = conditionalMailSource("Penny", 8, year: 3);
-                    break;
-                
-                case "Mushroom Berry Rice":
-                    if (modRegistry.IsLoaded("FlashShifter.StardewValleyExpandedCP")) // Added to Adventurer's Guild shop by SVE
-                        recipeSources = str.Get("shopGuild");
-                    break;
-                
-                case "Mixed Berry Pie":
-                    if (modRegistry.IsLoaded("FlashShifter.StardewValleyExpandedCP")) // Added to Saloon shop by SVE
-                        recipeSources = str.Get("shopSaloon");
-                    break;
-                
-                case "Baked Berry Oatmeal":
-                    if (modRegistry.IsLoaded("FlashShifter.StardewValleyExpandedCP")) // SVE bear shop
-                        recipeSources = str.Get("shopWestForestBear");
-                    break;
-                
-                case "Pillowsoft Cheezy Sandwich":
-                    if (modRegistry.IsLoaded("Rafseazz.RSVCP")) // Ridgeside Village hotel pastry shop
-                        recipeSources = str.Get("shopHotelPastry");
-                    break;
-                
+                // RSV Recipes By Mail
                 case "Matcha Latte":
-                    if (modRegistry.IsLoaded("Rafseazz.RSVCP")) // Ridgeside Village mail
+                    if (modRegistry.IsLoaded("Rafseazz.RSVCP"))
                         recipeSources = str.Get("conditionalMailSpecialOrder",
                             new { orderName = TokenParser.ParseText("[LocalizedText Strings\\SpecialOrderStrings:RSV.SpecialOrder.MorningDrinks_Name]") });
                     break;
                 
                 case "Clementine Cake":
-                    if (modRegistry.IsLoaded("Rafseazz.RSVCP")) // Ridgeside Village mail
+                    if (modRegistry.IsLoaded("Rafseazz.RSVCP"))
                         recipeSources = conditionalMailSource("Shanice", 8);
                     break;
                 
                 case "Highland Blueberry Pie":
-                    if (modRegistry.IsLoaded("Rafseazz.RSVCP")) // Ridgeside Village mail
+                    if (modRegistry.IsLoaded("Rafseazz.RSVCP"))
                         recipeSources = conditionalMailSource("Malaya", 8);
                     break;
                 
                 case "Fluffy Apple Crumble":
-                    if (modRegistry.IsLoaded("Rafseazz.RSVCP")) // Ridgeside Village mail
+                    if (modRegistry.IsLoaded("Rafseazz.RSVCP"))
                         recipeSources = conditionalMailSource("Blair", 8);
                     break;
                 
                 case "Sweet Cranberry Cheesecake":
-                    if (modRegistry.IsLoaded("Rafseazz.RSVCP")) // Ridgeside Village mail
+                    if (modRegistry.IsLoaded("Rafseazz.RSVCP"))
                         recipeSources = conditionalMailSource("Faye", 8);
                     break;
                 
+                // Alchemistry Recipes By Mail
                 case "Morghoula.AlchemistryCP_EssenceRestabilizer_Recipe":
                     if (modRegistry.IsLoaded("Morghoula.AlchemistryCP"))
                         recipeSources = conditionalMailSource("Wizard", 4);
@@ -4926,6 +5025,37 @@ namespace CommunityCenterHelper
                 case "Morghoula.AlchemistryCP_TransmuterCoil_Recipe":
                     if (modRegistry.IsLoaded("Morghoula.AlchemistryCP"))
                         recipeSources = conditionalMailSource("Wizard", 6, str.Get("miningSkill"), 8);
+                    break;
+                
+                // PPJA Recipes By Mail
+                case "Butter Churn":
+                    if (modRegistry.IsLoaded("ppja.artisanvalleyforMFM")) // Artisan Valley
+                        recipeSources = conditionalMailSource("Marnie", 4, "farming", 5);
+                    break;
+                
+                case "Still":
+                    if (modRegistry.IsLoaded("ppja.artisanvalleyforMFM")) // Artisan Valley
+                        recipeSources = conditionalMailSource(skill: "farming", level: 10, year: 3, seasonKey: "fall");
+                    break;
+                
+                case "Poached Pear":
+                    if (modRegistry.IsLoaded("ppja.MoreRecipesforMFM")) // More Recipes
+                        recipeSources = conditionalMailSource("Gus", 5, year: 2);
+                    break;
+                
+                case "PB&J Sandwich":
+                    if (modRegistry.IsLoaded("ppja.MoreRecipesforMFM")) // More Recipes
+                        recipeSources = conditionalMailSource(skill: "farming", level: 4);
+                    break;
+                
+                case "Seaweed Chips":
+                    if (modRegistry.IsLoaded("ppja.EvenMoreRecipesforMFM")) // Even More Recipes
+                        recipeSources = str.Get("recipeSourceFriendship", new { person = getPersonName("Willy"), hearts = 5 });
+                    break;
+                
+                case "Chocolate Mouse Bread":
+                    if (modRegistry.IsLoaded("ppja.EvenMoreRecipesforMFM")) // Even More Recipes
+                        recipeSources = conditionalMailSource("Penny", 8, year: 3);
                     break;
             }
             
@@ -4969,11 +5099,11 @@ namespace CommunityCenterHelper
                 }
             }
             
-            // Add other hardcoded sources.
+            // Add other hardcoded non-mail sources.
             string separator = recipeSources != ""? str.Get("recipeSourceSeparator") : "";
             switch (recipeName)
             {
-                // Crafting Recipes
+                // Base Game Crafting Recipes
                 case "Wood Floor":
                 case "Straw Floor":
                 case "Stone Floor":
@@ -5073,7 +5203,7 @@ namespace CommunityCenterHelper
                     recipeSources += separator + str.Get("skillMastery", new { skill = str.Get("foragingSkill") });
                     break;
                 
-                // Cooking Recipes
+                // Base Game Cooking Recipes
                 case "Hashbrowns":
                 case "Omelet":
                 case "Pancakes":
@@ -5103,6 +5233,54 @@ namespace CommunityCenterHelper
                 case "Ginger Ale":
                     if (isVolcanoKnown())
                         recipeSources += separator + str.Get("shopDwarfVolcano");
+                    break;
+                
+                // SVE Cooking Recipes
+                case "Big Bark Burger":
+                case "Mixed Berry Pie":
+                case "Glazed Butterfish":
+                case "Candy":
+                    recipeSources += separator + str.Get("shopSaloon");
+                    break;
+                
+                case "Void Salmon Sushi":
+                case "Void Delight":
+                    if (isSewerKnown())
+                        recipeSources += separator + str.Get("shopKrobus")
+                                       + parenthesize(str.Get("recipeSourceFriendship",
+                                                              new { person = getPersonName("Krobus"), hearts = 10 }));
+                    break;
+                
+                case "Birch Syrup":
+                    recipeSources += separator + str.Get("shopPierre");
+                    break;
+                
+                case "Mushroom Berry Rice":
+                case "Frog Legs":
+                    recipeSources += separator + str.Get("shopGuild");
+                    break;
+                
+                case "Ice Cream Sundae":
+                    recipeSources += separator + str.Get("shopLuau");
+                    break;
+                
+                case "Baked Berry Oatmeal":
+                    recipeSources += separator + str.Get("shopWestForestBear");
+                    break;
+                
+                // RSV Cooking Recipes
+                case "Highland Ice Cream":
+                    recipeSources += separator + str.Get("shopPikaRestaurant");
+                    break;
+                
+                case "Pillowsoft Cheezy Sandwich":
+                    recipeSources += separator + str.Get("shopHotelPastry");
+                    break;
+                
+                case "Pink Frosted Sprinkled Doughnut":
+                case "Kek's Style Shortcake":
+                case "Wild Apple Juice":
+                    recipeSources += separator + str.Get("shopMalayaRecipes");
                     break;
                 
                 // PPJA Cooking Recipes
@@ -5180,28 +5358,6 @@ namespace CommunityCenterHelper
                                                            : "");
                         }
                     }
-                    break;
-                
-                // SVE Cooking Recipes
-                case "Big Bark Burger":
-                case "Glazed Butterfish":
-                    recipeSources += separator + str.Get("shopSaloon")
-                                   + parenthesize(str.Get("recipeSourceFriendship",
-                                                  new { person = getPersonName("Gus"), hearts = 5 }));
-                    break;
-                
-                case "Void Salmon Sushi":
-                case "Void Delight":
-                    if (isSewerKnown())
-                        recipeSources += separator + str.Get("shopKrobus")
-                                       + parenthesize(str.Get("recipeSourceFriendship",
-                                                              new { person = getPersonName("Krobus"), hearts = 10 }));
-                    break;
-                
-                // RSV Cooking Recipes
-                
-                case "Highland Ice Cream":
-                    recipeSources += separator + str.Get("shopPikaRestaurant");
                     break;
             }
             

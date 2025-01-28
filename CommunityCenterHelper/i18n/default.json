@@ -173,6 +173,7 @@
 	"locationSkullPrehistoric": "on Skull Cavern prehistoric floors",
 	"locationIsland": "on Ginger Island",
 	"locationVolcano": "in the Volcano",
+	"locationAdventurerSummit": "on Adventurer Summit", // SVE
 	"locationRidgeForest": "in Ridge Forest", // RSV
 	"locationMagesRest": "in Mage's Rest", // Alchemistry
 	"locationUnknown": "in ???",
@@ -239,16 +240,19 @@
 	"shopIslandTrader": "Island Trader",
 	"shopIslandResort": "Island Resort",
 	"shopDwarfVolcano": "Volcano Dwarf",
+	"shopIceCream": "Ice Cream Stand",
 	"shopTravelingCartRandom": "Traveling Cart (random)",
 	"shopTravelingCartSeason": "Traveling Cart in {{season}}",
 	"shopEggFestival": "Pierre at Egg Festival (Spring 13)",
 	"shopFlowerDance": "Pierre at Flower Dance (Spring 24)",
+	"shopLuau": "Pierre at Luau (Summer 11)",
 	"shopSpiritsEve": "Pierre on Spirit's Eve (Fall 27)",
 	"shopSophiaLedger": "Sophia's ledger", // SVE
 	"shopWestForestBear": "Forest West bear", // SVE
 	"shopNightingaleOrchard": "Nightingale Orchard", // RSV
 	"shopHotelPastry": "Hotel Pastry Shop", // RSV
 	"shopPikaRestaurant": "Pika's Restaurant", // RSV
+	"shopMalayaRecipes": "Malaya's Shop", // RSV
 	"shopSevinae": "Sevinae's Shop", // Alchemistry
 	"shopUnknown": "???",
 	"randomlyAvailable": "random", // appended in parentheses after shop name when item is only randomly in stock
@@ -269,6 +273,7 @@
 	"itemCategoryWildSeed": "any wild seeds", // category -777; not defined as a constant, but used for Tea Sapling recipe
 	"itemCategoryNut": "any nut", // not a category strictly defined by base game, but used to summarize machine input
 	"itemCategoryMushroom": "any mushroom", // not a category strictly defined by base game, but used to summarize machine input
+	"itemCategoryHerb": "any herb", // Cornucopia
 	"itemCategoryBodyPart": "any body part", // Alchemistry
 	
 	// Tree Names (for tree suggestions)
@@ -290,6 +295,9 @@
 	"treeAvocado": "Avocado Tree", // Cornucopia
 	"treeCocoaPod": "Cocoa Pod Tree", // Cornucopia
 	"treePear": "Pear Tree", // Cornucopia
+	"treePistachio": "Pistachio Tree", // Cornucopia
+	"treeFir": "Fir Tree", // SVE
+	"treeNectarine": "Nectarine Tree", // SVE
 	"treeCherryPluot": "Cherry Pluot Tree", // RSV
 	"treeMountainPlumcot": "Mountain Plumcot Tree", // RSV
 	"treeDesertTangelo": "Desert Tangelo Tree", // RSV
