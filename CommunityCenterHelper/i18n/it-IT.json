@@ -11,21 +11,21 @@
 	"seasonalForage": "Raccogli in {{season}}",
 	"locationalForage": "Raccogli {{location}}",
 	"seasonalLocationalForage": "Raccogli in {{season}} {{location}}",
-	"bushForage": "Forage from bushes", // TODO
-	"locationalBushForage": "Forage from bushes {{location}}", // TODO
+	"bushForage": "Raccogli dai cespugli",
+	"locationalBushForage": "Raccogli dai cespugli {{location}}",
 	"bushForageDayRange": "Raccogli dai cespugli {{season}} {{startDay}}-{{endDay}}",
-	"locationalBushForageDayRange": "Forage from bushes {{location}} {{season}} {{startDay}}-{{endDay}}", // TODO
+	"locationalBushForageDayRange": "Raccogli dai cespugli {{location}} {{season}} {{startDay}}-{{endDay}}",
 	
 	// Tilling
 	"generalTilling": "Dissoda il suolo",
 	"seasonalTilling": "Dissoda in {{season}}",
-	"locationalTilling": "<Dissoda {{location}}",
+	"locationalTilling": "Dissoda {{location}}",
 	"artifactDigging": "Scava nei Punti Artefatto (\"vermi\")",
 	"locationalArtifact": "Scava nei Punti Artefatto {{location}}",
 	
 	// Mining
 	"hitRocks": "Rompi pietre con {{pickaxe}}",
-	"hitRocksInLocation": "Rompi pietre {{location}}",
+	"hitRocksInLocation": "Rompi pietre in {{location}}",
 	
 	// Fishing
 	"fishBase": "Pesca {{water}}, {{extraLinebreak}}{{time}}{{weather}}, {{season}}",
@@ -48,24 +48,24 @@
 	"noItemMachine": "Prodotto da {{machine}}",
 	
 	// Constructions
-	"putItemInMill": "Metti {{rawItem}} nell'edificio Mulino",
+	"putItemInMill": "Metti {{rawItem}} nel Mulino",
 	"fishPond": "Prodotto dal Laghetto per pesci con {{fish}} x{{num}}",
 	"fishPondAny": "Prodotto dal Laghetto per pesci con qualsiasi pesce",
 	
 	// Monsters
-	"droppedByMonster": "Droppato da {{monster}}",
+	"droppedByMonster": "Lasciato da {{monster}}",
 	
 	// Trees
 	"treeDuringSeason": "{{tree}} in {{season}}",
 	"tapTree": "Piazza {{tapper}} su {{tree}}",
 	"seedFromTree": "Scuoti/abbatti {{tree}}",
-	"treeMoss": "Find on random mossy trees", // TODO
+	"treeMoss": "Trovato sugli Alberi della pioggia verde",
 	
 	// Crafting/Cooking
 	"craftRecipeByName": "Fabbrica {{recipe}}",
 	"craftRecipe": "Fabbricazione",
 	"cookRecipe": "Cucina",
-	"apothecaryCauldron": "Apothecary's Cauldron", // Alchemistry // TODO
+	"apothecaryCauldron": "Calderone della Farmacia", // Alchemistry
 	
 	// From Geodes
 	"openGeode": "Apri {{geode}} dal fabbro",
@@ -75,28 +75,28 @@
 	"panning": "Setaccia",
 	
 	// Ore Through Mining
-	"mineCopperOre": "Rompi Filone di Rame (Miniere, molto nei piani 31-39)",
-	"mineIronOre": "Rompi Filone di Ferro (Miniere 41+, molto nei piani 71-79)",
-	"mineGoldOre": "Rompi Filone d'Oro (Miniere 81+)",
-	"mineIridiumOre": "Rompi Pietre Mistiche (Miniere 101+), meteorite (evento raro)",
-	"mineRadioactiveOre": "Mine Radioactive Nodes (Mines in dangerous state)", // TODO
+	"mineCopperOre": "Rompi Filone di Rame (Miniere, in maggior quantità nei piani 31-39)",
+	"mineIronOre": "Rompi Filone di Ferro (Miniere, piano 41+, in maggior quantità nei piani 71-79)",
+	"mineGoldOre": "Rompi Filone d'Oro (Miniere, piano 81+)",
+	"mineIridiumOre": "Rompi Pietre Mistiche (Miniere, piano 101+), meteorite (evento raro)",
+	"mineRadioactiveOre": "Rompi Pietra Radioattiva (Miniere nello stato pericoloso)",
 	
 	// Gems Through Mining
-	"gemEmerald": "Rompi Filone di Smeraldo (Miniere 81+), Filone di Gemme",
-	"gemAquamarine": "Rompi Filone di Acquamarina (Miniere 41+), Filone di Gemme",
-	"gemRuby": "Rompi Filone di Rubino (Miniere 81+), Filone di Gemme",
+	"gemEmerald": "Rompi Filone di Smeraldo (Miniere piano 81+), Filone di Gemme",
+	"gemAquamarine": "Rompi Filone di Acquamarina (Miniere piano 41+), Filone di Gemme",
+	"gemRuby": "Rompi Filone di Rubino (Miniere piano 81+), Filone di Gemme",
 	"gemAmethyst": "Rompi Filone di Ametista, Filone di Gemme",
 	"gemTopaz": "Rompi Filone di Topazio, Filone di Gemme",
-	"gemJade": "Rompi Filone di Giada (Miniere 41+), Filone di Gemme",
-	"gemDiamond": "Rompi Filone di Diamante (Miniere 51+), Filone di Gemme",
-	"gemPrismaticShard": "Rompi Filone di gemme, Pietre Mistiche (Miniere 101+, 25%), Filone di Iridio (4%)",
-	"gemCinderShard": "Mine Cinder Shard Node (Volcano)", // TODO
-	"boneNode": "Mine Bone Node (Ginger Island Dig Site)", // TODO
+	"gemJade": "Rompi Filone di Giada (Miniere piano 41+), Filone di Gemme",
+	"gemDiamond": "Rompi Filone di Diamante (Miniere piano 51+), Filone di Gemme",
+	"gemPrismaticShard": "Rompi Filone di gemme, Pietre Mistiche (Miniere piano 101+, 25%), Filone di Iridio (4%)",
+	"gemCinderShard": "Rompi Pietra con scheggie di brace (Vulcano)",
+	"boneNode": "Rompi Filone osseo (Sito degli Scavi dell'Isola Zenzero)",
 	
 	// Farm Cave
-	"caveYours": "Trovati nella grotta della fattoria", // once cave type has been chosen, the other type is disregarded and this is used
-	"caveFruitBats": "Trovati nella grotta della fattoria (pipistrelli della frutta)", // if spoilers are allowed, cave type is specified until player selects type
-	"caveMushrooms": "Trovati nella grotta della fattoria (funghi)", // if spoilers are allowed, cave type is specified until player selects type
+	"caveYours": "Trovato nella grotta della fattoria", // once cave type has been chosen, the other type is disregarded and this is used
+	"caveFruitBats": "Trovato nella grotta della fattoria (pipistrelli della frutta)", // if spoilers are allowed, cave type is specified until player selects type
+	"caveMushrooms": "Trovato nella grotta della fattoria (funghi)", // if spoilers are allowed, cave type is specified until player selects type
 	
 	// Buying
 	"buyFrom": "Compra da {{shop}}",
@@ -107,10 +107,10 @@
 	"chopTrees": "Abbatti alberi con {{axe}}",
 	"smashCrates": "Distruggi scatole nelle Miniere",
 	"clearWeeds": "Distruggi le erbacce",
-	"harvestHay": "Mieti dall'erba o dal {{wheat}}",
+	"harvestHay": "Mieti dall'erba o {{wheat}}",
 	"trash": "Spazzatura dalla pesca, Nassa per granchi, o da i bidoni dei rifiuti",
 	"trashCan": "Spazzatura dai bidoni dei rifiuti",
-	"prizeTicket": "Reward from quests and special orders", // TODO
+	"prizeTicket": "Ricompense dalle missioni e ordini speciali",
 	
 	// Miscellaneous Sources
 	"luckyShorts": "Stanza di Marnie (nella missione I Pantaloncini del Sindaco in Estate 3)",
@@ -119,8 +119,8 @@
 	"mermaidHint": " (1-5-4-2-3)", // included as hint for how to get the mermaid's pearl, if spoilers are allowed or secret note read
 	"winCraneGame": "Vinci al gioco della gru al Cinema",
 	"voidEggEvent": "Evento casuale della strega",
-	"mysteryBoxesLocked": "Not yet available (must get day-end event in which they're dropped)", // TODO
-	"foxbloom": "Appears in Ridge Forest on random Sunday each season\n(Weather must be sunny and Relic Fox Mask equipped)", // RSV // TODO
+	"mysteryBoxesLocked": "Non ancora disponibile (deve attivarsi l'evento a fine giornata dove vengono sbloccate)",
+	"foxbloom": "Appare nella Foresta Cresta durante una Domenica casuale in ogni stagione\n(Dev'essere soleggiato e devi avere equipaggiata la Reliquia Maschera della Volpe", // RSV
 	
 	// Concealed Source (for when entire suggestion is a spoiler)
 	"unknownSource": "???",
@@ -128,7 +128,7 @@
 	/***** Short Hints *****/
 	
 	"shortHintSeasonalCrop": "Coltura in {{season}}",
-	"shortHintSeasonalCropStartingYear": "Coltura in {{season}} Anno {{year}}+",
+	"shortHintSeasonalCropStartingYear": "Coltura in {{season}}, Anno {{year}}+",
 	"shortHintSeasonalSeed": "Seme in {{season}}",
 	"shortHintMachine": "{{item}} in {{machine}}",
 	"shortHintTrash": "spazzatura",
@@ -155,28 +155,28 @@
 	
 	// Location Names (for foraging suggestions)
 	"locationFarm": "nella Fattoria",
-	"locationTown": "in Pelican Town", // TODO
+	"locationTown": "in Pelican Town",
 	"locationMines": "nelle Miniere",
 	"locationMinesArea1": "nelle Miniere 1-39",
 	"locationMinesArea2": "nelle Miniere 41-79",
 	"locationMinesArea3": "nelle Miniere 81-119",
 	"locationMines21Plus": "nelle Miniere 21+",
-	"locationMountains": "alle Montagne",
-	"locationBeach": "alla Spiaggia",
-	"locationBeachEast": "alla Spiaggia (lato destro)",
-	"locationBeachEastInaccessible": "alla Spiaggia (lato destro; 300 {{wood}} per riparare il ponte)", // tip displayed if bridge is not fixed
+	"locationMountains": "nelle Montagne",
+	"locationBeach": "sulla Spiaggia",
+	"locationBeachEast": "sulla Spiaggia (lato destro)",
+	"locationBeachEastInaccessible": "sulla Spiaggia (lato destro; 300 {{wood}} per riparare il ponte)", // tip displayed if bridge is not fixed
 	"locationForest": "nella Foresta Linfabrace",
-	"locationBus": "at Bus Stop", // TODO
+	"locationBus": "alla Fermata dell'autobus",
 	"locationWoods": "nei Boschi Segreti",
 	"locationSewer": "nelle Fogne",
 	"locationDesert": "nel Deserto di Calico",
 	"locationSkullPrehistoric": "nei piani preistorici della Caverna del Teschio",
-	"locationIsland": "on Ginger Island", // TODO
-	"locationVolcano": "in the Volcano", // TODO
-	"locationAdventurerSummit": "in Adventurer Summit", // SVE // TODO
-	"locationRidgeForest": "in Ridge Forest", // RSV // TODO
-	"locationMagesRest": "in Mage's Rest", // Alchemistry // TODO
-	"locationUnknown": "in ???",
+	"locationIsland": "nell'Isola Zenzero",
+	"locationVolcano": "nel Vulcano",
+	"locationAdventurerSummit": "sulla Cima dell'Avventuriero", // SVE
+	"locationRidgeForest": "nella Foresta Cresta", // RSV
+	"locationMagesRest": "al Mage's Rest", // Alchemistry
+	"locationUnknown": "nel ???",
 	
 	// Water Locations (for fishing suggestions)
 	"waterRivers": "nei fiumi", // Town river or Cindersap Forest river
@@ -185,16 +185,16 @@
 	"waterMountain": "nel lago delle Montagne",
 	"waterForestPond": "nel laghetto della Foresta Linfabrace",
 	"waterForestRiver": "nel fiume della Foresta Linfabrace",
-	"waterForestFalls": "at bottom of Cindersap Forest waterfalls", // TODO
+	"waterForestFalls": "alla fine della cascata della Foresta Linfabrace",
 	"waterSpecialFarm": "nella Fattoria",
 	"waterWoods": "nel laghetto dei Boschi Segreti",
 	"waterDesert": "nel laghetto del Deserto",
 	"waterSewer": "nelle Fogne",
 	"waterBugLand": "nel Covo di Insetti",
 	"waterMines": "nelle Miniere Piani 20/60/100",
-	"waterMines20": "nelle Miniere Piano 20",
-	"waterMines60": "nelle Miniere Piano 60",
-	"waterMines100": "nelle Miniere Piano 100",
+	"waterMines20": "nelle Miniere Piani 20",
+	"waterMines60": "nelle Miniere Piani 60",
+	"waterMines100": "nelle Miniere Piani 100",
 	"waterSwamp": "nella Palude della Strega",
 	"waterIsland": "sull'Isola Zenzero",
 	"waterIslandRiver": "nel fiume sull'Isola Zenzero",
@@ -202,18 +202,18 @@
 	"waterIslandOceanWest": "nell'oceano sull'Isola Zenzero (Ovest)",
 	"waterIslandCove": "nel Covo dei Pirati",
 	"waterAnglerSpot": "all'estremo nord del fiume in città",
-	"waterCrimsonfishSpot": "alla Spiaggia riva est/est del molo",
+	"waterCrimsonfishSpot": "alla Spiaggia, riva est/est del molo",
 	"waterGlacierfishSpot": "dalla punta più meridionale dell'isola centrale nella Foresta Linfabrace",
 	"waterLegendSpot": "intorno al tronco nel lago delle Montagne",
 	"waterBlueMoonVineyard": "al Vigneto Luna Blu", // SVE
-	"waterShearwaterBridge": "al ponte Shearwater", // SVE
+	"waterShearwaterBridge": "al Ponte Berta Maggiore", // SVE
 	"waterForestWest": "nella Foresta Linfabrace (Ovest)", // SVE
-	"waterAdventurerSummit": "alla Vetta dell'Avventuriero", // SVE
-	"waterRidgesideRiver": "in Ridgeside Village river", // RSV // TODO
-	"waterRidge": "on the Ridge", // RSV // TODO
-	"waterRidgeForest": "in Ridge Forest", // RSV // TODO
-	"waterRidgeFalls": "at Ridge Falls", // RSV // TODO
-	"waterMagesRest": "in Mage's Rest", // Alchemistry // TODO
+	"waterAdventurerSummit": "al Cima dell'Avventuriero", // SVE
+	"waterRidgesideRiver": "nel fiume del Villaggio Ridgeside", // RSV
+	"waterRidge": "sulla Cresta", // RSV
+	"waterRidgeForest": "nella Foresta Cresta", // RSV
+	"waterRidgeFalls": "alle Cascate Cresta", // RSV
+	"waterMagesRest": "al Mage's Rest", // Alchemistry
 	"waterUnknown": "in ???",
 	
 	// Water Types (for crab pot suggestions)
@@ -227,32 +227,33 @@
 	"shopMarnie": "Ranch di Marnie",
 	"shopCarpenter": "Bottega del falegname",
 	"shopBlacksmith": "Fabbro",
-	"shopSaloon": "Saloon",
+	"shopSaloon": "Saloon Astropomo",
 	"shopClinic": "Clinica",
-	"shopFish": "Fish Shop", // TODO
-	"shopGuild": "Adventurer's Guild", // TODO
+	"shopFish": "Negozio di pesca",
+	"shopGuild": "Gilda degli Avventurieri",
 	"shopDwarf": "Nano",
 	"shopKrobus": "Krobus",
 	"shopKrobusWeekday": "Krobus ({{day}})",
 	"shopDesertTrader": "Mercante del Deserto",
 	"shopOasis": "Oasi",
 	"shopOasisWeekday": "Oasi ({{day}})",
-	"shopIslandTrader": "Island Trader", // TODO
-	"shopIslandResort": "Island Resort", // TODO
-	"shopDwarfVolcano": "Volcano Dwarf", // TODO
-	"shopIceCream": "Ice Cream Stand", // TODO
+	"shopIslandTrader": "Mercante dell'isola",
+	"shopIslandResort": "Villaggio vacanze",
+	"shopDwarfVolcano": "Nano del vulcano",
+	"shopIceCream": "Stand di gelato",
 	"shopTravelingCartRandom": "Carovana del Mercante (casuale)",
 	"shopTravelingCartSeason": "Carovana del Mercante in {{season}}",
 	"shopEggFestival": "Pierre al Festival delle uova (Primavera 13)",
 	"shopFlowerDance": "Pierre al Ballo dei fiori (Primavera 24)",
+	"shopLuau": "Pierre al Luau (Estate 11)",
 	"shopSpiritsEve": "Pierre alla Vigilia degli spiriti (Autunno 27)",
-	"shopSophiaLedger": "Sophia's ledger", // SVE // TODO
-	"shopWestForestBear": "Forest West bear", // SVE // TODO
-	"shopNightingaleOrchard": "Nightingale Orchard", // RSV // TODO
-	"shopHotelPastry": "Hotel Pastry Shop", // RSV // TODO
-	"shopPikaRestaurant": "Pika's Restaurant", // RSV // TODO
-	"shopMalayaRecipes": "Malaya's Shop", // RSV // TODO
-	"shopSevinae": "Sevinae's Shop", // Alchemistry // TODO
+	"shopSophiaLedger": "Registro di Sophia", // SVE
+	"shopWestForestBear": "Orso della Foresta Linfabrace Ovest", // SVE
+	"shopNightingaleOrchard": "Frutteto Usignolo", // RSV
+	"shopHotelPastry": "Hotel Delizia", // RSV
+	"shopPikaRestaurant": "Ristorante di Pika", // RSV
+	"shopMalayaRecipes": "Negozio di Malaya", // RSV
+	"shopSevinae": "Negozio di Sevinae", // Alchemistry
 	"shopUnknown": "???",
 	"randomlyAvailable": "casuale", // appended in parentheses after shop name when item is only randomly in stock
 	"mustHaveShipped": "spedisci {{item}}", // appended in parentheses after shop name if you have to have shipped a certain other item
@@ -272,8 +273,8 @@
 	"itemCategoryWildSeed": "qualsiasi seme selvatico", // category -777; not defined as a constant, but used for Tea Sapling recipe
 	"itemCategoryNut": "qualsiasi noce", // not a category strictly defined by base game, but used to summarize machine input
 	"itemCategoryMushroom": "qualsiasi fungo", // not a category strictly defined by base game, but used to summarize machine input
-	"itemCategoryHerb": "any herb", // Cornucopia // TODO
-	"itemCategoryBodyPart": "any body part", // Alchemistry // TODO
+	"itemCategoryHerb": "qualsiasi erba", // Cornucopia
+	"itemCategoryBodyPart": "qualsiasi parte del corpo", // Alchemistry
 	
 	// Tree Names (for tree suggestions)
 	"treeApple": "Melo",
@@ -282,33 +283,33 @@
 	"treePeach": "Pesco",
 	"treePomegranate": "Melograno",
 	"treeCherry": "Ciliegio",
-	"treeMahogany": "Mahogany Tree", // TODO
-	"treeBanana": "Banana Tree", // TODO
-	"treeMango": "Mango Tree", // TODO
-	"treeLime": "Albero di Lime", // Cornucopia
+	"treeMahogany": "Albero di mogano",
+	"treeBanana": "Albero di banane",
+	"treeMango": "Albero di mango",
+	"treeLime": "Albero di lime", // Cornucopia
 	"treePapaya": "Albero di papaya", // Cornucopia
 	"treeWalnut": "Albero noce", // Cornucopia
-	"treePersimmon": "Cachi", // Cornucopia
+	"treePersimmon": "Caco", // Cornucopia
 	"treeEucalyptus": "Eucalipto", // Cornucopia
 	"treeGranny": "Albero delle Granny Smith", // PPJA More Trees
-	"treeAvocado": "Avocado Tree", // Cornucopia // TODO
-	"treeCocoaPod": "Cocoa Pod Tree", // Cornucopia // TODO
-	"treePear": "Pear Tree", // Cornucopia // TODO
-	"treePistachio": "Pistachio Tree", // Cornucopia // TODO
-	"treeFir": "Fir Tree", // SVE // TODO
-	"treeNectarine": "Nectarine Tree", // SVE // TODO
-	"treeCherryPluot": "Cherry Pluot Tree", // RSV // TODO
-	"treeMountainPlumcot": "Mountain Plumcot Tree", // RSV // TODO
-	"treeDesertTangelo": "Desert Tangelo Tree", // RSV // TODO
-	"treeTropiUgliFruit": "Tropi Ugli Fruit Tree", // RSV // TODO
-	"treeParadiseRangpur": "Paradise Rangpur Tree", // RSV // TODO
-	"treeEmberBloomLime": "Ember Blood Lime Tree", // RSV // TODO
+	"treeAvocado": "Albero di avocado", // Cornucopia
+	"treeCocoaPod": "Albero di cacao", // Cornucopia
+	"treePear": "Pero", // Cornucopia
+	"treePistachio": "Albero di pistacchio", // Cornucopia
+	"treeFir": "Abete", // SVE
+	"treeNectarine": "Albero di nettarine", // SVE
+	"treeCherryPluot": "Amolo", // RSV
+	"treeMountainPlumcot": "Prugno di montagna", // RSV
+	"treeDesertTangelo": "Albero di tangelo del deserto", // RSV
+	"treeTropiUgliFruit": "Ugli Tropicale", // RSV
+	"treeParadiseRangpur": "Albero di Paradiso di Rangpur", // RSV
+	"treeEmberBloomLime": "Tiglio rosso braciere", // RSV
 	"treeMaple": "Acero",
 	"treeOak": "Quercia",
 	"treePine": "Pino",
-	"treeMystic": "Mystic Tree ({{craftingInfo}})", // TODO
-	"treeMushroom": "Albero di Funghi (evento autunnale raro)",
-	"treeDescSeedling": "pianticela da {{shop}}{{startingYear}}", // advice for fruit trees
+	"treeMystic": "Albero mistico ({{craftingInfo}})",
+	"treeMushroom": "Albero fungo (evento autunnale raro)",
+	"treeDescSeedling": "albero giovane da {{shop}}{{startingYear}}", // advice for fruit trees
 	"treeDescNonFruit": "già nella fattoria/cresci {{treeSeed}}", // advice for Maple/Oak/Pine trees
 	
 	// General Monster Names (most monster names are taken from data, so these are either categories of monster or specific colors/etc.)
@@ -320,8 +321,8 @@
 	"monsterRedSlime": "Melma rossa",
 	"monsterPurpleSlime": "Melma viola",
 	"monsterBRPCISlime": "Melma blu/rossa/viola/di rame/di ferro",
-	"monsterHauntedSkull": "Haunted Skull", // TODO
-	"monsterRidgeForest": "Ridge Forest monsters", // RSV // TODO
+	"monsterHauntedSkull": "Teschio stregato",
+	"monsterRidgeForest": "Mostri della Foresta Cresta", // RSV
 	"monsterUnknown": "???",
 	
 	// Monster Locations (appended after monster names)
@@ -331,7 +332,7 @@
 	"monsterAreaSkull": "Caverna del Teschio",
 	"monsterAreaSkullFloorPlus": "Caverna del Teschio {{start}}+",
 	"monsterAreaSkullPrehistoric": "Piani preistorici della Caverna del Teschio",
-	"monsterAreaSkullMummy": "Caverna del Teschio piani di mummie",
+	"monsterAreaSkullMummy": "Piani delle mummie della Caverna del Teschio ",
 	"monsterAreaVolcano": "Vulcano",
 	"monsterAreaUnknown": "???",
 	
@@ -344,7 +345,7 @@
 	"animalRabbit": "Conigli",
 	"animalDuck": "Anatre",
 	"animalPig": "Maiali",
-	"animalOstrich": "Ostriches", // TODO
+	"animalOstrich": "Ostriches",
 	
 	// Animal Building Requirements (advice on how to obtain animals, if not currently available to purchase)
 	"animalReqCoopLv1": "necessaria Stia",
@@ -360,7 +361,7 @@
 	"recipeSourceSeparator": " / ",
 	
 	// Recipe Sources (compiled into list for recipeFrom)
-	"recipeSourceSaloon": "Saloon",
+	"recipeSourceSaloon": "Saloon Astropomo",
 	"recipeSourceTV": "TV ({{date}})",
 	"recipeSourceTVAlreadyAired": "TV (replica del mercoledì, o {{date}})",
 	"recipeSourceFriendship": "{{hearts}}+ cuori con {{person}}", // sent in mail or available for purchase when you have enough hearts
@@ -379,11 +380,11 @@
 	// Skill Level Requirements
 	"skillLvRequirement": "{{skill}} Lv. {{num}}",
 	"totalSkillLvRequirement": "Abilità combinate Lv. {{num}}",
-	"skillMastery": "{{skill}} Mastery", // TODO
+	"skillMastery": "{{skill}} Mastery",
 	"farmingSkill": "Fattoria",
 	"miningSkill": "Estrazione",
 	"fishingSkill": "Pesca",
-	"foragingSkill": "Racc. Selvatica",
+	"foragingSkill": "Raccolta Selvatica",
 	"combatSkill": "Combattimento",
 	
 	// Machine Sources
@@ -399,8 +400,8 @@
 	"mailConditionFriendship": "{{hearts}} cuori con {{person}}",
 	
 	// Times (for fishing)
-	"timeAM": "{{hour}}am",
-	"timePM": "{{hour}}pm",
+	"timeAM": "{{hour}} (mattina)",
+	"timePM": "{{hour}} (pomeriggio)",
 	"time24Hour": "{{hour}}:00",
 	"timeRange": "{{start}}-{{end}}",
 	"anyTime": "qualsiasi ora",
@@ -423,12 +424,12 @@
 	
 	/***** Mod Config Menu Text *****/
 	
-	"optionShowSpoilersName": "Show Spoilers", // TODO
-	"optionShowSpoilersTooltip": "Whether hints should include spoilers of certain things not yet encountered.", // TODO
+	"optionShowSpoilersName": "Mostra Spoiler",
+	"optionShowSpoilersTooltip": "Se i suggerimenti devono includere spoiler di certe cose che non sono state ancora scoperte.",
 	
-	"optionCollectionsTabName": "Collections Tab Hints", // TODO
-	"optionCollectionsTabTooltip": "Additionally show tooltip hints in the Collections tab for how to obtain items. For \"All Items\" setting, toggle display with click/Action/Tool Button. (Items from mods not guaranteed to show hints.)", // TODO
-	"collectionsTabOff": "Off", // TODO
-	"collectionsTabUnknowns": "Unknowns Only", // TODO
-	"collectionsTabAll": "All Items", // TODO
+	"optionCollectionsTabName": "Suggerimenti Collezioni",
+	"optionCollectionsTabTooltip": "Mostra suggerimenti in più nella scheda Collezioni su come ottenere gli oggetti. Se l'opzione 'Tutti gli oggetti' è selezionata, attiva/disattiva la visualizzazione con un click sinistro/pulsante Azione/Strumento (non è garantito che gli oggetti delle mod abbiano suggerimenti).",
+	"collectionsTabOff": "Off",
+	"collectionsTabUnknowns": "Solo oggetti sconosciuti",
+	"collectionsTabAll": "Tutti gli oggetti"
 }

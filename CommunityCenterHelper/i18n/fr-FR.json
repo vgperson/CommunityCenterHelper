@@ -245,6 +245,7 @@
     "shopTravelingCartSeason": "au charriot de voyage en {{season}}",
     "shopEggFestival": "chez Pierre au Festival des Oeufs (Printemps 13)",
     "shopFlowerDance": "chez Pierre à la Danse des Fleurs (Printemps 24)",
+	"shopLuau": "Pierre at Luau (Summer 11)", // TODO
     "shopSpiritsEve": "chez Pierre à la Fête des Esprits (automne 27)",
     "shopSophiaLedger": "chez Sophia", // SVE
     "shopWestForestBear": "auprès de l’ours de la forêt de l'Ouest", // SVE

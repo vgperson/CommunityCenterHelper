@@ -245,6 +245,7 @@
 	"shopTravelingCartSeason": "в мандрівного купця {{season}}",
 	"shopEggFestival": "у П'єра на Фестивалі яєць (Навесні 13 числа)",
 	"shopFlowerDance": "у П'єра на Квітковому танці (Навесні 24 числа)",
+	"shopLuau": "Pierre at Luau (Summer 11)", // TODO
 	"shopSpiritsEve": "у П'єра на Переддні усіх духів (Восени 27 числа)",
 	"shopSophiaLedger": "Sophia's ledger", // SVE // TODO
 	"shopWestForestBear": "Forest West bear", // SVE // TODO

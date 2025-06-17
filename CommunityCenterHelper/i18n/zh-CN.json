@@ -245,6 +245,7 @@
 	"shopTravelingCartSeason": "{{season}}于旅行货车",
 	"shopEggFestival": "复活节中皮埃尔的摊位(春季第13日)",
 	"shopFlowerDance": "花舞节中皮埃尔的摊位(春季第24日)",
+	"shopLuau": "Pierre at Luau (Summer 11)", // TODO
 	"shopSpiritsEve": "万灵节中皮埃尔的摊位(Fall 27)",
 	"shopSophiaLedger": "Sophia's ledger", // SVE // TODO
 	"shopWestForestBear": "Forest West bear", // SVE // TODO

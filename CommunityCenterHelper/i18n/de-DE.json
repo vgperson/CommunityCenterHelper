@@ -245,6 +245,7 @@
 	"shopTravelingCartSeason": "Reisewagen im {{season}}",
 	"shopEggFestival": "Pierre am Egg Festival (13. im Frühling)",
 	"shopFlowerDance": "Pierre beim Blumentanz (24. im Frühling)",
+	"shopLuau": "Pierre at Luau (Summer 11)", // TODO
 	"shopSpiritsEve": "Pierre in der Geisternacht (27. im Herbst)",
 	"shopSophiaLedger": "Sophia's ledger", // SVE // TODO
 	"shopWestForestBear": "Forest West bear", // SVE // TODO

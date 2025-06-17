@@ -245,6 +245,7 @@
 	"shopTravelingCartSeason": "Carro ambulante en {{season}}",
 	"shopEggFestival": "Pierre durante el festival del Huevo (13 de Primavera)",
 	"shopFlowerDance": "Pierre durante la Danza Floral (24 de Primavera)",
+	"shopLuau": "Pierre at Luau (Summer 11)", // TODO
 	"shopSpiritsEve": "Pierre durante la Víspera de los Espíritus (27 de Otoño)",
 	"shopSophiaLedger": "Sophia's ledger", // SVE // TODO
 	"shopWestForestBear": "Forest West bear", // SVE // TODO

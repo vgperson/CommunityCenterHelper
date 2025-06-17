@@ -245,6 +245,7 @@
 	"shopTravelingCartSeason": "รถเร่ขายของใน{{season}}",
 	"shopEggFestival": "บูทปิแอร์ในเทศกาลไข่อีสเตอร์ (ฤดูใบไม้ผลิ วันที่ 13)",
 	"shopFlowerDance": "บูทปิแอร์ในเทศกาลเต้นรำดอกไม้ (ฤดูใบไม้ผลิ วันที่ 24)",
+	"shopLuau": "Pierre at Luau (Summer 11)", // TODO
 	"shopSpiritsEve": "บูทปิแอร์ในเทศกาลภูติ (ฤดูใบไม้ร่วง วันที่ 27)",
 	"shopSophiaLedger": "Sophia's ledger", // SVE // TODO
 	"shopWestForestBear": "Forest West bear", // SVE // TODO
