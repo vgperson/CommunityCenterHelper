@@ -13,7 +13,7 @@ Additionally, as of version 1.6.0, you can choose to show hints for items in the
 
 ## Supported Languages
 
-**English, Japanese, Simplified Chinese (provided by sansenenlemon), Traditional Chinese (provided by Yilite), French (provided by Azurys & Caranud), German (provided by NotErikWasTaken & randomC0der), Italian (provided by AliAgo08), Portuguese (provided by Cosmiky), Russian (provided by angel4killer & AppleNorris), Spanish (provided by vlcoo), Thai (provided by ellipszist), Turkish (provided by sevilayerkan), Ukrainian (provided by ChulkyBow)**
+**English, Japanese, Simplified Chinese (provided by sansenenlemon), Traditional Chinese (provided by Yilite), French (provided by Azurys & Caranud), German (provided by NotErikWasTaken & randomC0der), Italian (provided by AliAgo08 & flowerssummerr), Portuguese (provided by Cosmiky), Russian (provided by angel4killer & AppleNorris), Spanish (provided by vlcoo), Thai (provided by ellipszist), Turkish (provided by sevilayerkan), Ukrainian (provided by ChulkyBow)**
 
 (Even in unsupported languages, item and character names refer directly to the data, so those will use the proper names for that language.)
 
