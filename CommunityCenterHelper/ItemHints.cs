@@ -1665,8 +1665,7 @@ namespace CommunityCenterHelper
                     // [Challenging Cornucopia_RSV_SVE] Ocean Fish Bundle
                     
                     case ItemID.SVE_Starfish:
-                        return strFishBase(waterList: new string[] { "waterOcean", "waterBlueMoonVineyard" },
-                                           seasonList: new string[] { "spring", "summer", "fall" }, start: "6am", end: "10pm")
+                        return strFishBase("waterOcean", "6am", "10pm", seasonList: new string[] { "spring", "summer", "winter" })
                              + (isIslandKnown()? "\n" + strFishBase("waterIsland", "6am", "10pm") : "");
                     
                     // [Challenging Cornucopia_RSV_SVE] Night Fishing Bundle
@@ -2360,8 +2359,12 @@ namespace CommunityCenterHelper
                     
                     /********** [Stardew Valley Expanded Built-In Bundles] Crafts Room **********/
                     
+                    // [SVE Built-In] Summer Foraging Bundle
+                    
                     case ItemID.SVE_RedBaneberry:
                         return strSeasonalLocationalForage("summer", "locationWoods");
+                    
+                    // [SVE Built-In] Exotic Foraging Bundle
                     
                     case ItemID.SVE_BirchWater:
                         return strTapTree("treeBirch") + "\n"
@@ -2370,10 +2373,14 @@ namespace CommunityCenterHelper
                     
                     /********** [Stardew Valley Expanded Built-In Bundles] Fish Tank **********/
                     
+                    // [SVE Built-In] River Fish Bundle
+                    
                     case ItemID.SVE_Goldfish:
                         return strFishBase(waterList: new string[] { "waterTown", "waterBlueMoonVineyard" }, seasonKey: "spring");
                     
                     /********** [Stardew Valley Expanded Built-In Bundles] Bulletin Board **********/
+                    
+                    // [SVE Built-In] Enchanter's Bundle
                     
                     case ItemID.SVE_FourLeafClover:
                         return strSeasonalLocationalForage(seasonList: new string[] { "spring", "summer" }, locationKey: "locationForestWest") + "\n"
